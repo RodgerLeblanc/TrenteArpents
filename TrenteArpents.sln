@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrenteArpents.iOS", "Trente
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrenteArpents", "TrenteArpents\TrenteArpents\TrenteArpents.csproj", "{710F5BF6-B5D0-4000-802D-E47B9B371B46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrenteArpents.UWP", "TrenteArpents.UWP\TrenteArpents.UWP.csproj", "{B0872377-4F51-4519-BCAE-458F0BD20CE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrenteArpents.UWP", "TrenteArpents\TrenteArpents.UWP\TrenteArpents.UWP.csproj", "{B0872377-4F51-4519-BCAE-458F0BD20CE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
