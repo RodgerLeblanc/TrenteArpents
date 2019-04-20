@@ -165,7 +165,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TrenteArpents\TrenteArpents\TrenteArpents.csproj">
+    <ProjectReference Include="..\TrenteArpents\TrenteArpents.csproj">
       <Project>{710f5bf6-b5d0-4000-802d-e47b9b371b46}</Project>
       <Name>TrenteArpents</Name>
     </ProjectReference>
