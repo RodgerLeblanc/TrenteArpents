@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:TrenteArpents.Views"
+    x:Class="TrenteArpents.Views.ScheduleList">
+
+    <ContentPage.Resources>
+        <DataTemplate x:Key="sponsorTemplate">
+            <!--BackgroundColor="{StaticResource NavigationPrimary}"-->
+            <StackLayout HorizontalOptions="FillAndExpand" Padding="10,5">
+
+                <StackLayout.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="Margin" Value="0,-5" />
+                        <Setter Property="Opacity" Value="0.5" />
+                        <Setter Property="FontSize" Value="Micro" />
+                        <Setter Property="HorizontalOptions" Value="Center" />
+                    </Style>
+                    <Style TargetType="Image">
+                        <Setter Property="HeightRequest" Value="60" />
+                        <Setter Property="Aspect" Value="AspectFill" />
+                        <Setter Property="HorizontalOptions" Value="Center" />
+                        <Setter Property="VerticalOptions" Value="Center" />
+                    </Style>
+                </StackLayout.Resources>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <StackLayout VerticalOptions="Center">
+                        <Label Text="Commandité" />
+                        <Label Grid.Row="1" Text="par" />
+                    </StackLayout>
+
+                    <Image Source="{Binding [0].ImageSource}" />
+                    <Image Source="{Binding [1].ImageSource}" />
+                    <Image Source="{Binding [2].ImageSource}" />
+                </StackLayout>
+            </StackLayout>
+        </DataTemplate>
+    </ContentPage.Resources>
+
+    <Grid Margin="-12,0">
+        <ListView
+            x:Name="listView"
+            ItemsSource="{Binding Activities}"
+            SelectedItem="{Binding SelectedActivity}"
+            Header="{Binding HeaderSponsors}"
+            HeaderTemplate="{StaticResource sponsorTemplate}"
+            IsVisible="{Binding ScheduleVisible}"
+            HasUnevenRows="True">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell 
+                        Text="{Binding Name}" 
+                        Detail="{Binding Description}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Label 
+            Text="Aucune programmation"
+            IsVisible="{Binding NoScheduleVisible}"
+            VerticalOptions="CenterAndExpand" 
+            HorizontalOptions="CenterAndExpand" />
+    </Grid>
+</ContentPage>
