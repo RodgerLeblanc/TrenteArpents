@@ -1,10 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:views="clr-namespace:TrenteArpents.Views"
-            x:Class="TrenteArpents.Views.MainPage">
+<MasterDetailPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:TrenteArpents.Views"
+    x:Class="TrenteArpents.Views.MainPage">
 
-    <TabbedPage.Children>
+    <MasterDetailPage.Master>
+        <NavigationPage Title="MainPage.xaml">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="hamburger_icon.png"/>
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:MainMenuMaster NavigationPage.HasNavigationBar="False" />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Master>
+
+    <!--<TabbedPage.Children>
         <NavigationPage Title="Programmation" Padding="0">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -59,6 +73,6 @@
                 <views:AboutPage />
             </x:Arguments>
         </NavigationPage>
-    </TabbedPage.Children>
+    </TabbedPage.Children>-->
     
-</TabbedPage>
+</MasterDetailPage>

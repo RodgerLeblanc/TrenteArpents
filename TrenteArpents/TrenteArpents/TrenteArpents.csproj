@@ -11,12 +11,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Background\repeatedPattern.png" />
+    <None Remove="Images\feteDeQuartier.png" />
+    <None Remove="Images\Icons\about.png" />
+    <None Remove="Images\Icons\facebook.png" />
+    <None Remove="Images\Icons\photos.png" />
+    <None Remove="Images\Icons\schedule.png" />
+    <None Remove="Images\Icons\sponsors.png" />
+    <None Remove="Images\Icons\weather.png" />
     <None Remove="Images\Sponsors\domaineDes30Arpents.png" />
     <None Remove="Images\Sponsors\groupeDoyon.png" />
     <None Remove="Images\Sponsors\raynaldGiguere.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Images\Background\repeatedPattern.png" />
+    <EmbeddedResource Include="Images\feteDeQuartier.png" />
+    <EmbeddedResource Include="Images\Icons\about.png" />
+    <EmbeddedResource Include="Images\Icons\facebook.png" />
+    <EmbeddedResource Include="Images\Icons\photos.png" />
+    <EmbeddedResource Include="Images\Icons\schedule.png" />
+    <EmbeddedResource Include="Images\Icons\sponsors.png" />
+    <EmbeddedResource Include="Images\Icons\weather.png" />
     <EmbeddedResource Include="Images\Sponsors\domaineDes30Arpents.png" />
     <EmbeddedResource Include="Images\Sponsors\groupeDoyon.png" />
     <EmbeddedResource Include="Images\Sponsors\raynaldGiguere.png" />
@@ -41,9 +57,8 @@
     <EmbeddedResource Update="Views\ScheduleList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Helpers\" />
+    <EmbeddedResource Update="Views\Sponsors.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

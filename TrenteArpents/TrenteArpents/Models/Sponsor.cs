@@ -9,5 +9,13 @@ namespace TrenteArpents.Models
     {
         public string Name { get; set; }
         public ImageSource ImageSource { get; set; }
+        public SponsorType Type { get; set; } = SponsorType.Bronze;
+    }
+
+    public enum SponsorType
+    {
+        Gold,
+        Silver,
+        Bronze,
     }
 }

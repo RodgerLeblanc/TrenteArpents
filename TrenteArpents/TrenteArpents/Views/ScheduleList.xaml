@@ -39,7 +39,7 @@
         </DataTemplate>
     </ContentPage.Resources>
 
-    <Grid Margin="-12,0">
+    <Grid>
         <ListView
             x:Name="listView"
             ItemsSource="{Binding Activities}"
