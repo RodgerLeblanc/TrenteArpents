@@ -13,25 +13,79 @@
             </OnPlatform>
         </Grid.Margin>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
         <Image
+            Grid.RowSpan="3"
             Source="{hlp:ImageResource TrenteArpents.Images.Background.repeatedPattern.png}" 
             Aspect="AspectFill" />
 
         <StackLayout HorizontalOptions="FillAndExpand" Padding="10,5">
+            <Image 
+                Source="{hlp:ImageResource TrenteArpents.Images.feteDeQuartier.png}"
+                Aspect="AspectFit"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center" />
+            
+            <BoxView 
+                Color="White" 
+                HeightRequest="1" 
+                Opacity="0.5" 
+                Margin="5,0" 
+                HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+
+        <ListView
+            Grid.Row="1"
+            ItemsSource="{Binding DetailPages}" 
+            ItemSelected="ListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Margin="10">
+                            <Image
+                                Source="{Binding ImageSource}" 
+                                VerticalOptions="Center" 
+                                HeightRequest="30" 
+                                WidthRequest="30" />
+
+                            <Label
+                                Text="{Binding Name}" 
+                                VerticalOptions="Center" 
+                                TextColor="White" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackLayout Grid.Row="2" HorizontalOptions="FillAndExpand" Padding="10,5">
             <StackLayout.Resources>
                 <Style TargetType="Label">
                     <Setter Property="Margin" Value="0,-5" />
                     <Setter Property="Opacity" Value="0.5" />
-                    <Setter Property="FontSize" Value="Micro" />
+                    <Setter Property="FontSize" Value="12" />
                     <Setter Property="HorizontalOptions" Value="Center" />
+                    <Setter Property="TextColor" Value="White" />
                 </Style>
                 <Style TargetType="Image">
-                    <Setter Property="HeightRequest" Value="60" />
+                    <Setter Property="HeightRequest" Value="80" />
                     <Setter Property="Aspect" Value="AspectFill" />
                     <Setter Property="HorizontalOptions" Value="Center" />
                     <Setter Property="VerticalOptions" Value="Center" />
                 </Style>
             </StackLayout.Resources>
+
+            <BoxView 
+                Color="White" 
+                HeightRequest="1" 
+                Opacity="0.5" 
+                Margin="5,0" 
+                HorizontalOptions="FillAndExpand" />
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <StackLayout VerticalOptions="Center">
@@ -40,12 +94,9 @@
                 </StackLayout>
 
                 <Image Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.domaineDes30Arpents.png}" />
+                <BoxView Color="White" WidthRequest="1" HeightRequest="80" Opacity="0.5" Margin="5,0" />
                 <Image Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.groupeDoyon.png}" />
-                <Image Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.raynaldGiguere.png}" />
             </StackLayout>
         </StackLayout>
-
-        <!--<Label Text="MainMenuMaster.xaml Label" />-->
-
     </Grid>
 </ContentPage>
