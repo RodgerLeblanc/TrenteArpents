@@ -49,12 +49,6 @@ namespace TrenteArpents.ViewModels
                 },
                 new DetailPageInfo
                 {
-                    Name = "Météo",
-                    ImageSource = GetIconFromResource("weather.png"),
-                    PageType = typeof(ScheduleList)
-                },
-                new DetailPageInfo
-                {
                     Name = "À propos",
                     ImageSource = GetIconFromResource("about.png"),
                     PageType = typeof(ScheduleList)
