@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TrenteArpents.Views.MainMenuMaster"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
+    Title="MainMenuMaster.xaml">
+    
+    <Grid>
+        <Grid.Margin>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="iOS" Value="0,20,0,0"/>
+            </OnPlatform>
+        </Grid.Margin>
+
+        <Image
+            Source="{hlp:ImageResource TrenteArpents.Images.Background.repeatedPattern.png}" 
+            Aspect="AspectFill" />
+
+        <StackLayout HorizontalOptions="FillAndExpand" Padding="10,5">
+            <StackLayout.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="Margin" Value="0,-5" />
+                    <Setter Property="Opacity" Value="0.5" />
+                    <Setter Property="FontSize" Value="Micro" />
+                    <Setter Property="HorizontalOptions" Value="Center" />
+                </Style>
+                <Style TargetType="Image">
+                    <Setter Property="HeightRequest" Value="60" />
+                    <Setter Property="Aspect" Value="AspectFill" />
+                    <Setter Property="HorizontalOptions" Value="Center" />
+                    <Setter Property="VerticalOptions" Value="Center" />
+                </Style>
+            </StackLayout.Resources>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout VerticalOptions="Center">
+                    <Label Text="Commandité" />
+                    <Label Grid.Row="1" Text="par" />
+                </StackLayout>
+
+                <Image Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.domaineDes30Arpents.png}" />
+                <Image Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.groupeDoyon.png}" />
+                <Image Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.raynaldGiguere.png}" />
+            </StackLayout>
+        </StackLayout>
+
+        <!--<Label Text="MainMenuMaster.xaml Label" />-->
+
+    </Grid>
+</ContentPage>

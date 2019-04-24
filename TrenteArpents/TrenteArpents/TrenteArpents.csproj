@@ -11,12 +11,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Background\repeatedPattern.png" />
     <None Remove="Images\Sponsors\domaineDes30Arpents.png" />
     <None Remove="Images\Sponsors\groupeDoyon.png" />
     <None Remove="Images\Sponsors\raynaldGiguere.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Images\Background\repeatedPattern.png" />
     <EmbeddedResource Include="Images\Sponsors\domaineDes30Arpents.png" />
     <EmbeddedResource Include="Images\Sponsors\groupeDoyon.png" />
     <EmbeddedResource Include="Images\Sponsors\raynaldGiguere.png" />
@@ -41,9 +43,5 @@
     <EmbeddedResource Update="Views\ScheduleList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Helpers\" />
   </ItemGroup>
 </Project>

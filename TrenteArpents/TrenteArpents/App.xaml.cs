@@ -17,6 +17,7 @@ namespace TrenteArpents
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
+
             MainPage = new MainPage();
         }
 
