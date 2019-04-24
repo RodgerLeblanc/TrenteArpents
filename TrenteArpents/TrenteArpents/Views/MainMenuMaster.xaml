@@ -42,7 +42,9 @@
         <ListView
             Grid.Row="1"
             ItemsSource="{Binding DetailPages}" 
-            ItemSelected="ListView_ItemSelected">
+            ItemSelected="ListView_ItemSelected"
+            HorizontalScrollBarVisibility="Never"
+            VerticalScrollBarVisibility="Never">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
