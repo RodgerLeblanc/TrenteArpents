@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
+    x:Class="TrenteArpents.Views.Multimedia">
+    
+    <Grid Margin="10,0">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Image
+            Margin="-10,0"
+            Grid.RowSpan="3"
+            Source="{hlp:ImageResource TrenteArpents.Images.Background.repeatedPattern.png}" 
+            Aspect="AspectFill" />
+
+        <StackLayout
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand">
+            <Label 
+                Text="Photos"
+                HorizontalOptions="Center" />
+
+            <Grid HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Frame
+                    HeightRequest="{Binding Height, Source={Reference imageFete2018}}"
+                    BorderColor="White"
+                    IsClippedToBounds="True"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Padding="0">
+                    <Image
+                        x:Name="imageFete2018"
+                        Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.1.jpg}" 
+                        Aspect="AspectFit" />
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame
+                    Grid.Column="1"
+                    HeightRequest="{Binding Height, Source={Reference imageFete2018}}"
+                    BorderColor="White"
+                    IsClippedToBounds="True"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Padding="0">
+                    <Image
+                        Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.2.jpg}" 
+                        Aspect="AspectFit" />
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame
+                    Grid.Row="1"
+                    HeightRequest="{Binding Height, Source={Reference imageFete2018}}"
+                    BorderColor="White"
+                    IsClippedToBounds="True"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Padding="0">
+                    <Image
+                        Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.3.jpg}" 
+                        Aspect="AspectFit" />
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HeightRequest="{Binding Height, Source={Reference imageFete2018}}"
+                    BorderColor="White"
+                    IsClippedToBounds="True"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Padding="0">
+                    <Image
+                        Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.4.jpg}" 
+                        Aspect="AspectFit" />
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+
+            <Label 
+                Text="et plus..."
+                HorizontalOptions="Center" 
+                FontSize="10"
+                FontAttributes="Italic">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+
+        <BoxView 
+            Grid.Row="1"
+            HeightRequest="1" 
+            Opacity="0.5" 
+            Margin="5,0" 
+            HorizontalOptions="FillAndExpand" />
+
+        <StackLayout 
+            Grid.Row="2"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand">
+            <Label 
+                Text="Vidéos"
+                HorizontalOptions="Center" />
+
+            <Frame
+                HeightRequest="{Binding Height, Source={Reference videoDomaine}}"
+                BorderColor="White"
+                IsClippedToBounds="True"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Padding="0">
+                <Image
+                    x:Name="videoDomaine"
+                    Source="{hlp:ImageResource TrenteArpents.Images.videoScreenshot.png}" 
+                    Aspect="AspectFit" />
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenVideoCommand}" />
+                </Frame.GestureRecognizers>
+            </Frame>
+        </StackLayout>
+    </Grid>
+</ContentPage>
