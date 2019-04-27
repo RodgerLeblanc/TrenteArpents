@@ -10,15 +10,37 @@ namespace TrenteArpents.Helpers
     [ContentProperty(nameof(Source))]
     public class ImageResourceExtension : IMarkupExtension
     {
+        private static Assembly assembly;
+
+        static ImageResourceExtension()
+        {
+            if (assembly == null)
+            {
+                assembly = typeof(ImageResourceExtension).GetTypeInfo().Assembly;
+            }
+        }
+
+        private Dictionary<string, ImageSource> imageSourceCache = new Dictionary<string, ImageSource>();
+
         public string Source { get; set; }
 
         public object ProvideValue(IServiceProvider serviceProvider)
         {
-            var x = Source == null ?
-                null :
-                ImageSource.FromResource(Source, typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+            if (string.IsNullOrEmpty(Source))
+            {
+                return null;
+            }
 
-            return x;
+            if (imageSourceCache.ContainsKey(Source))
+            {
+                return imageSourceCache[Source];
+            }
+
+            var imageSource = ImageSource.FromResource(Source, assembly);
+
+            imageSourceCache.Add(Source, imageSource);
+
+            return imageSource;
         }
     }
 }

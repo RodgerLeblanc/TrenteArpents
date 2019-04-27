@@ -8,7 +8,7 @@
 
     <Grid>
         <Image
-            Source="{hlp:ImageResource TrenteArpents.Images.Background.repeatedPattern.png}" 
+            Source="{StaticResource detailBackgroundImage}" 
             Aspect="AspectFill" />
 
         <Frame

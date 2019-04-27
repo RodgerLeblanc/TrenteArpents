@@ -21,7 +21,7 @@
 
         <Image
             Grid.RowSpan="3"
-            Source="{hlp:ImageResource TrenteArpents.Images.Background.sunset.png}" 
+            Source="{StaticResource masterBackgroundImage}" 
             Aspect="AspectFill" />
 
         <BoxView

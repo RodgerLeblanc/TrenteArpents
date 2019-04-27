@@ -2,6 +2,7 @@ using Xamarin.Forms;
 using System;
 using System.Linq;
 using TrenteArpents.ViewModels;
+using System.Diagnostics;
 
 namespace TrenteArpents.Views
 {
@@ -21,11 +22,11 @@ namespace TrenteArpents.Views
             if (!(Application.Current.MainPage is MasterDetailPage masterDetailPage))
                 return;
 
-            Page page = (Page)Activator.CreateInstance(detailPageInfo.PageType);
-            masterDetailPage.Detail = new NavigationPage(page);
-
             ListView listView = (ListView)sender;
             listView.SelectedItem = null;
+
+            Page page = (Page)Activator.CreateInstance(detailPageInfo.PageType);
+            masterDetailPage.Detail = new NavigationPage(page);
         }
     }
 }

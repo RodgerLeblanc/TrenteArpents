@@ -9,7 +9,7 @@
 
     <Grid>
         <Image
-            Source="{hlp:ImageResource TrenteArpents.Images.Background.repeatedPattern.png}" 
+            Source="{StaticResource detailBackgroundImage}" 
             Aspect="AspectFill" />
 
         <ListView
@@ -25,10 +25,7 @@
                             x:Name="frame"
                             HeightRequest="100"
                             Margin="5,10"
-                            Padding="0"
-                            BorderColor="White" 
-                            BackgroundColor="Black"
-                            IsClippedToBounds="True">
+                            BackgroundColor="Black">
                             <Grid Margin="5,0">
                                 <Grid.RowDefinitions>
                                     <RowDefinition />

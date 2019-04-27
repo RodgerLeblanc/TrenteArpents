@@ -16,7 +16,7 @@
         <Image
             Margin="-10,-6"
             Grid.RowSpan="3"
-            Source="{hlp:ImageResource TrenteArpents.Images.Background.repeatedPattern.png}" 
+            Source="{StaticResource detailBackgroundImage}" 
             Aspect="AspectFill" />
 
         <Grid
@@ -45,11 +45,8 @@
                 </Grid.RowDefinitions>
 
                 <Frame
-                    BorderColor="White"
-                    IsClippedToBounds="True"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Padding="0">
+                    VerticalOptions="Center">
                     <Image
                         Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.1.jpg}" 
                         Aspect="AspectFit" />
@@ -61,11 +58,8 @@
 
                 <Frame
                     Grid.Column="1"
-                    BorderColor="White"
-                    IsClippedToBounds="True"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Padding="0">
+                    VerticalOptions="Center">
                     <Image
                         Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.2.jpg}" 
                         Aspect="AspectFit" />
@@ -77,11 +71,8 @@
 
                 <Frame
                     Grid.Row="1"
-                    BorderColor="White"
-                    IsClippedToBounds="True"
                     HorizontalOptions="Center"
-                    VerticalOptions="Start"
-                    Padding="0">
+                    VerticalOptions="Start">
                     <Image
                         Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.3.jpg}" 
                         Aspect="AspectFit" />
@@ -94,11 +85,8 @@
                 <Frame
                     Grid.Row="1"
                     Grid.Column="1"
-                    BorderColor="White"
-                    IsClippedToBounds="True"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Padding="0">
+                    VerticalOptions="Center">
                     <Image
                         Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.4.jpg}" 
                         Aspect="AspectFit" />
@@ -143,11 +131,8 @@
 
             <Frame
                 Grid.Row="1"
-                BorderColor="White"
-                IsClippedToBounds="True"
                 HorizontalOptions="Center"
-                VerticalOptions="Center"
-                Padding="0">
+                VerticalOptions="Center">
                 <Image
                     Source="{hlp:ImageResource TrenteArpents.Images.videoScreenshot.png}" 
                     Aspect="AspectFit" />
