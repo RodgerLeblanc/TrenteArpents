@@ -27,7 +27,9 @@ namespace TrenteArpents.ViewModels
                 .Select(i => new Activity
                 {
                     Name = $"Name {i}",
-                    Description = $"Description {i}"
+                    Description = $"Description {i}",
+                    Time = "10:00 - 11:00",
+                    ImageSource = GetSponsorImage("raynaldGiguere.png")
                 })
                 .ToList();
 

@@ -21,8 +21,15 @@
 
         <Image
             Grid.RowSpan="3"
-            Source="{hlp:ImageResource TrenteArpents.Images.Background.repeatedPattern.png}" 
+            Source="{hlp:ImageResource TrenteArpents.Images.Background.sunset.png}" 
             Aspect="AspectFill" />
+
+        <BoxView
+            Grid.RowSpan="3"
+            BackgroundColor="Black"
+            Opacity="0.4"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand" />
 
         <StackLayout HorizontalOptions="FillAndExpand" Padding="10,5">
             <Image 
@@ -32,7 +39,6 @@
                 VerticalOptions="Center" />
             
             <BoxView 
-                Color="White" 
                 HeightRequest="1" 
                 Opacity="0.5" 
                 Margin="5,0" 
@@ -57,23 +63,21 @@
 
                             <Label
                                 Text="{Binding Name}" 
-                                VerticalOptions="Center" 
-                                TextColor="White" />
+                                VerticalOptions="Center" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
-        <StackLayout Grid.Row="2" HorizontalOptions="FillAndExpand" Padding="10,5">
+        <StackLayout Grid.Row="2" HorizontalOptions="FillAndExpand" Padding="10,5" BackgroundColor="#88000000">
             <StackLayout.Resources>
                 <Style TargetType="Label">
                     <Setter Property="Margin" Value="0,-5" />
-                    <Setter Property="Opacity" Value="0.5" />
                     <Setter Property="FontSize" Value="12" />
                     <Setter Property="HorizontalOptions" Value="Center" />
-                    <Setter Property="TextColor" Value="White" />
                 </Style>
+
                 <Style TargetType="Image">
                     <Setter Property="HeightRequest" Value="80" />
                     <Setter Property="Aspect" Value="AspectFill" />
@@ -83,22 +87,37 @@
             </StackLayout.Resources>
 
             <BoxView 
-                Color="White" 
                 HeightRequest="1" 
                 Opacity="0.5" 
                 Margin="5,0" 
                 HorizontalOptions="FillAndExpand" />
 
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
                 <StackLayout VerticalOptions="Center">
                     <Label Text="Commandité" />
                     <Label Grid.Row="1" Text="par" />
                 </StackLayout>
 
-                <Image Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.domaineDes30Arpents.png}" />
-                <BoxView Color="White" WidthRequest="1" HeightRequest="80" Opacity="0.5" Margin="5,0" />
-                <Image Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.groupeDoyon.png}" />
-            </StackLayout>
+                <Image 
+                    Grid.Column="1"
+                    Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.domaineDes30Arpents.png}" />
+                <BoxView 
+                    Grid.Column="2"
+                    WidthRequest="1" 
+                    HeightRequest="80" 
+                    Opacity="0.5" 
+                    Margin="5,0" />
+                <Image 
+                    Grid.Column="3"
+                    Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.groupeDoyon.png}" />
+            </Grid>
         </StackLayout>
     </Grid>
 </ContentPage>

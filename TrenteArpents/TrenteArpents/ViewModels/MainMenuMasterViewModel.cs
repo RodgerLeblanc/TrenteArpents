@@ -39,13 +39,13 @@ namespace TrenteArpents.ViewModels
                 {
                     Name = "Social",
                     ImageSource = GetIconFromResource("facebook.png"),
-                    PageType = typeof(Facebook)
+                    PageType = typeof(Social)
                 },
                 new DetailPageInfo
                 {
-                    Name = "Photos",
+                    Name = "Multimedia",
                     ImageSource = GetIconFromResource("photos.png"),
-                    PageType = typeof(Photos)
+                    PageType = typeof(Multimedia)
                 },
                 new DetailPageInfo
                 {
