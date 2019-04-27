@@ -4,8 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:TrenteArpents.Views"
     xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
-    x:Class="TrenteArpents.Views.ScheduleList">
-    
+    x:Class="TrenteArpents.Views.ScheduleList"
+    Title="{Binding Title}">
+
     <Grid>
         <Image
             Source="{hlp:ImageResource TrenteArpents.Images.Background.repeatedPattern.png}" 

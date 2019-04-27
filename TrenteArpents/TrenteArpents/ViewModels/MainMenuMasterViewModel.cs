@@ -43,7 +43,7 @@ namespace TrenteArpents.ViewModels
                 },
                 new DetailPageInfo
                 {
-                    Name = "Multimedia",
+                    Name = "Multimédia",
                     ImageSource = GetIconFromResource("photos.png"),
                     PageType = typeof(Multimedia)
                 },
@@ -51,7 +51,7 @@ namespace TrenteArpents.ViewModels
                 {
                     Name = "À propos",
                     ImageSource = GetIconFromResource("about.png"),
-                    PageType = typeof(ScheduleList)
+                    PageType = typeof(About)
                 },
             };
         }

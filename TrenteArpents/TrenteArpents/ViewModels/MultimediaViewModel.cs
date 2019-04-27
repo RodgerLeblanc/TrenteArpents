@@ -17,6 +17,8 @@ namespace TrenteArpents.ViewModels
 
         public MultimediaViewModel()
         {
+            Title = "Multimédia";
+
             OpenFacebookPhotosCommand = new Command(() => Device.OpenUri(new Uri(facebookPhotosUrl)));
             OpenVideoCommand = new Command(() => Device.OpenUri(new Uri(youtubeVideoUrl)));
         }

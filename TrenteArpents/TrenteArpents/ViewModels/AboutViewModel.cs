@@ -9,7 +9,7 @@ namespace TrenteArpents.ViewModels
     {
         public AboutViewModel()
         {
-            Title = "About";
+            Title = "À propos";
 
             OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
         }

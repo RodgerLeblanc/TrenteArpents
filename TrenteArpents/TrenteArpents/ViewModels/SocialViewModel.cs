@@ -16,6 +16,8 @@ namespace TrenteArpents.ViewModels
 
         public SocialViewModel()
         {
+            Title = "Social";
+
             OpenFacebookCommand = new Command(() => Device.OpenUri(new Uri(facebookUrl)));
         }
 

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TrenteArpents.Views.About"
+    xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
+    Title="{Binding Title}">
+
+    <Grid>
+        <Image
+            Source="{hlp:ImageResource TrenteArpents.Images.Background.repeatedPattern.png}" 
+            Aspect="AspectFill" />
+
+        <StackLayout
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand">
+            <Label 
+                Text="Les membres du Comité"
+                HorizontalOptions="Center" />
+
+            <Frame
+                Grid.Row="1"
+                Grid.Column="1"
+                BorderColor="White"
+                IsClippedToBounds="True"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="10"
+                Padding="0">
+                <Image
+                    Source="{hlp:ImageResource TrenteArpents.Images.Members.AlexandrineRoger.jpg}" 
+                    Aspect="AspectFit" />
+            </Frame>
+
+            <Label 
+                Text="Alexandrine et Roger"
+                HorizontalOptions="Center" 
+                FontSize="10"
+                FontAttributes="Italic" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

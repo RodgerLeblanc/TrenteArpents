@@ -25,6 +25,7 @@
     <None Remove="Images\Icons\schedule.png" />
     <None Remove="Images\Icons\sponsors.png" />
     <None Remove="Images\Icons\weather.png" />
+    <None Remove="Images\Members\AlexandrineRoger.jpg" />
     <None Remove="Images\Sponsors\domaineDes30Arpents.png" />
     <None Remove="Images\Sponsors\groupeDoyon.png" />
     <None Remove="Images\Sponsors\raynaldGiguere.png" />
@@ -49,6 +50,7 @@
     <EmbeddedResource Include="Images\Icons\schedule.png" />
     <EmbeddedResource Include="Images\Icons\sponsors.png" />
     <EmbeddedResource Include="Images\Icons\weather.png" />
+    <EmbeddedResource Include="Images\Members\AlexandrineRoger.jpg" />
     <EmbeddedResource Include="Images\Sponsors\domaineDes30Arpents.png" />
     <EmbeddedResource Include="Images\Sponsors\groupeDoyon.png" />
     <EmbeddedResource Include="Images\Sponsors\raynaldGiguere.png" />
@@ -65,6 +67,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Social.xaml.cs">
       <DependentUpon>Social.xaml</DependentUpon>
     </Compile>

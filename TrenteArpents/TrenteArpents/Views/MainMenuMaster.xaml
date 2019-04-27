@@ -101,8 +101,8 @@
                 </Grid.ColumnDefinitions>
                 
                 <StackLayout VerticalOptions="Center">
-                    <Label Text="Commandité" />
-                    <Label Grid.Row="1" Text="par" />
+                    <Label Text="Commanditaires" />
+                    <Label Grid.Row="1" Text="principaux" />
                 </StackLayout>
 
                 <Image 

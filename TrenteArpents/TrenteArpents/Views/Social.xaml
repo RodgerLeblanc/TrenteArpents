@@ -3,7 +3,9 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
-    x:Class="TrenteArpents.Views.Social">
+    x:Class="TrenteArpents.Views.Social"
+    Title="{Binding Title}">
+
     <Grid>
         <Image
             Source="{hlp:ImageResource TrenteArpents.Images.Background.repeatedPattern.png}" 

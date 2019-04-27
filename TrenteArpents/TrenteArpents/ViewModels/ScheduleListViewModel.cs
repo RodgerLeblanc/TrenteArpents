@@ -22,6 +22,8 @@ namespace TrenteArpents.ViewModels
 
         public ScheduleListViewModel()
         {
+            Title = "Programmation";
+
             Activities = Enumerable
                 .Range(0, 10)
                 .Select(i => new Activity

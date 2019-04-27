@@ -21,6 +21,8 @@ namespace TrenteArpents.ViewModels
 
         public SponsorListViewModel()
         {
+            Title = "Commanditaires";
+
             Sponsors = new List<Sponsor>
             {
                 new Sponsor
