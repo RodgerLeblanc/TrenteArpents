@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
+    xmlns:ctrls="clr-namespace:TrenteArpents.Controls"
     Title="MainMenuMaster.xaml">
     
     <Grid>
@@ -34,7 +35,6 @@
         <StackLayout HorizontalOptions="FillAndExpand" Padding="10,5">
             <Image 
                 Source="{hlp:ImageResource TrenteArpents.Images.feteDeQuartier.png}"
-                Aspect="AspectFit"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="Center" />
             
@@ -45,12 +45,10 @@
                 HorizontalOptions="FillAndExpand" />
         </StackLayout>
 
-        <ListView
+        <ctrls:ListViewWithoutScroll
             Grid.Row="1"
             ItemsSource="{Binding DetailPages}" 
-            ItemSelected="ListView_ItemSelected"
-            HorizontalScrollBarVisibility="Never"
-            VerticalScrollBarVisibility="Never">
+            ItemSelected="ListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -68,7 +66,7 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
+        </ctrls:ListViewWithoutScroll>
 
         <StackLayout Grid.Row="2" HorizontalOptions="FillAndExpand" Padding="10,5" BackgroundColor="#88000000">
             <StackLayout.Resources>
@@ -94,29 +92,22 @@
 
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 
-                <StackLayout VerticalOptions="Center">
-                    <Label Text="Commanditaires" />
-                    <Label Grid.Row="1" Text="principaux" />
-                </StackLayout>
-
-                <Image 
-                    Grid.Column="1"
-                    Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.domaineDes30Arpents.png}" />
+                <Image Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.domaineDes30Arpents.png}" />
                 <BoxView 
-                    Grid.Column="2"
+                    Grid.Column="1"
                     WidthRequest="1" 
                     HeightRequest="80" 
                     Opacity="0.5" 
                     Margin="5,0" />
                 <Image 
-                    Grid.Column="3"
-                    Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.groupeDoyon.png}" />
+                    Grid.Column="2"
+                    Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.groupeDoyon.png}" 
+                    HorizontalOptions="FillAndExpand"/>
             </Grid>
         </StackLayout>
     </Grid>

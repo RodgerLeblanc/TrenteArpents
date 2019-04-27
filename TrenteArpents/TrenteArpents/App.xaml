@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
+    xmlns:ctrls="clr-namespace:TrenteArpents.Controls"
     x:Class="TrenteArpents.App">
 
     <Application.Resources>
@@ -23,12 +24,11 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource NavigationPrimary}" />
             </Style>
             
-            <Style TargetType="ListView">
-                <Setter Property="FooterTemplate">
+            <Style TargetType="ListView" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="Footer">
                     <Setter.Value>
-                        <DataTemplate>
-                            <StackLayout />
-                        </DataTemplate>
+                        <StackLayout />
                     </Setter.Value>
                 </Setter>
             </Style>
@@ -45,6 +45,10 @@
                 <Setter Property="BorderColor" Value="White" />
                 <Setter Property="IsClippedToBounds" Value="True" />
                 <Setter Property="Padding" Value="0" />
+            </Style>
+
+            <Style TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFit" />
             </Style>
 
         </ResourceDictionary>

@@ -47,9 +47,7 @@
                 <Frame
                     HorizontalOptions="Center"
                     VerticalOptions="Center">
-                    <Image
-                        Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.1.jpg}" 
-                        Aspect="AspectFit" />
+                    <Image Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.1.jpg}" />
 
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
@@ -60,9 +58,7 @@
                     Grid.Column="1"
                     HorizontalOptions="Center"
                     VerticalOptions="Center">
-                    <Image
-                        Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.2.jpg}" 
-                        Aspect="AspectFit" />
+                    <Image Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.2.jpg}" />
 
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
@@ -73,9 +69,7 @@
                     Grid.Row="1"
                     HorizontalOptions="Center"
                     VerticalOptions="Start">
-                    <Image
-                        Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.3.jpg}" 
-                        Aspect="AspectFit" />
+                    <Image Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.3.jpg}" />
 
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
@@ -87,9 +81,7 @@
                     Grid.Column="1"
                     HorizontalOptions="Center"
                     VerticalOptions="Center">
-                    <Image
-                        Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.4.jpg}" 
-                        Aspect="AspectFit" />
+                    <Image Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.4.jpg}" />
 
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
@@ -133,9 +125,7 @@
                 Grid.Row="1"
                 HorizontalOptions="Center"
                 VerticalOptions="Center">
-                <Image
-                    Source="{hlp:ImageResource TrenteArpents.Images.videoScreenshot.png}" 
-                    Aspect="AspectFit" />
+                <Image Source="{hlp:ImageResource TrenteArpents.Images.videoScreenshot.png}" />
 
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OpenVideoCommand}" />

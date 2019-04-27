@@ -24,9 +24,7 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 Margin="10">
-                <Image
-                    Source="{hlp:ImageResource TrenteArpents.Images.Members.AlexandrineRoger.jpg}" 
-                    Aspect="AspectFit" />
+                <Image Source="{hlp:ImageResource TrenteArpents.Images.Members.AlexandrineRoger.jpg}" />
             </Frame>
 
             <Label 

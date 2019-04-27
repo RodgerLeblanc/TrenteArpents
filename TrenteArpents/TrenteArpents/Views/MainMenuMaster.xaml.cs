@@ -27,6 +27,8 @@ namespace TrenteArpents.Views
 
             Page page = (Page)Activator.CreateInstance(detailPageInfo.PageType);
             masterDetailPage.Detail = new NavigationPage(page);
+
+            masterDetailPage.IsPresented = false;
         }
     }
 }
