@@ -73,7 +73,7 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Effects\ListViewWithoutScrollRenderer.cs" />
+    <Compile Include="Renderers\ListViewWithoutScrollRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
