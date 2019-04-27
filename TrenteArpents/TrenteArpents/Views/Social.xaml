@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
+    x:Class="TrenteArpents.Views.Social">
+    <Grid>
+        <Image
+            Source="{hlp:ImageResource TrenteArpents.Images.Background.repeatedPattern.png}" 
+            Aspect="AspectFill" />
+
+        <Frame
+            BackgroundColor="#88000000"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OpenFacebookCommand}" />
+            </Frame.GestureRecognizers>
+
+            <StackLayout>
+                <Label
+                    Text="Rejoignez-nous sur"
+                    HorizontalOptions="Center" />
+
+                <Image
+                    Source="{hlp:ImageResource TrenteArpents.Images.Icons.facebook.png}"
+                    HorizontalOptions="Center"
+                    HeightRequest="60"
+                    WidthRequest="60">
+                </Image>
+            </StackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>
