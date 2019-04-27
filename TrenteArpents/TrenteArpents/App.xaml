@@ -22,6 +22,7 @@
 
             <Style TargetType="ContentPage">
                 <Setter Property="BackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BackgroundImage" Value="{StaticResource detailBackgroundImage}" />
             </Style>
             
             <Style TargetType="ListView" ApplyToDerivedTypes="True">

@@ -6,14 +6,8 @@
     xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
     xmlns:ctrls="clr-namespace:TrenteArpents.Controls"
     Title="MainMenuMaster.xaml">
-    
-    <Grid>
-        <Grid.Margin>
-            <OnPlatform x:TypeArguments="Thickness">
-                <On Platform="iOS" Value="0,20,0,0"/>
-            </OnPlatform>
-        </Grid.Margin>
 
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -45,10 +39,12 @@
                 HorizontalOptions="FillAndExpand" />
         </StackLayout>
 
-        <ctrls:ListViewWithoutScroll
+        <ListView
+            x:Name="listView"
             Grid.Row="1"
             ItemsSource="{Binding DetailPages}" 
-            ItemSelected="ListView_ItemSelected">
+            ItemSelected="ListView_ItemSelected"
+            HeightRequest="10000">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -56,17 +52,18 @@
                             <Image
                                 Source="{Binding ImageSource}" 
                                 VerticalOptions="Center" 
-                                HeightRequest="30" 
-                                WidthRequest="30" />
+                                HeightRequest="50" 
+                                WidthRequest="50" />
 
                             <Label
-                                Text="{Binding Name}" 
+                                Text="{Binding Name}"
+                                FontSize="Large"
                                 VerticalOptions="Center" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ctrls:ListViewWithoutScroll>
+        </ListView>
 
         <StackLayout Grid.Row="2" HorizontalOptions="FillAndExpand" Padding="10,5" BackgroundColor="#88000000">
             <StackLayout.Resources>
@@ -97,7 +94,8 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 
-                <Image Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.domaineDes30Arpents.png}" />
+                <Image 
+                    Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.domaineDes30Arpents.png}" />
                 <BoxView 
                     Grid.Column="1"
                     WidthRequest="1" 
@@ -106,8 +104,7 @@
                     Margin="5,0" />
                 <Image 
                     Grid.Column="2"
-                    Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.groupeDoyon.png}" 
-                    HorizontalOptions="FillAndExpand"/>
+                    Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.groupeDoyon.png}" />
             </Grid>
         </StackLayout>
     </Grid>
