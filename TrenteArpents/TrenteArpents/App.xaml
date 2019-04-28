@@ -12,7 +12,7 @@
         <ResourceDictionary>
             <vm:ViewModelLocator x:Key="locator" />
              
-            <hlp:ImageResource Source="TrenteArpents.Images.Background.sunset.png" x:Key="masterBackgroundImage" />
+            <hlp:ImageResource Source="TrenteArpents.Images.Background.fete2017.jpg" x:Key="masterBackgroundImage" />
             <hlp:ImageResource Source="TrenteArpents.Images.Background.repeatedPattern.png" x:Key="detailBackgroundImage" />
 
             <Color x:Key="NavigationPrimary">#165973</Color>

@@ -11,6 +11,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Background\fete2017.jpg" />
+    <None Remove="Images\Background\fete2017Cropped.png" />
     <None Remove="Images\Fete2018\1.jpg" />
     <None Remove="Images\Fete2018\2.jpg" />
     <None Remove="Images\Fete2018\3.jpg" />
@@ -26,13 +28,12 @@
     <None Remove="Images\Icons\sponsors.png" />
     <None Remove="Images\Icons\weather.png" />
     <None Remove="Images\Members\AlexandrineRoger.jpg" />
-    <None Remove="Images\Sponsors\domaineDes30Arpents.png" />
-    <None Remove="Images\Sponsors\groupeDoyon.png" />
-    <None Remove="Images\Sponsors\raynaldGiguere.png" />
     <None Remove="Images\videoScreenshot.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Images\Background\fete2017.jpg" />
+    <EmbeddedResource Include="Images\Background\fete2017Cropped.png" />
     <EmbeddedResource Include="Images\Fete2018\1.jpg" />
     <EmbeddedResource Include="Images\Fete2018\2.jpg" />
     <EmbeddedResource Include="Images\Fete2018\3.jpg" />
@@ -51,9 +52,6 @@
     <EmbeddedResource Include="Images\Icons\sponsors.png" />
     <EmbeddedResource Include="Images\Icons\weather.png" />
     <EmbeddedResource Include="Images\Members\AlexandrineRoger.jpg" />
-    <EmbeddedResource Include="Images\Sponsors\domaineDes30Arpents.png" />
-    <EmbeddedResource Include="Images\Sponsors\groupeDoyon.png" />
-    <EmbeddedResource Include="Images\Sponsors\raynaldGiguere.png" />
     <EmbeddedResource Include="Images\videoScreenshot.png" />
   </ItemGroup>
 

@@ -19,6 +19,7 @@
         <Image
             Grid.RowSpan="3"
             Source="{StaticResource masterBackgroundImage}" 
+            HorizontalOptions="Center"
             Aspect="AspectFill" />
 
         <BoxView
@@ -70,7 +71,12 @@
             </StackLayout>
         </ScrollView>
         
-        <StackLayout Grid.Row="2" HorizontalOptions="FillAndExpand" Padding="10,5" BackgroundColor="#88000000">
+        <StackLayout 
+            Grid.Row="2" 
+            IsVisible="{Binding HasSponsors}"
+            HorizontalOptions="FillAndExpand" 
+            Padding="10,5" 
+            BackgroundColor="#88000000">
             <StackLayout.Resources>
                 <Style TargetType="Label">
                     <Setter Property="Margin" Value="0,-5" />
@@ -98,9 +104,13 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                
+
                 <Image 
-                    Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.domaineDes30Arpents.png}" />
+                    Source="{Binding Sponsors[0].ImageUrl}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding FirstSponsorTappedCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
                 <BoxView 
                     Grid.Column="1"
                     WidthRequest="1" 
@@ -109,7 +119,11 @@
                     Margin="5,0" />
                 <Image 
                     Grid.Column="2"
-                    Source="{hlp:ImageResource TrenteArpents.Images.Sponsors.groupeDoyon.png}" />
+                    Source="{Binding Sponsors[1].ImageUrl}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SecondSponsorTappedCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
             </Grid>
         </StackLayout>
     </Grid>

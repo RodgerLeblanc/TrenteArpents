@@ -7,55 +7,72 @@ using Xamarin.Forms;
 
 namespace TrenteArpents.Views
 {
-    public partial class EventToCommandBehavior : Behavior<Element>
+    public partial class EventToCommandBehavior : BehaviorBase<Element>
     {
-        private EventInfo eventInfo;
-        private Delegate eventHandler;
-        private ICommand internalCommand;
+        Delegate eventHandler;
 
-        public Element View { get; private set; }
+        public static readonly BindableProperty EventNameProperty = 
+            BindableProperty.Create(
+                nameof(EventName), 
+                typeof(string), 
+                typeof(EventToCommandBehavior), 
+                null, 
+                propertyChanged: OnEventNameChanged);
 
-        public static readonly BindableProperty EventNameProperty =
-          BindableProperty.Create(nameof(EventName), typeof(string), typeof(EventToCommandBehavior), null, propertyChanged: OnEventNameChanged);
+        public static readonly BindableProperty CommandProperty = 
+            BindableProperty.Create(
+                nameof(Command), 
+                typeof(ICommand), 
+                typeof(EventToCommandBehavior), 
+                null);
 
-        public static readonly BindableProperty CommandProperty =
-          BindableProperty.Create(nameof(Command), typeof(ICommand), typeof(EventToCommandBehavior), null, propertyChanged: OnCommandChanged);
+        public static readonly BindableProperty CommandParameterProperty = 
+            BindableProperty.Create(
+                nameof(CommandParameter), 
+                typeof(object), 
+                typeof(EventToCommandBehavior), 
+                null);
 
-        private static void OnCommandChanged(BindableObject bindable, object oldValue, object newValue)
+        public static readonly BindableProperty InputConverterProperty = 
+            BindableProperty.Create(
+                nameof(Converter), 
+                typeof(IValueConverter), 
+                typeof(EventToCommandBehavior), 
+                null);
+
+        public string EventName
         {
-            if (bindable is EventToCommandBehavior behavior)
-            {
-                if (behavior.internalCommand != newValue)
-                {
-                    behavior.internalCommand = (ICommand)newValue;
-                }
-            }
+            get { return (string)GetValue(EventNameProperty); }
+            set { SetValue(EventNameProperty, value); }
         }
 
-        public static readonly BindableProperty CommandParameterProperty =
-          BindableProperty.Create(nameof(CommandParameter), typeof(object), typeof(EventToCommandBehavior), null);
+        public ICommand Command
+        {
+            get { return (ICommand)GetValue(CommandProperty); }
+            set { SetValue(CommandProperty, value); }
+        }
 
-        public static readonly BindableProperty InputConverterProperty =
-          BindableProperty.Create(nameof(Converter), typeof(IValueConverter), typeof(EventToCommandBehavior), null);
+        public object CommandParameter
+        {
+            get { return GetValue(CommandParameterProperty); }
+            set { SetValue(CommandParameterProperty, value); }
+        }
 
-        public string EventName { get; set; }
-        public ICommand Command { get; set; }
-        public object CommandParameter { get; set; }
-        public IValueConverter Converter { get; set; }
+        public IValueConverter Converter
+        {
+            get { return (IValueConverter)GetValue(InputConverterProperty); }
+            set { SetValue(InputConverterProperty, value); }
+        }
 
         protected override void OnAttachedTo(Element bindable)
         {
             base.OnAttachedTo(bindable);
-
-            View = bindable;
-
             RegisterEvent(EventName);
         }
 
         protected override void OnDetachingFrom(Element bindable)
         {
-            DeregisterEvent();
-
+            DeregisterEvent(EventName);
             base.OnDetachingFrom(bindable);
         }
 
@@ -66,65 +83,76 @@ namespace TrenteArpents.Views
                 return;
             }
 
-            eventInfo = View.GetType().GetRuntimeEvent(name);
-
+            EventInfo eventInfo = AssociatedObject.GetType().GetRuntimeEvent(name);
             if (eventInfo == null)
             {
-                throw new ArgumentException($"Can't register the {name} event.");
+                throw new ArgumentException($"Can't register the '{name}' event.");
             }
-
-            MethodInfo methodInfo = GetMethod(nameof(OnEvent));
+            MethodInfo methodInfo = typeof(EventToCommandBehavior).GetTypeInfo().GetDeclaredMethod(nameof(OnEvent));
             eventHandler = methodInfo.CreateDelegate(eventInfo.EventHandlerType, this);
-            eventInfo.AddEventHandler(View, eventHandler);
+            eventInfo.AddEventHandler(AssociatedObject, eventHandler);
         }
 
-        private MethodInfo GetMethod(string methodName)
+        void DeregisterEvent(string name)
         {
-            return typeof(EventToCommandBehavior).GetTypeInfo().GetDeclaredMethod(methodName);
-        }
-
-        void OnEvent(object sender, object eventArgs)
-        {
-            if (internalCommand == null)
+            if (string.IsNullOrWhiteSpace(name))
             {
                 return;
             }
 
-            object resolvedParameter = GetParameter(eventArgs);
-
-            if (internalCommand.CanExecute(resolvedParameter))
+            if (eventHandler == null)
             {
-                internalCommand.Execute(resolvedParameter);
+                return;
             }
+            EventInfo eventInfo = AssociatedObject.GetType().GetRuntimeEvent(name);
+            if (eventInfo == null)
+            {
+                throw new ArgumentException($"Can't de-register the '{name}' event.");
+            }
+            eventInfo.RemoveEventHandler(AssociatedObject, eventHandler);
+            eventHandler = null;
         }
 
-        private object GetParameter(object eventArgs)
+        void OnEvent(object sender, object eventArgs)
         {
+            if (Command == null)
+            {
+                return;
+            }
+
+            object resolvedParameter;
             if (CommandParameter != null)
             {
-                return CommandParameter;
+                resolvedParameter = CommandParameter;
+            }
+            else if (Converter != null)
+            {
+                resolvedParameter = Converter.Convert(eventArgs, typeof(object), null, null);
+            }
+            else
+            {
+                resolvedParameter = eventArgs;
             }
 
-            if (Converter != null)
+            if (Command.CanExecute(resolvedParameter))
             {
-                return Converter.Convert(eventArgs, typeof(object), null, null);
-            }
-
-            return eventArgs;
-        }
-
-        private static void OnEventNameChanged(BindableObject bindable, object oldValue, object newValue)
-        {
-            if (bindable is EventToCommandBehavior behavior)
-            {
-                behavior.DeregisterEvent();
-                behavior.RegisterEvent((string)newValue);
+                Command.Execute(resolvedParameter);
             }
         }
 
-        private void DeregisterEvent()
+        static void OnEventNameChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            eventInfo?.RemoveEventHandler(View, eventHandler);
+            var behavior = (EventToCommandBehavior)bindable;
+            if (behavior.AssociatedObject == null)
+            {
+                return;
+            }
+
+            string oldEventName = (string)oldValue;
+            string newEventName = (string)newValue;
+
+            behavior.DeregisterEvent(oldEventName);
+            behavior.RegisterEvent(newEventName);
         }
     }
 }
