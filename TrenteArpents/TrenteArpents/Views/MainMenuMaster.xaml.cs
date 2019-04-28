@@ -12,7 +12,6 @@ namespace TrenteArpents.Views
         public MainMenuMaster()
         {
             InitializeComponent();
-            BindingContext = new MainMenuMasterViewModel();
         }
     }
 }

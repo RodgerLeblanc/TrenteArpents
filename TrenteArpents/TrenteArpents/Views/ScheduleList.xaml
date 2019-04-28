@@ -6,6 +6,7 @@
     xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
     xmlns:ctrls="clr-namespace:TrenteArpents.Controls"
     x:Class="TrenteArpents.Views.ScheduleList"
+    BindingContext="{Binding ScheduleListViewModel, Source={StaticResource locator}}"
     Title="{Binding Title}">
 
     <Grid>
@@ -15,9 +16,9 @@
 
         <ListView
             x:Name="listView"
-            ItemsSource="{Binding Activities}"
-            SelectedItem="{Binding SelectedActivity}"
-            IsVisible="{Binding ScheduleVisible}"
+            ItemsSource="{Binding Items}"
+            SelectedItem="{Binding SelectedItem}"
+            IsVisible="{Binding HasItems}"
             RowHeight="100"
             SelectionMode="None">
 
@@ -43,7 +44,7 @@
                                     Margin="-5,0"
                                     Grid.RowSpan="2"
                                     Grid.ColumnSpan="2"
-                                    Source="{Binding ImageSource}" 
+                                    Source="{Binding ImageUrl}" 
                                     Opacity="0.3"
                                     Aspect="AspectFill" />
 
@@ -79,8 +80,8 @@
         </ListView>
 
         <Label 
-            Text="Aucune programmation"
-            IsVisible="{Binding NoScheduleVisible}"
+            Text="Aucune programmation disponible"
+            IsVisible="{Binding HasNoItems}"
             VerticalOptions="CenterAndExpand" 
             HorizontalOptions="CenterAndExpand" />
     </Grid>

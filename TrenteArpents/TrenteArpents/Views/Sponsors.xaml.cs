@@ -15,7 +15,6 @@ namespace TrenteArpents.Views
         public SponsorList()
         {
             InitializeComponent();
-            BindingContext = new SponsorListViewModel();
         }
     }
 }

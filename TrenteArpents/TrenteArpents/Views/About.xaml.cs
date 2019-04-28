@@ -10,7 +10,6 @@ namespace TrenteArpents.Views
         public About()
         {
             InitializeComponent();
-            BindingContext = new AboutViewModel();
         }
     }
 }

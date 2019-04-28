@@ -15,7 +15,6 @@ namespace TrenteArpents.Views
         public Social()
         {
             InitializeComponent();
-            BindingContext = new SocialViewModel();
         }
     }
 }

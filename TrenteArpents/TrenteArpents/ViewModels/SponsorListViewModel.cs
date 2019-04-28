@@ -1,56 +1,28 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Views;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 using TrenteArpents.Models;
+using TrenteArpents.Repos;
 using Xamarin.Forms;
 
 namespace TrenteArpents.ViewModels
 {
-    public class SponsorListViewModel : BaseViewModel
+    public class SponsorListViewModel : BaseListViewModel<Sponsor>
     {
-        private static Assembly assembly;
-
-        static SponsorListViewModel()
-        {
-            if (assembly == null)
-            {
-                assembly = typeof(SponsorListViewModel).GetTypeInfo().Assembly;
-            }
-        }
-
-        public SponsorListViewModel()
+        public SponsorListViewModel(INavigationService navigationService, IRepo<Sponsor> repo) : base(navigationService, repo)
         {
             Title = "Commanditaires";
-
-            Sponsors = new List<Sponsor>
-            {
-                new Sponsor
-                {
-                    ImageSource = GetSponsorImage("domaineDes30Arpents.png"),
-                    Name = "Domaine des 30 Arpents",
-                    Type = SponsorType.Gold,
-                },
-                new Sponsor
-                {
-                    ImageSource = GetSponsorImage("groupeDoyon.png"),
-                    Name = "Groupe Doyon",
-                    Type = SponsorType.Gold,
-                },
-                new Sponsor
-                {
-                    ImageSource = GetSponsorImage("raynaldGiguere.png"),
-                    Name = "Marché Raynald Giguère",
-                    Type = SponsorType.Gold,
-                },
-            };
         }
 
-        public IList<Sponsor> Sponsors { get; set; }
-
-        private ImageSource GetSponsorImage(string fileName)
+        protected override void OnAppearing()
         {
-            return ImageSource.FromResource($"TrenteArpents.Images.Sponsors.{fileName}", assembly);
+            base.OnAppearing();
+
         }
     }
 }

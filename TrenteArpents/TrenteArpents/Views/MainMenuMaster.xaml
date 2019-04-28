@@ -6,6 +6,7 @@
     xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
     xmlns:views="clr-namespace:TrenteArpents.Views"
     xmlns:ctrls="clr-namespace:TrenteArpents.Controls"
+    BindingContext="{Binding MainMenuMasterViewModel, Source={StaticResource locator}}"
     Title="MainMenuMaster.xaml">
 
     <Grid>

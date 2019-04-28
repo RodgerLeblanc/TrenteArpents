@@ -15,7 +15,6 @@ namespace TrenteArpents.Views
         public Multimedia()
         {
             InitializeComponent();
-            BindingContext = new MultimediaViewModel();
         }
     }
 }

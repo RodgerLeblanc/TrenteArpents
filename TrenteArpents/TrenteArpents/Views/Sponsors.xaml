@@ -2,9 +2,8 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
-    xmlns:ctrls="clr-namespace:TrenteArpents.Controls"
     x:Class="TrenteArpents.Views.SponsorList"
+    BindingContext="{Binding SponsorListViewModel, Source={StaticResource locator}}"
     Title="{Binding Title}">
 
     <Grid>
@@ -13,7 +12,7 @@
             Aspect="AspectFill" />
 
       <ListView 
-          ItemsSource="{Binding Sponsors}"
+          ItemsSource="{Binding Items}"
           HasUnevenRows="True"
           SelectionMode="None">
         <ListView.ItemTemplate>
@@ -26,7 +25,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Image
-                    Source="{Binding ImageSource}"
+                    Source="{Binding ImageUrl}"
                     VerticalOptions="Center"
                     HeightRequest="100"
                     WidthRequest="100" />
@@ -41,5 +40,11 @@
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>
+
+        <Label 
+            Text="Aucune commanditaire disponible"
+            IsVisible="{Binding HasNoItems}"
+            VerticalOptions="CenterAndExpand" 
+            HorizontalOptions="CenterAndExpand" />
     </Grid>
 </ContentPage>
