@@ -25,7 +25,7 @@
         <BoxView
             Grid.RowSpan="3"
             BackgroundColor="Black"
-            Opacity="0.4"
+            Opacity="0.7"
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand" />
 
