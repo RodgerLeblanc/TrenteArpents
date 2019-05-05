@@ -10,6 +10,29 @@
 
     <Application.Resources>
         <ResourceDictionary>
+            <ResourceDictionary>
+                <OnPlatform x:TypeArguments="x:String" x:Key="normalFont">
+                    <On Platform="Android" Value="Raleway-Light.ttf#Raleway Light" />
+                    <On Platform="UWP" Value="/Assets/Raleway-Light.ttf#Raleway Light" />
+                    <On Platform="iOS" Value="Raleway-Light" />
+                </OnPlatform>
+                <OnPlatform x:TypeArguments="x:String" x:Key="boldFont">
+                    <On Platform="Android" Value="Raleway-Bold.ttf#Raleway Bold" />
+                    <On Platform="UWP" Value="/Assets/Raleway-Bold.ttf#Raleway Bold" />
+                    <On Platform="iOS" Value="Raleway-Bold" />
+                </OnPlatform>
+                <OnPlatform x:TypeArguments="x:String" x:Key="boldItalicFont">
+                    <On Platform="Android" Value="Raleway-BoldItalic.ttf#Raleway Bold Italic" />
+                    <On Platform="UWP" Value="/Assets/Raleway-BoldItalic.ttf#Raleway Bold Italic" />
+                    <On Platform="iOS" Value="Raleway-BoldItalic" />
+                </OnPlatform>
+                <OnPlatform x:TypeArguments="x:String" x:Key="italicFont">
+                    <On Platform="Android" Value="Raleway-LightItalic.ttf#Raleway Light Italic" />
+                    <On Platform="UWP" Value="/Assets/Raleway-LightItalic.ttf#Raleway Light Italic" />
+                    <On Platform="iOS" Value="Raleway-LightItalic" />
+                </OnPlatform>
+            </ResourceDictionary>
+            
             <vm:ViewModelLocator x:Key="locator" />
              
             <hlp:ImageResource Source="TrenteArpents.Images.Background.fete2017.jpg" x:Key="masterBackgroundImage" />
@@ -41,6 +64,7 @@
 
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontFamily" Value="{StaticResource normalFont}" />
             </Style>
 
             <Style TargetType="BoxView">

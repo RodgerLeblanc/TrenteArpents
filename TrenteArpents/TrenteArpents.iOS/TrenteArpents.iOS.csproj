@@ -89,6 +89,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork%402x" />
+    <BundleResource Include="Resources\Raleway-LightItalic.ttf" />
+    <BundleResource Include="Resources\Raleway-Bold.ttf" />
+    <BundleResource Include="Resources\Raleway-BoldItalic.ttf" />
+    <BundleResource Include="Resources\Raleway-Light.ttf" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">

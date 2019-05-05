@@ -128,6 +128,10 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="Assets\Raleway-LightItalic.ttf" />
+    <Content Include="Assets\Raleway-Light.ttf" />
+    <Content Include="Assets\Raleway-BoldItalic.ttf" />
+    <Content Include="Assets\Raleway-Bold.ttf" />
     <None Include="TrenteArpents.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
