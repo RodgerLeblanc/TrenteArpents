@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Drawing;
 
 namespace TrenteArpents.Models
 {
@@ -19,6 +20,9 @@ namespace TrenteArpents.Models
 
         [JsonProperty("promoUrl")]
         public Uri PromoUrl { get; set; }
+
+        [JsonProperty("backgroundColor")]
+        public string BackgroundColor { get; set; } = "#00000000";
     }
 }
 

@@ -37,14 +37,14 @@ namespace TrenteArpents
             Container = new Container();
 
 #if DEBUG
-            Container.Register<IRestClient>(() => new RestClient());
-            Container.Register<IRepo<Sponsor>, SponsorRepoDebug>();
+            var cachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
 #else
             var cachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
-            Container.Register<IRestClient>(() => new RestClient() { CachePolicy = cachePolicy });
-            Container.Register<IRepo<Sponsor>, SponsorRepo>();
 #endif
 
+            Container.Register<IRestClient>(() => new RestClient() { CachePolicy = cachePolicy });
+
+            Container.Register<IRepo<Sponsor>, SponsorRepo>();
             Container.Register<IRepo<Activity>, ActivityRepo>();
 
             Container.RegisterSingleton(() => GetNavigationService());
