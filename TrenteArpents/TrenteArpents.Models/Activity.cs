@@ -5,7 +5,7 @@ namespace TrenteArpents.Models
 {
     public class Activity : IModel
     {
-        private const string timeFormat = "hh:mm";
+        private const string timeFormat = "h:mm tt";
 
         [JsonProperty("id")]
         public int Id { get; set; }

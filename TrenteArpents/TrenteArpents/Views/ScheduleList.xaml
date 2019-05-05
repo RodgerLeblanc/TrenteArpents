@@ -19,7 +19,7 @@
             ItemsSource="{Binding Items}"
             SelectedItem="{Binding SelectedItem}"
             IsVisible="{Binding HasItems}"
-            RowHeight="100"
+            RowHeight="200"
             SelectionMode="None">
 
             <ListView.ItemTemplate>
