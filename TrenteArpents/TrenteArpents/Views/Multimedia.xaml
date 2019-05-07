@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     x:Class="TrenteArpents.Views.Multimedia"
     BindingContext="{Binding MultimediaViewModel, Source={StaticResource locator}}"
     Title="{Binding Title}">
@@ -14,7 +15,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <Image
+        <ffimageloading:CachedImage
             Margin="-10,-6"
             Grid.RowSpan="3"
             Source="{StaticResource detailBackgroundImage}" 
@@ -25,7 +26,7 @@
             VerticalOptions="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Label 
@@ -48,7 +49,7 @@
                 <Frame
                     HorizontalOptions="Center"
                     VerticalOptions="Center">
-                    <Image Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.1.jpg}" />
+                    <ffimageloading:CachedImage Source="{Binding Photos.Items[0].ImageUrl}" />
 
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
@@ -59,7 +60,7 @@
                     Grid.Column="1"
                     HorizontalOptions="Center"
                     VerticalOptions="Center">
-                    <Image Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.2.jpg}" />
+                    <ffimageloading:CachedImage Source="{Binding Photos.Items[1].ImageUrl}" />
 
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
@@ -70,7 +71,7 @@
                     Grid.Row="1"
                     HorizontalOptions="Center"
                     VerticalOptions="Start">
-                    <Image Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.3.jpg}" />
+                    <ffimageloading:CachedImage Source="{Binding Photos.Items[2].ImageUrl}" />
 
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
@@ -82,7 +83,7 @@
                     Grid.Column="1"
                     HorizontalOptions="Center"
                     VerticalOptions="Center">
-                    <Image Source="{hlp:ImageResource TrenteArpents.Images.Fete2018.4.jpg}" />
+                    <ffimageloading:CachedImage Source="{Binding Photos.Items[3].ImageUrl}" />
 
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
@@ -126,7 +127,9 @@
                 Grid.Row="1"
                 HorizontalOptions="Center"
                 VerticalOptions="Center">
-                <Image Source="{hlp:ImageResource TrenteArpents.Images.videoScreenshot.png}" />
+                <ffimageloading:CachedImage 
+                    Source="{Binding Photos.Items[4].ImageUrl}" 
+                    DownsampleToViewSize="True" />
 
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OpenVideoCommand}" />

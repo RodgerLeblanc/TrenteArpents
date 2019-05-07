@@ -11,13 +11,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Images\Members\**" />
+    <EmbeddedResource Remove="Images\Members\**" />
+    <None Remove="Images\Members\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Images\Background\fete2017.jpg" />
     <None Remove="Images\Background\fete2017Cropped.png" />
     <None Remove="Images\Background\fete2018.jpg" />
-    <None Remove="Images\Fete2018\1.jpg" />
-    <None Remove="Images\Fete2018\2.jpg" />
-    <None Remove="Images\Fete2018\3.jpg" />
-    <None Remove="Images\Fete2018\4.jpg" />
     <None Remove="Images\Background\repeatedPattern.png" />
     <None Remove="Images\Background\sunset.png" />
     <None Remove="Images\Background\sunsetAmusementPark.jpg" />
@@ -29,7 +31,6 @@
     <None Remove="Images\Icons\schedule.png" />
     <None Remove="Images\Icons\sponsors.png" />
     <None Remove="Images\Icons\weather.png" />
-    <None Remove="Images\Members\AlexandrineRoger.jpg" />
     <None Remove="Images\videoScreenshot.png" />
   </ItemGroup>
 
@@ -37,17 +38,10 @@
     <EmbeddedResource Include="Images\Background\fete2017.jpg" />
     <EmbeddedResource Include="Images\Background\fete2017Cropped.png" />
     <EmbeddedResource Include="Images\Background\fete2018.jpg" />
-    <EmbeddedResource Include="Images\Fete2018\1.jpg" />
-    <EmbeddedResource Include="Images\Fete2018\2.jpg" />
-    <EmbeddedResource Include="Images\Fete2018\3.jpg" />
-    <EmbeddedResource Include="Images\Fete2018\4.jpg" />
-    <EmbeddedResource Include="Images\Background\sunset.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Images\Background\repeatedPattern.png" />
-    <EmbeddedResource Include="Images\Background\sunsetAmusementPark.jpg" />
-    <EmbeddedResource Include="Images\feteDeQuartier.png" />
     <EmbeddedResource Include="Images\Icons\about.png" />
     <EmbeddedResource Include="Images\Icons\email.png" />
     <EmbeddedResource Include="Images\Icons\facebook.png" />
@@ -55,24 +49,22 @@
     <EmbeddedResource Include="Images\Icons\schedule.png" />
     <EmbeddedResource Include="Images\Icons\sponsors.png" />
     <EmbeddedResource Include="Images\Icons\weather.png" />
-    <EmbeddedResource Include="Images\Members\AlexandrineRoger.jpg" />
-    <EmbeddedResource Include="Images\videoScreenshot.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fody" Version="5.0.1">
+    <PackageReference Include="Fody" Version="5.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.AppCenter" Version="1.14.0" />
-    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.14.0" />
-    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.14.0" />
-    <PackageReference Include="Microsoft.AppCenter.Push" Version="1.14.0" />
+    <PackageReference Include="Microsoft.AppCenter" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="2.0.0" />
     <PackageReference Include="MvvmLightLibsStd10" Version="5.4.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.0.0" />
     <PackageReference Include="RestSharp" Version="106.6.9" />
-    <PackageReference Include="SimpleInjector" Version="4.5.1" />
+    <PackageReference Include="SimpleInjector" Version="4.5.2" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.9.961" />
     <PackageReference Include="Xamarin.Forms" Version="3.6.0.344457" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
   </ItemGroup>
@@ -113,5 +105,35 @@
     <EmbeddedResource Update="Views\Sponsors.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\About.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Components\MasterMenuEntry.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MainMenuMaster.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Multimedia.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ScheduleList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Social.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Sponsors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
   </ItemGroup>
 </Project>

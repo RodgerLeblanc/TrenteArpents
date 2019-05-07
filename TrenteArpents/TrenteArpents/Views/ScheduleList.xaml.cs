@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using FFImageLoading.Forms;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace TrenteArpents.Views

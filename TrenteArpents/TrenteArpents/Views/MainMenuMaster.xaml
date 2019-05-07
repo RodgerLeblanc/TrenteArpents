@@ -6,6 +6,7 @@
     xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
     xmlns:views="clr-namespace:TrenteArpents.Views"
     xmlns:ctrls="clr-namespace:TrenteArpents.Controls"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     BindingContext="{Binding MainMenuMasterViewModel, Source={StaticResource locator}}"
     Title="MainMenuMaster.xaml">
 
@@ -16,8 +17,8 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Image
-            Grid.RowSpan="3"
+        <ffimageloading:CachedImage
+          Grid.RowSpan="3"
             Source="{StaticResource masterBackgroundImage}" 
             HorizontalOptions="Center"
             Aspect="AspectFill" />
@@ -92,25 +93,27 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Image 
+                <ffimageloading:CachedImage
                     Source="{Binding Sponsors[0].ImageUrl}">
-                    <Image.GestureRecognizers>
+                    <ffimageloading:CachedImage.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding FirstSponsorTappedCommand}" />
-                    </Image.GestureRecognizers>
-                </Image>
+                    </ffimageloading:CachedImage.GestureRecognizers>
+                </ffimageloading:CachedImage>
+                
                 <BoxView 
                     Grid.Column="1"
                     WidthRequest="1" 
                     HeightRequest="80" 
                     Opacity="0.5" 
                     Margin="5,0" />
-                <Image 
+                
+                <ffimageloading:CachedImage
                     Grid.Column="2"
                     Source="{Binding Sponsors[1].ImageUrl}">
-                    <Image.GestureRecognizers>
+                    <ffimageloading:CachedImage.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SecondSponsorTappedCommand}" />
-                    </Image.GestureRecognizers>
-                </Image>
+                    </ffimageloading:CachedImage.GestureRecognizers>
+                </ffimageloading:CachedImage>
             </Grid>
         </StackLayout>
     </Grid>

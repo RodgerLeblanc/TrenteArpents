@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     x:Class="TrenteArpents.Views.Social"
     BindingContext="{Binding SocialViewModel, Source={StaticResource locator}}"
     Title="{Binding Title}">
@@ -12,8 +13,9 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        
-        <Image
+
+        <ffimageloading:CachedImage
+            DownsampleToViewSize="True"
             Grid.RowSpan="2"
             Source="{StaticResource detailBackgroundImage}" 
             Aspect="AspectFill" />
@@ -31,12 +33,11 @@
                     Text="Rejoignez-nous sur"
                     HorizontalOptions="Center" />
 
-                <Image
+                <ffimageloading:CachedImage
                     Source="{hlp:ImageResource TrenteArpents.Images.Icons.facebook.png}"
                     HorizontalOptions="Center"
                     HeightRequest="60"
-                    WidthRequest="60">
-                </Image>
+                    WidthRequest="60" />
             </StackLayout>
         </Frame>
 
@@ -54,12 +55,11 @@
                     Text="Rejoignez-nous par courriel"
                     HorizontalOptions="Center" />
 
-                <Image
+                <ffimageloading:CachedImage
                     Source="{hlp:ImageResource TrenteArpents.Images.Icons.email.png}"
                     HorizontalOptions="Center"
                     HeightRequest="60"
-                    WidthRequest="60">
-                </Image>
+                    WidthRequest="60" />
             </StackLayout>
         </Frame>
     </Grid>

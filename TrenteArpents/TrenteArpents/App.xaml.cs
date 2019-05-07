@@ -5,7 +5,6 @@ using TrenteArpents.Views;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
-using Microsoft.AppCenter.Push;
 using SimpleInjector;
 using RestSharp;
 using TrenteArpents.Models;
@@ -14,6 +13,7 @@ using TrenteArpents.ViewModels;
 using GalaSoft.MvvmLight.Views;
 using TrenteArpents.Services;
 using System.Net.Cache;
+using FFImageLoading.Forms;
 
 namespace TrenteArpents
 {
@@ -44,13 +44,15 @@ namespace TrenteArpents
 
             Container.Register<IRestClient>(() => new RestClient() { CachePolicy = cachePolicy });
 
-            Container.Register<IRepo<Sponsor>, SponsorRepo>();
             Container.Register<IRepo<Activity>, ActivityRepo>();
+            Container.Register<IRepo<Photo>, PhotoRepo>();
+            Container.Register<IRepo<Sponsor>, SponsorRepo>();
 
             Container.RegisterSingleton(() => GetNavigationService());
             Container.Register<AboutViewModel>();
             Container.Register<MainMenuMasterViewModel>();
             Container.Register<MultimediaViewModel>();
+            Container.Register<PhotoListViewModel>();
             Container.Register<ScheduleListViewModel>();
             Container.Register<SocialViewModel>();
             Container.Register<SponsorListViewModel>();
