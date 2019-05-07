@@ -28,8 +28,7 @@ namespace TrenteArpents.Tests.Repos
                     Id = i,
                     Name = $"Sponsor #{i}",
                     Description = $"Description #{i}",
-                    TimeStart = partyStartTime.AddMinutes(i * 30),
-                    TimeEnd = partyStartTime.AddMinutes(i * 30).AddHours(1),
+                    Time = "10:00 - 16:30",
                     ImageUrl = new Uri($"https://via.placeholder.com/150?text={i}"),
                 })
                 .ToList();

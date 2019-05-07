@@ -8,7 +8,13 @@
     Title="{Binding Title}">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
         <Image
+            Grid.RowSpan="2"
             Source="{StaticResource detailBackgroundImage}" 
             Aspect="AspectFill" />
 
@@ -27,6 +33,29 @@
 
                 <Image
                     Source="{hlp:ImageResource TrenteArpents.Images.Icons.facebook.png}"
+                    HorizontalOptions="Center"
+                    HeightRequest="60"
+                    WidthRequest="60">
+                </Image>
+            </StackLayout>
+        </Frame>
+
+        <Frame
+            Grid.Row="1"
+            BackgroundColor="#88000000"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OpenEmailCommand}" />
+            </Frame.GestureRecognizers>
+
+            <StackLayout Margin="10">
+                <Label
+                    Text="Rejoignez-nous par courriel"
+                    HorizontalOptions="Center" />
+
+                <Image
+                    Source="{hlp:ImageResource TrenteArpents.Images.Icons.email.png}"
                     HorizontalOptions="Center"
                     HeightRequest="60"
                     WidthRequest="60">

@@ -23,6 +23,7 @@
     <None Remove="Images\Background\sunsetAmusementPark.jpg" />
     <None Remove="Images\feteDeQuartier.png" />
     <None Remove="Images\Icons\about.png" />
+    <None Remove="Images\Icons\email.png" />
     <None Remove="Images\Icons\facebook.png" />
     <None Remove="Images\Icons\photos.png" />
     <None Remove="Images\Icons\schedule.png" />
@@ -48,6 +49,7 @@
     <EmbeddedResource Include="Images\Background\sunsetAmusementPark.jpg" />
     <EmbeddedResource Include="Images\feteDeQuartier.png" />
     <EmbeddedResource Include="Images\Icons\about.png" />
+    <EmbeddedResource Include="Images\Icons\email.png" />
     <EmbeddedResource Include="Images\Icons\facebook.png" />
     <EmbeddedResource Include="Images\Icons\photos.png" />
     <EmbeddedResource Include="Images\Icons\schedule.png" />
