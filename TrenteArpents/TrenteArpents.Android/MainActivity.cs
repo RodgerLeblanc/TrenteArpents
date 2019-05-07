@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms;
+using FFImageLoading.Forms.Platform;
 
 namespace TrenteArpents.Droid
 {
@@ -20,8 +22,10 @@ namespace TrenteArpents.Droid
             base.SetTheme(Resource.Style.MainTheme);
             base.OnCreate(savedInstanceState);
 
+            CachedImageRenderer.Init(enableFastRenderer: false);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Forms.Init(this, savedInstanceState);
+
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

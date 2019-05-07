@@ -4,11 +4,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="TrenteArpents.Views.About"
     xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     BindingContext="{Binding AboutViewModel, Source={StaticResource locator}}"
     Title="{Binding Title}">
 
     <Grid>
-        <Image
+        <ffimageloading:CachedImage
             Source="{StaticResource detailBackgroundImage}" 
             Aspect="AspectFill" />
 
@@ -25,7 +26,9 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 Margin="10">
-                <Image Source="{hlp:ImageResource TrenteArpents.Images.Members.AlexandrineRoger.jpg}" />
+                <ffimageloading:CachedImage 
+                    Source="{Binding MembersImageUrl}" 
+                    DownsampleToViewSize="True" />
             </Frame>
 
             <Label 

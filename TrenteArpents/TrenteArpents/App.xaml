@@ -6,6 +6,7 @@
     xmlns:vm="clr-namespace:TrenteArpents.ViewModels"
     xmlns:views="clr-namespace:TrenteArpents.Views"
     xmlns:ctrls="clr-namespace:TrenteArpents.Controls"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     x:Class="TrenteArpents.App">
 
     <Application.Resources>
@@ -37,6 +38,10 @@
              
             <hlp:ImageResource Source="TrenteArpents.Images.Background.fete2018.jpg" x:Key="masterBackgroundImage" />
             <hlp:ImageResource Source="TrenteArpents.Images.Background.repeatedPattern.png" x:Key="detailBackgroundImage" />
+            <!--<hlp:ImageResource Source="TrenteArpents.Images.Placeholders.loading.gif" x:Key="loadingImage" />
+            <hlp:ImageResource Source="TrenteArpents.Images.Placeholders.error.jpg" x:Key="errorImage" />-->
+            <FileImageSource File="loading.gif" x:Key="loadingImage" />
+            <FileImageSource File="error.jpg" x:Key="errorImage" />
 
             <Color x:Key="NavigationPrimary">#165973</Color>
 
@@ -79,6 +84,12 @@
 
             <Style TargetType="Image">
                 <Setter Property="Aspect" Value="AspectFit" />
+            </Style>
+
+            <Style TargetType="ffimageloading:CachedImage">
+                <Setter Property="Aspect" Value="AspectFit" />
+                <Setter Property="RetryCount" Value="3" />
+                <Setter Property="RetryDelay" Value="200" />
             </Style>
 
         </ResourceDictionary>

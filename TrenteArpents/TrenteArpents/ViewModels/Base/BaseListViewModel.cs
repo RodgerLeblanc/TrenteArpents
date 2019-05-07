@@ -37,10 +37,13 @@ namespace TrenteArpents.ViewModels
         public TModel SelectedItem { get; set; }
         public bool HasItems { get => Items != null && Items.Any(); }
         public bool HasNoItems { get => !HasItems; }
+        public string NoItemsText { get => IsBusy ? "Chargement..." : "Aucune programmation disponible"; }
 
         public virtual async Task RefreshAsync()
         {
+            IsBusy = true;
             Items = await Repo.GetAsync();
+            IsBusy = false;
         }
 
         protected override async Task OnAppearingAsync()

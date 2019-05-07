@@ -11,6 +11,7 @@ namespace TrenteArpents.Helpers
     public class ImageResourceExtension : IMarkupExtension
     {
         private static Assembly assembly;
+        private static Dictionary<string, ImageSource> imageSourceCache;
 
         static ImageResourceExtension()
         {
@@ -18,9 +19,12 @@ namespace TrenteArpents.Helpers
             {
                 assembly = typeof(ImageResourceExtension).GetTypeInfo().Assembly;
             }
-        }
 
-        private Dictionary<string, ImageSource> imageSourceCache = new Dictionary<string, ImageSource>();
+            if (imageSourceCache == null)
+            {
+                imageSourceCache = new Dictionary<string, ImageSource>();
+            }
+        }
 
         public string Source { get; set; }
 

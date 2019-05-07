@@ -32,6 +32,7 @@ namespace TrenteArpents.ViewModels
         public AboutViewModel AboutViewModel { get => App.Container.GetInstance<AboutViewModel>(); }
         public MainMenuMasterViewModel MainMenuMasterViewModel { get => App.Container.GetInstance<MainMenuMasterViewModel>(); }
         public MultimediaViewModel MultimediaViewModel { get => App.Container.GetInstance<MultimediaViewModel>(); }
+        public PhotoListViewModel PhotoListViewModel { get => App.Container.GetInstance<PhotoListViewModel>(); }
         public ScheduleListViewModel ScheduleListViewModel { get => App.Container.GetInstance<ScheduleListViewModel>(); }
         public SocialViewModel SocialViewModel { get => App.Container.GetInstance<SocialViewModel>(); }
         public SponsorListViewModel SponsorListViewModel { get => App.Container.GetInstance<SponsorListViewModel>(); }
