@@ -51,7 +51,7 @@
                                 <Label 
                                     Margin="5,0"
                                     Text="{Binding Name}" 
-                                    FontSize="16"
+                                    FontSize="24"
                                     FontAttributes="Bold"
                                     VerticalOptions="CenterAndExpand" />
 
@@ -60,7 +60,7 @@
                                     Margin="5,0"
                                     Text="{Binding Time}" 
                                     TextColor="LightGray"
-                                    FontSize="12"
+                                    FontSize="16"
                                     VerticalOptions="CenterAndExpand" 
                                     HorizontalOptions="End" />
 
@@ -69,7 +69,7 @@
                                     Grid.ColumnSpan="2"
                                     Margin="5,0"
                                     Text="{Binding Description}" 
-                                    FontSize="12"
+                                    FontSize="16"
                                     FontAttributes="Italic"
                                     VerticalOptions="CenterAndExpand" />
                             </Grid>
