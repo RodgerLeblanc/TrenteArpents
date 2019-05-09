@@ -4,16 +4,8 @@
     <color android:color="@color/launcher_background" />
   </item>
   <item>
-    <bitmap android:src="@drawable/fete2018" 
+    <bitmap android:src="@drawable/splashscreen" 
             android:tileMode="disabled" 
-            android:gravity="center" />
-  </item>
-  <item>
-    <color android:color="#AA000000" />
-  </item>
-  <item>
-    <bitmap android:src="@drawable/splashscreen_text"
-            android:tileMode="disabled"
             android:gravity="center" />
   </item>
 </layer-list>

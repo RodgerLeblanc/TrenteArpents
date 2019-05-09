@@ -26,9 +26,7 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 Margin="10">
-                <ffimageloading:CachedImage 
-                    Source="{Binding MembersImageUrl}" 
-                    DownsampleToViewSize="True" />
+                <ffimageloading:CachedImage Source="{Binding MembersImageUrl}" />
             </Frame>
 
             <Label 

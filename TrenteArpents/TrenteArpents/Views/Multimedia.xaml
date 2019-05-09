@@ -128,8 +128,7 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center">
                 <ffimageloading:CachedImage 
-                    Source="{Binding Photos.Items[4].ImageUrl}" 
-                    DownsampleToViewSize="True" />
+                    Source="{Binding Photos.Items[4].ImageUrl}" />
 
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OpenVideoCommand}" />

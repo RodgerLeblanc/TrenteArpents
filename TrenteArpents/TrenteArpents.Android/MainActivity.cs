@@ -22,12 +22,34 @@ namespace TrenteArpents.Droid
             base.SetTheme(Resource.Style.MainTheme);
             base.OnCreate(savedInstanceState);
 
+            LockDeviceOrientation();
+
             CachedImageRenderer.Init(enableFastRenderer: false);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Forms.Init(this, savedInstanceState);
 
             LoadApplication(new App());
         }
+
+        private void LockDeviceOrientation()
+        {
+            switch (Device.Idiom)
+            {
+                case TargetIdiom.Desktop:
+                case TargetIdiom.Tablet:
+                case TargetIdiom.TV:
+                    RequestedOrientation = ScreenOrientation.SensorLandscape;
+                    break;
+
+                case TargetIdiom.Phone:
+                case TargetIdiom.Watch:
+                case TargetIdiom.Unsupported:
+                default:
+                    RequestedOrientation = ScreenOrientation.Portrait;
+                    break;
+            }
+        }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);

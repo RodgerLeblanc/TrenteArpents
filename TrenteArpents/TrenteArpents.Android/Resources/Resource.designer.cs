@@ -5129,10 +5129,10 @@ namespace TrenteArpents.Droid
 			public const int notify_panel_notification_icon_bg = 2130837805;
 			
 			// aapt resource value: 0x7f02012e
-			public const int splashScreen = 2130837806;
+			public const int repeatedPattern = 2130837806;
 			
 			// aapt resource value: 0x7f02012f
-			public const int splashscreen_text = 2130837807;
+			public const int splashScreen = 2130837807;
 			
 			// aapt resource value: 0x7f020130
 			public const int tooltip_frame_dark = 2130837808;

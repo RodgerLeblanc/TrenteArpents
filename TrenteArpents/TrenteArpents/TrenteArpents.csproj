@@ -19,8 +19,6 @@
   <ItemGroup>
     <None Remove="Images\Background\fete2017.jpg" />
     <None Remove="Images\Background\fete2017Cropped.png" />
-    <None Remove="Images\Background\fete2018.jpg" />
-    <None Remove="Images\Background\repeatedPattern.png" />
     <None Remove="Images\Background\sunset.png" />
     <None Remove="Images\Background\sunsetAmusementPark.jpg" />
     <None Remove="Images\feteDeQuartier.png" />
@@ -37,11 +35,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Images\Background\fete2017.jpg" />
     <EmbeddedResource Include="Images\Background\fete2017Cropped.png" />
-    <EmbeddedResource Include="Images\Background\fete2018.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Images\Background\repeatedPattern.png" />
     <EmbeddedResource Include="Images\Icons\about.png" />
     <EmbeddedResource Include="Images\Icons\email.png" />
     <EmbeddedResource Include="Images\Icons\facebook.png" />
