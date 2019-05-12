@@ -62,7 +62,7 @@ namespace TrenteArpents.Tests.Extensions
 
             var result = sut.SetIsBusy(mock.Object);
 
-            mock.VerifySet(vm => vm.IsBusy = true);
+            mock.VerifySet(vm => vm.IsBusy = true, Times.Exactly(1));
         }
 
         [Fact]
@@ -75,7 +75,7 @@ namespace TrenteArpents.Tests.Extensions
 
             var result = sut.SetIsBusy(mock.Object);
 
-            mock.VerifySet(vm => vm.IsBusy = true);
+            mock.VerifySet(vm => vm.IsBusy = true, Times.Exactly(1));
         }
 
         [Fact]
