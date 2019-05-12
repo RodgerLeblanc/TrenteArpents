@@ -13,6 +13,6 @@ namespace TrenteArpents.Repos
         {
         }
 
-        public override string GetResource() => "ServerFiles/Sponsors/sponsors.json";
+        public override string GetResource() => "TrenteArpents/Sponsors/sponsors.json";
     }
 }

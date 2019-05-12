@@ -9,6 +9,6 @@ namespace TrenteArpents.Repos
         {
         }
 
-        public override string GetResource() => "ServerFiles/Photos/photos.json";
+        public override string GetResource() => "TrenteArpents/Photos/photos.json";
     }
 }
