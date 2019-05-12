@@ -23,6 +23,8 @@ namespace TrenteArpents.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
+            FFImageLoading.FormsHandler.Init(debug: false);
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
