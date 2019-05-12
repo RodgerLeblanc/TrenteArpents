@@ -47,6 +47,7 @@ namespace TrenteArpents
             DependencyInjection.RegisterSingleton(() => GetNavigationService());
             DependencyInjection.Register<AboutViewModel>();
             DependencyInjection.Register<MainMenuMasterViewModel>();
+            DependencyInjection.Register<MotDeMDoyonViewModel>();
             DependencyInjection.Register<MultimediaViewModel>();
             DependencyInjection.Register<PhotoListViewModel>();
             DependencyInjection.Register<ScheduleListViewModel>();

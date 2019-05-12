@@ -48,31 +48,15 @@
         </StackLayout>
 
         <ScrollView Grid.Row="1">
-            <StackLayout>
-                <views:MasterMenuEntry
-                    ImageSource="{Binding DetailPages[0].ImageSource}"
-                    Title="{Binding DetailPages[0].Name}" 
-                    PageType="{Binding DetailPages[0].PageType}" />
-
-                <views:MasterMenuEntry
-                    ImageSource="{Binding DetailPages[1].ImageSource}"
-                    Title="{Binding DetailPages[1].Name}" 
-                    PageType="{Binding DetailPages[1].PageType}" />
-
-                <views:MasterMenuEntry
-                    ImageSource="{Binding DetailPages[2].ImageSource}"
-                    Title="{Binding DetailPages[2].Name}" 
-                    PageType="{Binding DetailPages[2].PageType}" />
-
-                <views:MasterMenuEntry
-                    ImageSource="{Binding DetailPages[3].ImageSource}"
-                    Title="{Binding DetailPages[3].Name}" 
-                    PageType="{Binding DetailPages[3].PageType}" />
-
-                <views:MasterMenuEntry
-                    ImageSource="{Binding DetailPages[4].ImageSource}"
-                    Title="{Binding DetailPages[4].Name}" 
-                    PageType="{Binding DetailPages[4].PageType}" />
+            <StackLayout BindableLayout.ItemsSource="{Binding DetailPages}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <views:MasterMenuEntry
+                            ImageSource="{Binding ImageSource}"
+                            Title="{Binding Name}" 
+                            PageType="{Binding PageType}" />
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
             </StackLayout>
         </ScrollView>
         

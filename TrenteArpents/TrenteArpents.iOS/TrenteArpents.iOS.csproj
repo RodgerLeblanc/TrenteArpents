@@ -598,4 +598,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\weather.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\message.png" />
+  </ItemGroup>
 </Project>
