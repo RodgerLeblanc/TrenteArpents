@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Foundation;
 using UIKit;
@@ -23,7 +24,7 @@ namespace TrenteArpents.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
-            FFImageLoading.FormsHandler.Init(debug: false);
+            FFImageLoading.FormsHandler.Init(debug: Debugger.IsAttached);
 
             LoadApplication(new App());
 

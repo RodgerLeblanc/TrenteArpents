@@ -30,12 +30,12 @@
             VerticalOptions="FillAndExpand" />
 
         <StackLayout 
-            x:Name="title"
             HorizontalOptions="FillAndExpand" 
             Padding="10,5" 
             BackgroundColor="#88000000">
             <Label
-                Text="17 AOÛT"
+                x:Name="title"
+                Text="17 AOÛT 2019"
                 FontSize="28" 
                 FontFamily="{StaticResource boldFont}"
                 HorizontalOptions="Center" />
@@ -111,7 +111,9 @@
                 </Grid.ColumnDefinitions>
 
                 <Image
-                    Source="{Binding Sponsors[0].ImageUrl}">
+                    Source="{Binding Sponsors[0].ImageUrl}"
+                    WidthRequest="80"
+                    HeightRequest="80">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding FirstSponsorTappedCommand}" />
                     </Image.GestureRecognizers>
@@ -126,7 +128,9 @@
                 
                 <Image
                     Grid.Column="2"
-                    Source="{Binding Sponsors[1].ImageUrl}">
+                    Source="{Binding Sponsors[1].ImageUrl}"
+                    WidthRequest="80"
+                    HeightRequest="80">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding SecondSponsorTappedCommand}" />
                     </Image.GestureRecognizers>

@@ -12,27 +12,33 @@
             Source="{StaticResource detailBackgroundImage}" 
             Aspect="AspectFill" />
 
-        <StackLayout
-            HorizontalOptions="CenterAndExpand"
-            VerticalOptions="CenterAndExpand">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="2*" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            
             <Label 
                 Text="Les membres du Comité"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center" 
+                VerticalOptions="End" />
 
             <Frame
                 Grid.Row="1"
-                Grid.Column="1"
-                HorizontalOptions="Center"
-                VerticalOptions="Center"
                 Margin="10">
-                <Image Source="{Binding MembersImageUrl}" />
+                <Image 
+                    Source="{Binding MembersImageUrl}" 
+                    Aspect="AspectFill" />
             </Frame>
 
             <Label 
+                Grid.Row="2"
                 Text="Alexandrine et Roger"
                 HorizontalOptions="Center" 
+                VerticalOptions="Start"
                 FontSize="10"
                 FontAttributes="Italic" />
-        </StackLayout>
+        </Grid>
     </Grid>
 </ContentPage>

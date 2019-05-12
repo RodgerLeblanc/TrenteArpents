@@ -38,10 +38,6 @@
 
             <x:String x:Key="masterBackgroundImage">fete2018.jpg</x:String>
             <x:String x:Key="detailBackgroundImage">repeatedPattern.png</x:String>
-            <!--<hlp:ImageResource Source="TrenteArpents.Images.Placeholders.loading.gif" x:Key="loadingImage" />
-            <hlp:ImageResource Source="TrenteArpents.Images.Placeholders.error.jpg" x:Key="errorImage" />-->
-            <FileImageSource File="loading.gif" x:Key="loadingImage" />
-            <FileImageSource File="error.jpg" x:Key="errorImage" />
 
             <Color x:Key="NavigationPrimary">#165973</Color>
 
@@ -79,7 +75,7 @@
             <Style TargetType="Frame">
                 <Setter Property="BorderColor" Value="White" />
                 <Setter Property="IsClippedToBounds" Value="True" />
-                <Setter Property="Padding" Value="0" />
+                <Setter Property="Padding" Value="1" />
             </Style>
 
             <Style TargetType="Image">
