@@ -11,13 +11,6 @@
   See http://www.galasoft.ch/mvvm
 */
 
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Ioc;
-using GalaSoft.MvvmLight.Views;
-using SimpleInjector;
-using TrenteArpents.Services;
-using TrenteArpents.Views;
-
 namespace TrenteArpents.ViewModels
 {
     public class ViewModelLocator
@@ -29,12 +22,12 @@ namespace TrenteArpents.ViewModels
         public const string SocialPageKey = nameof(SocialPageKey);
         public const string SponsorListKey = nameof(SponsorListKey);
 
-        public AboutViewModel AboutViewModel { get => App.Container.GetInstance<AboutViewModel>(); }
-        public MainMenuMasterViewModel MainMenuMasterViewModel { get => App.Container.GetInstance<MainMenuMasterViewModel>(); }
-        public MultimediaViewModel MultimediaViewModel { get => App.Container.GetInstance<MultimediaViewModel>(); }
-        public PhotoListViewModel PhotoListViewModel { get => App.Container.GetInstance<PhotoListViewModel>(); }
-        public ScheduleListViewModel ScheduleListViewModel { get => App.Container.GetInstance<ScheduleListViewModel>(); }
-        public SocialViewModel SocialViewModel { get => App.Container.GetInstance<SocialViewModel>(); }
-        public SponsorListViewModel SponsorListViewModel { get => App.Container.GetInstance<SponsorListViewModel>(); }
+        public AboutViewModel AboutViewModel { get => DependencyInjection.Get<AboutViewModel>(); }
+        public MainMenuMasterViewModel MainMenuMasterViewModel { get => DependencyInjection.Get<MainMenuMasterViewModel>(); }
+        public MultimediaViewModel MultimediaViewModel { get => DependencyInjection.Get<MultimediaViewModel>(); }
+        public PhotoListViewModel PhotoListViewModel { get => DependencyInjection.Get<PhotoListViewModel>(); }
+        public ScheduleListViewModel ScheduleListViewModel { get => DependencyInjection.Get<ScheduleListViewModel>(); }
+        public SocialViewModel SocialViewModel { get => DependencyInjection.Get<SocialViewModel>(); }
+        public SponsorListViewModel SponsorListViewModel { get => DependencyInjection.Get<SponsorListViewModel>(); }
     }
 }

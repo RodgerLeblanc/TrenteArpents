@@ -12,13 +12,13 @@ namespace TrenteArpents.ViewModels
     {
         public BaseViewModel() : base()
         {
-            Navigation = App.Container.GetInstance<INavigationService>();
+            Navigation = DependencyInjection.Get<INavigationService>();
             SetCommands();
         }
 
         public BaseViewModel(IMessenger messenger) : base(messenger)
         {
-            Navigation = App.Container.GetInstance<INavigationService>();
+            Navigation = DependencyInjection.Get<INavigationService>();
             SetCommands();
         }
 

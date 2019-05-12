@@ -29,35 +29,31 @@ namespace TrenteArpents
             MainPage = new MainPage();
         }
 
-        public static Container Container { get; private set; }
-
         private static void RegisterIoc()
         {
-            Container = new Container();
-
 #if DEBUG
             var cachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
 #else
             var cachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
 #endif
 
-            Container.Register<IGitHubConfiguration, GitHubConfiguration>();
-            Container.Register<IRestClient>(() => new RestClient() { CachePolicy = cachePolicy });
+            DependencyInjection.Register<IGitHubConfiguration, GitHubConfiguration>();
+            DependencyInjection.Register<IRestClient>(() => new RestClient() { CachePolicy = cachePolicy });
 
-            Container.Register<IRepo<Activity>, ActivityRepo>();
-            Container.Register<IRepo<Photo>, PhotoRepo>();
-            Container.Register<IRepo<Sponsor>, SponsorRepo>();
+            DependencyInjection.Register<IRepo<Activity>, ActivityRepo>();
+            DependencyInjection.Register<IRepo<Photo>, PhotoRepo>();
+            DependencyInjection.Register<IRepo<Sponsor>, SponsorRepo>();
 
-            Container.RegisterSingleton(() => GetNavigationService());
-            Container.Register<AboutViewModel>();
-            Container.Register<MainMenuMasterViewModel>();
-            Container.Register<MultimediaViewModel>();
-            Container.Register<PhotoListViewModel>();
-            Container.Register<ScheduleListViewModel>();
-            Container.Register<SocialViewModel>();
-            Container.Register<SponsorListViewModel>();
+            DependencyInjection.RegisterSingleton(() => GetNavigationService());
+            DependencyInjection.Register<AboutViewModel>();
+            DependencyInjection.Register<MainMenuMasterViewModel>();
+            DependencyInjection.Register<MultimediaViewModel>();
+            DependencyInjection.Register<PhotoListViewModel>();
+            DependencyInjection.Register<ScheduleListViewModel>();
+            DependencyInjection.Register<SocialViewModel>();
+            DependencyInjection.Register<SponsorListViewModel>();
 
-            Container.Verify();
+            DependencyInjection.Verify();
         }
 
         private static INavigationService GetNavigationService()
