@@ -1,5 +1,4 @@
-﻿using FFImageLoading.Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -52,14 +51,7 @@ namespace TrenteArpents.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                var assembliesToInclude = new List<Assembly>
-                {
-                    typeof(CachedImage).GetTypeInfo().Assembly,
-                    typeof(FFImageLoading.Forms.Platform.CachedImageRenderer).GetTypeInfo().Assembly
-                };
-
-                FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
-                Xamarin.Forms.Forms.Init(e, assembliesToInclude);
+                Xamarin.Forms.Forms.Init(e);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

@@ -13,7 +13,6 @@ using TrenteArpents.ViewModels;
 using GalaSoft.MvvmLight.Views;
 using TrenteArpents.Services;
 using System.Net.Cache;
-using FFImageLoading.Forms;
 
 namespace TrenteArpents
 {

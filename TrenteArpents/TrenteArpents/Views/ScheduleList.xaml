@@ -5,14 +5,12 @@
     xmlns:views="clr-namespace:TrenteArpents.Views"
     xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
     xmlns:ctrls="clr-namespace:TrenteArpents.Controls"
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     x:Class="TrenteArpents.Views.ScheduleList"
     BindingContext="{Binding ScheduleListViewModel, Source={StaticResource locator}}"
     Title="{Binding Title}">
 
     <Grid>
-        <ffimageloading:CachedImage 
-            DownsampleToViewSize="true"
+        <Image 
             Aspect="AspectFill" 
             Source = "{StaticResource detailBackgroundImage}" />
 
@@ -42,7 +40,7 @@
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
 
-                                <ffimageloading:CachedImage
+                                <Image
                                     Grid.RowSpan="2"
                                     Grid.ColumnSpan="2"
                                     Margin="-5,0"
