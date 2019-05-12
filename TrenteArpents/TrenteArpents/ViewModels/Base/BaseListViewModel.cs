@@ -4,6 +4,7 @@ using GalaSoft.MvvmLight.Views;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TrenteArpents.Extensions;
 using TrenteArpents.Models;
 using TrenteArpents.Repos;
 
@@ -37,13 +38,11 @@ namespace TrenteArpents.ViewModels
         public TModel SelectedItem { get; set; }
         public bool HasItems { get => Items != null && Items.Any(); }
         public bool HasNoItems { get => !HasItems; }
-        public string NoItemsText { get => IsBusy ? "Chargement..." : "Aucune programmation disponible"; }
+        public string NoItemsText { get => IsBusy ? "Chargement..." : "Aucun item disponible"; }
 
         public virtual async Task RefreshAsync()
         {
-            IsBusy = true;
-            Items = await Repo.GetAsync();
-            IsBusy = false;
+            Items = await Repo.GetAsync().SetIsBusy(this);
         }
 
         protected override async Task OnAppearingAsync()

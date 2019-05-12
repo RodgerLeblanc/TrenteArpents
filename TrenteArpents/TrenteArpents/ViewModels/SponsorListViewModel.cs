@@ -1,12 +1,8 @@
-﻿using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Views;
+﻿using GalaSoft.MvvmLight.Views;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TrenteArpents.Extensions;
 using TrenteArpents.Models;
 using TrenteArpents.Repos;
 using Xamarin.Forms;
@@ -38,6 +34,11 @@ namespace TrenteArpents.ViewModels
         {
             Sponsor sponsor = (Sponsor)eventArgs?.Item;
             return sponsor?.PromoUrl;
+        }
+
+        public override async Task RefreshAsync()
+        {
+            Items = await Repo.GetAsync(a => a.IsVisible).SetIsBusy(this);
         }
     }
 }

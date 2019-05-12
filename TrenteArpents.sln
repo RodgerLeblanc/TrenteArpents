@@ -13,9 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrenteArpents.UWP", "Trente
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrenteArpents.Tests", "TrenteArpents\TrenteArpents.Tests\TrenteArpents.Tests.csproj", "{B803F602-FC1B-4A19-B84E-AD07EE03CD40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrenteArpents.Models", "TrenteArpents\TrenteArpents.Models\TrenteArpents.Models.csproj", "{565F1F2E-789D-4465-8D03-6312B0BB6E12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrenteArpents.Models", "TrenteArpents\TrenteArpents.Models\TrenteArpents.Models.csproj", "{565F1F2E-789D-4465-8D03-6312B0BB6E12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrenteArpents.Repos", "TrenteArpents\TrenteArpents.Repos\TrenteArpents.Repos.csproj", "{5BFDA5B4-0376-4A2F-A774-68AFC7AF906B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrenteArpents.Repos", "TrenteArpents\TrenteArpents.Repos\TrenteArpents.Repos.csproj", "{5BFDA5B4-0376-4A2F-A774-68AFC7AF906B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -19,5 +19,8 @@ namespace TrenteArpents.Models
 
         [JsonProperty("imageUrl")]
         public Uri ImageUrl { get; set; }
+
+        [JsonProperty("isVisible")]
+        public bool IsVisible { get; set; } = true;
     }
 }

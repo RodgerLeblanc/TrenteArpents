@@ -15,7 +15,7 @@ namespace TrenteArpents.Tests.Repos
         {
         }
 
-        public override string Resource { get; }
+        public override string GetResource() => String.Empty;
 
         public override Task<IEnumerable<Sponsor>> GetAsync()
         {
