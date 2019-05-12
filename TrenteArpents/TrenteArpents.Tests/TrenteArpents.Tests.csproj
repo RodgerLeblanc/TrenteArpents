@@ -22,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\TrenteArpents.Models\TrenteArpents.Models.csproj" />
     <ProjectReference Include="..\TrenteArpents.Repos\TrenteArpents.Repos.csproj" />
+    <ProjectReference Include="..\TrenteArpents\TrenteArpents.csproj" />
   </ItemGroup>
 
 </Project>

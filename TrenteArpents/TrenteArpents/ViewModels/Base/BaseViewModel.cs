@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace TrenteArpents.ViewModels
 {
-    public abstract class BaseViewModel : ViewModelBase
+    public abstract class BaseViewModel : ViewModelBase, IBusyViewModel
     {
         public BaseViewModel() : base()
         {
