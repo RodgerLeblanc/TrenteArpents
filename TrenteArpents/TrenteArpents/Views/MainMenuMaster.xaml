@@ -30,7 +30,11 @@
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand" />
 
-        <StackLayout x:Name="title">
+        <StackLayout 
+            x:Name="title"
+            HorizontalOptions="FillAndExpand" 
+            Padding="10,5" 
+            BackgroundColor="#88000000">
             <Label
                 Text="17 AOÛT"
                 FontSize="28" 
