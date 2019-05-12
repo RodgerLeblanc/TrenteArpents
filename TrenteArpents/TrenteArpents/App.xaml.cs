@@ -41,6 +41,7 @@ namespace TrenteArpents
             var cachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
 #endif
 
+            Container.Register<IGitHubConfiguration, GitHubConfiguration>();
             Container.Register<IRestClient>(() => new RestClient() { CachePolicy = cachePolicy });
 
             Container.Register<IRepo<Activity>, ActivityRepo>();

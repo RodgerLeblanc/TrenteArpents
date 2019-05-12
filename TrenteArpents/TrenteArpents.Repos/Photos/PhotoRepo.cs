@@ -5,12 +5,10 @@ namespace TrenteArpents.Repos
 {
     public class PhotoRepo : BaseGitHubRepo<Photo>
     {
-        private const string resource = "TrenteArpents/Photos/photos.json";
-
-        public PhotoRepo(IRestClient client) : base(client)
+        public PhotoRepo(IRestClient client, IGitHubConfiguration configuration) : base(client, configuration)
         {
         }
 
-        public override string Resource { get; } = resource;
+        public override string GetResource() => "ServerFiles/Photos/photos.json";
     }
 }

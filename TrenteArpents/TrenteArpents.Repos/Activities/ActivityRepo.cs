@@ -5,12 +5,10 @@ namespace TrenteArpents.Repos
 {
     public class ActivityRepo : BaseGitHubRepo<Activity>
     {
-        private const string resource = "TrenteArpents/Activities/activities.json";
-
-        public ActivityRepo(IRestClient client) : base(client)
+        public ActivityRepo(IRestClient client, IGitHubConfiguration configuration) : base(client, configuration)
         {
         }
 
-        public override string Resource { get; } = resource;
+        public override string GetResource() => "ServerFiles/Activities/activities.json";
     }
 }

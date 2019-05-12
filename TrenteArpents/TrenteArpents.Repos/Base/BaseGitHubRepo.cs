@@ -9,11 +9,9 @@ namespace TrenteArpents.Repos
     public abstract class BaseGitHubRepo<TModel> : BaseRepo<TModel>
         where TModel : IModel, new()
     {
-        private const string gitHubBaseUrl = "https://rodgerleblanc.github.io/";
-
-        public BaseGitHubRepo(IRestClient client) : base(client)
+        public BaseGitHubRepo(IRestClient client, IGitHubConfiguration configuration) : base(client)
         {
-            client.BaseUrl = new Uri(gitHubBaseUrl);
+            client.BaseUrl = configuration.BaseUrl;
         }
     }
 }
