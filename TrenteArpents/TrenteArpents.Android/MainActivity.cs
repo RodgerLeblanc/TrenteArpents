@@ -26,6 +26,8 @@ namespace TrenteArpents.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Forms.Init(this, savedInstanceState);
 
+            Android.Glide.Forms.Init();
+
             LoadApplication(new App());
         }
 
