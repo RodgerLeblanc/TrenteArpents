@@ -7,7 +7,6 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
-using FFImageLoading.Forms.Platform;
 
 namespace TrenteArpents.Droid
 {
@@ -24,7 +23,6 @@ namespace TrenteArpents.Droid
 
             LockDeviceOrientation();
 
-            CachedImageRenderer.Init(enableFastRenderer: false);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Forms.Init(this, savedInstanceState);
 
