@@ -17,7 +17,8 @@ namespace TrenteArpents.Repos
         }
 
         public IRestClient RestClient { get; }
-        public abstract string Resource { get; }
+
+        public abstract string GetResource();
 
         public virtual async Task<TModel> GetAsync(int id)
         {
@@ -31,7 +32,7 @@ namespace TrenteArpents.Repos
 
         public virtual async Task<IEnumerable<TModel>> GetAsync()
         {
-            var request = new RestRequest(Resource, DataFormat.Json);
+            var request = new RestRequest(GetResource(), DataFormat.Json);
             return await RestClient.GetAsync<List<TModel>>(request);
         }
     }

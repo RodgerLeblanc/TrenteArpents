@@ -9,12 +9,10 @@ namespace TrenteArpents.Repos
 {
     public class SponsorRepo : BaseGitHubRepo<Sponsor>
     {
-        private const string resource = "TrenteArpents/Sponsors/sponsors.json";
-
-        public SponsorRepo(IRestClient client) : base(client)
+        public SponsorRepo(IRestClient client, IGitHubConfiguration configuration) : base(client, configuration)
         {
         }
 
-        public override string Resource { get; } = resource;
+        public override string GetResource() => "ServerFiles/Sponsors/sponsors.json";
     }
 }

@@ -13,7 +13,6 @@ using TrenteArpents.ViewModels;
 using GalaSoft.MvvmLight.Views;
 using TrenteArpents.Services;
 using System.Net.Cache;
-using FFImageLoading.Forms;
 
 namespace TrenteArpents
 {
@@ -42,6 +41,7 @@ namespace TrenteArpents
             var cachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
 #endif
 
+            Container.Register<IGitHubConfiguration, GitHubConfiguration>();
             Container.Register<IRestClient>(() => new RestClient() { CachePolicy = cachePolicy });
 
             Container.Register<IRepo<Activity>, ActivityRepo>();
