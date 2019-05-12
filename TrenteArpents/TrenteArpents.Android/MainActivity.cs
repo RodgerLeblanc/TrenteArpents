@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
+using System.Diagnostics;
 
 namespace TrenteArpents.Droid
 {
@@ -24,9 +25,10 @@ namespace TrenteArpents.Droid
             LockDeviceOrientation();
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+
             Forms.Init(this, savedInstanceState);
 
-            Android.Glide.Forms.Init();
+            Android.Glide.Forms.Init(debug: Debugger.IsAttached);
 
             LoadApplication(new App());
         }

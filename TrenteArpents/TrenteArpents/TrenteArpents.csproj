@@ -17,34 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Images\Background\fete2017.jpg" />
-    <None Remove="Images\Background\fete2017Cropped.png" />
     <None Remove="Images\Background\sunset.png" />
     <None Remove="Images\Background\sunsetAmusementPark.jpg" />
     <None Remove="Images\feteDeQuartier.png" />
-    <None Remove="Images\Icons\about.png" />
-    <None Remove="Images\Icons\email.png" />
-    <None Remove="Images\Icons\facebook.png" />
-    <None Remove="Images\Icons\photos.png" />
-    <None Remove="Images\Icons\schedule.png" />
-    <None Remove="Images\Icons\sponsors.png" />
-    <None Remove="Images\Icons\weather.png" />
     <None Remove="Images\videoScreenshot.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Images\Background\fete2017.jpg" />
-    <EmbeddedResource Include="Images\Background\fete2017Cropped.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Images\Icons\about.png" />
-    <EmbeddedResource Include="Images\Icons\email.png" />
-    <EmbeddedResource Include="Images\Icons\facebook.png" />
-    <EmbeddedResource Include="Images\Icons\photos.png" />
-    <EmbeddedResource Include="Images\Icons\schedule.png" />
-    <EmbeddedResource Include="Images\Icons\sponsors.png" />
-    <EmbeddedResource Include="Images\Icons\weather.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -130,5 +106,9 @@
     <None Update="Views\Sponsors.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Images\Background\" />
   </ItemGroup>
 </Project>

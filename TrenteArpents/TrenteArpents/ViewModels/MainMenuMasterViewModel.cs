@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using TrenteArpents.Models;
@@ -14,16 +13,6 @@ namespace TrenteArpents.ViewModels
 {
     public class MainMenuMasterViewModel : BaseViewModel
     {
-        private static Assembly assembly;
-
-        static MainMenuMasterViewModel()
-        {
-            if (assembly == null)
-            {
-                assembly = typeof(MainMenuMasterViewModel).GetTypeInfo().Assembly;
-            }
-        }
-
         public MainMenuMasterViewModel(IRepo<Sponsor> repo)
         {
             Repo = repo;
@@ -55,31 +44,31 @@ namespace TrenteArpents.ViewModels
                 new DetailPageInfo
                 {
                     Name = "Programmation",
-                    ImageSource = GetIconFromResource("schedule.png"),
+                    ImageSource = ImageSource.FromFile("schedule.png"),
                     PageType = typeof(ScheduleList)
                 },
                 new DetailPageInfo
                 {
                     Name = "Commanditaires",
-                    ImageSource = GetIconFromResource("sponsors.png"),
+                    ImageSource = ImageSource.FromFile("sponsors.png"),
                     PageType = typeof(SponsorList)
                 },
                 new DetailPageInfo
                 {
                     Name = "Social",
-                    ImageSource = GetIconFromResource("facebook.png"),
+                    ImageSource = ImageSource.FromFile("facebook.png"),
                     PageType = typeof(Social)
                 },
                 new DetailPageInfo
                 {
                     Name = "Multimédia",
-                    ImageSource = GetIconFromResource("photos.png"),
+                    ImageSource = ImageSource.FromFile("photos.png"),
                     PageType = typeof(Multimedia)
                 },
                 new DetailPageInfo
                 {
                     Name = "À propos",
-                    ImageSource = GetIconFromResource("about.png"),
+                    ImageSource = ImageSource.FromFile("about.png"),
                     PageType = typeof(About)
                 },
             };
@@ -87,23 +76,26 @@ namespace TrenteArpents.ViewModels
 
         private void OnFirstSponsorTapped()
         {
-            if (Sponsors?.FirstOrDefault() is Sponsor sponsor && sponsor.PromoUrl != null)
-            {
-                Device.OpenUri(sponsor.PromoUrl);
-            }
+            OpenPromoUrlForSponsorIndex(0);
         }
 
         private void OnSecondSponsorTapped()
         {
-            if (Sponsors?.Skip(1).FirstOrDefault() is Sponsor sponsor && sponsor.PromoUrl != null)
+            OpenPromoUrlForSponsorIndex(1);
+        }
+
+        private void OpenPromoUrlForSponsorIndex(int index)
+        {
+            Sponsor sponsor = GetSponsorAtIndex(index);
+            if (sponsor != null && sponsor.PromoUrl != null)
             {
                 Device.OpenUri(sponsor.PromoUrl);
             }
         }
 
-        private ImageSource GetIconFromResource(string fileName)
+        private Sponsor GetSponsorAtIndex(int index)
         {
-            return ImageSource.FromResource($"TrenteArpents.Images.Icons.{fileName}", assembly);
+            return Sponsors?.ElementAt(index);
         }
     }
 
