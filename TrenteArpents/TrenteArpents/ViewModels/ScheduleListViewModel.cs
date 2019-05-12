@@ -1,13 +1,8 @@
 ﻿using GalaSoft.MvvmLight.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Windows.Input;
+using System.Threading.Tasks;
+using TrenteArpents.Extensions;
 using TrenteArpents.Models;
 using TrenteArpents.Repos;
-using Xamarin.Forms;
 
 namespace TrenteArpents.ViewModels
 {
@@ -16,6 +11,11 @@ namespace TrenteArpents.ViewModels
         public ScheduleListViewModel(INavigationService navigationService, IRepo<Activity> repo) : base(navigationService, repo)
         {
             Title = "Programmation";
+        }
+
+        public override async Task RefreshAsync()
+        {
+            Items = await Repo.GetAsync(a => a.IsVisible).SetIsBusy(this);
         }
     }
 }

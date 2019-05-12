@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
@@ -22,12 +23,16 @@ namespace TrenteArpents.Repos
 
         public virtual async Task<TModel> GetAsync(int id)
         {
-            //Retrieving the whole list as Get(id) is not available on our server
+            return (await GetAsync(m => m.Id == id)).FirstOrDefault();
+        }
+
+        public virtual async Task<IEnumerable<TModel>> GetAsync(Func<TModel, bool> predicate)
+        {
             var items = await GetAsync();
 
             return items
-                .Where(i => i.Id == id)
-                .FirstOrDefault();
+                .Where(predicate)
+                .ToList();
         }
 
         public virtual async Task<IEnumerable<TModel>> GetAsync()

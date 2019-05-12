@@ -23,6 +23,9 @@ namespace TrenteArpents.Models
 
         [JsonProperty("backgroundColor")]
         public string BackgroundColor { get; set; } = "#00000000";
+
+        [JsonProperty("isVisible")]
+        public bool IsVisible { get; set; } = true;
     }
 }
 

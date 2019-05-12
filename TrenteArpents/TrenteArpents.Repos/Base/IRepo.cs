@@ -12,6 +12,7 @@ namespace TrenteArpents.Repos
         IRestClient RestClient { get; }
 
         Task<TModel> GetAsync(int id);
+        Task<IEnumerable<TModel>> GetAsync(Func<TModel, bool> predicate);
         Task<IEnumerable<TModel>> GetAsync();
     }
 }
