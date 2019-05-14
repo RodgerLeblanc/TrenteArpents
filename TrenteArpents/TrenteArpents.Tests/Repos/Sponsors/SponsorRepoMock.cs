@@ -26,7 +26,7 @@ namespace TrenteArpents.Tests.Repos
                     Id = i,
                     Name = $"Sponsor #{i}",
                     ImageUrl = new Uri($"https://via.placeholder.com/150?text={i}"),
-                    SponsorType = i % 3,
+                    SponsorType = (SponsorType)(i % 4),
                     PromoUrl = new Uri("https://www.google.com")
                 })
                 .ToList();

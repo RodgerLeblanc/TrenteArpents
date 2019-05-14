@@ -37,6 +37,12 @@
     <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
     <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignProvision>
+    </CodesignProvision>
+    <CodesignExtraArgs />
+    <CodesignResourceRules />
+    <CodesignEntitlements />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,8 +72,13 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignEntitlements>
+    </CodesignEntitlements>
+    <CodesignProvision>Distribution Wildcard</CodesignProvision>
+    <CodesignExtraArgs />
+    <CodesignResourceRules />
+    <BuildIpa>true</BuildIpa>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
@@ -600,5 +611,17 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bronzeBanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\goldBanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\silverBanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\localBanner.png" />
   </ItemGroup>
 </Project>

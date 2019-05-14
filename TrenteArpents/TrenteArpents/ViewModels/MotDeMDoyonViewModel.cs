@@ -23,7 +23,7 @@ namespace TrenteArpents.ViewModels
             {
                 FormattedString formattedText = new FormattedString();
 
-                formattedText.Spans.Add(new Span { Text = "Souvent, quand il y a une propriété à vendre au Domaine, l’on peut lire dans l’annonce publié par le vendeur une petite note qui fait référence à ce milieu de vie;", FontSize = FormattedTextFontSize });
+                formattedText.Spans.Add(new Span { Text = "Souvent, quand il y a une propriété à vendre au Domaine, l’on peut lire dans l’annonce publiée par le vendeur une petite note qui fait référence à ce milieu de vie;", FontSize = FormattedTextFontSize });
                 formattedText.Spans.Add(new Span { Text = " au Domaine des 30 Arpents,", FontAttributes = FontAttributes.Bold | FontAttributes.Italic, FontSize = FormattedTextFontSize });
                 formattedText.Spans.Add(new Span { Text = " superbe quartier familial, sécuritaire et paisible, secteur d’exception, etc.", FontAttributes = FontAttributes.Italic, FontSize = FormattedTextFontSize });
                 formattedText.Spans.Add(new Span { Text = @"
