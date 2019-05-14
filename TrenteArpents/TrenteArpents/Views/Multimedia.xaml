@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
+    x:Class="TrenteArpents.Views.Multimedia"
+    BindingContext="{Binding MultimediaViewModel, Source={StaticResource locator}}"
+    Title="{Binding Title}">
+
+    <Grid Margin="10,5">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Image
+            Margin="-10,-6"
+            Grid.RowSpan="3"
+            Source="{StaticResource detailBackgroundImage}" 
+            Aspect="AspectFill" />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label 
+                Text="Photos"
+                HorizontalOptions="Center" />
+            
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Frame>
+                    <Image 
+                        Source="{Binding Photos.Items[0].ImageUrl}" 
+                        Aspect="AspectFill" />
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame Grid.Column="1">
+                    <Image 
+                        Source="{Binding Photos.Items[1].ImageUrl}" 
+                        Aspect="AspectFill" />
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame Grid.Row="1">
+                    <Image 
+                        Source="{Binding Photos.Items[2].ImageUrl}" 
+                        Aspect="AspectFill" />
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame
+                    Grid.Row="1"
+                    Grid.Column="1">
+                    <Image 
+                        Source="{Binding Photos.Items[3].ImageUrl}" 
+                        Aspect="AspectFill" />
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+
+            <Label 
+                Grid.Row="2"
+                Text="et plus..."
+                HorizontalOptions="Center" 
+                FontSize="10"
+                FontAttributes="Italic">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenFacebookPhotosCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+
+        <BoxView 
+            Grid.Row="1"
+            HeightRequest="1" 
+            Opacity="0.5" 
+            Margin="5,0" 
+            HorizontalOptions="FillAndExpand" />
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Label 
+                Text="Vidéos"
+                HorizontalOptions="Center" />
+
+            <Frame Grid.Row="1">
+                <Image 
+                    Source="{Binding Photos.Items[4].ImageUrl}" 
+                    Aspect="AspectFill" />
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenVideoCommand}" />
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
+    </Grid>
+</ContentPage>

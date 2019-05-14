@@ -9,11 +9,11 @@ namespace TrenteArpents.ViewModels
     {
         public AboutViewModel()
         {
-            Title = "About";
+            Title = "À propos";
 
-            OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
+            MembersImageUrl = ImageSource.FromUri(new Uri("https://rodgerleblanc.github.io/TrenteArpents/Members/Images/AlexandrineRoger.jpg"));
         }
 
-        public ICommand OpenWebCommand { get; }
+        public ImageSource MembersImageUrl { get; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-
 using Foundation;
 using UIKit;
 
@@ -23,6 +23,9 @@ namespace TrenteArpents.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            FFImageLoading.FormsHandler.Init(debug: Debugger.IsAttached);
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
