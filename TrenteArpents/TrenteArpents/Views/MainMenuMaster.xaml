@@ -7,7 +7,7 @@
     xmlns:views="clr-namespace:TrenteArpents.Views"
     xmlns:ctrls="clr-namespace:TrenteArpents.Controls"
     BindingContext="{Binding MainMenuMasterViewModel, Source={StaticResource locator}}"
-    Title="MainMenuMaster.xaml">
+    Title="Menu">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -40,6 +40,11 @@
                 FontFamily="{StaticResource boldFont}"
                 HorizontalOptions="Center" />
 
+            <Label
+                Text="POINTE-DU-LAC"
+                FontSize="20" 
+                HorizontalOptions="Center" />
+
             <BoxView 
                 HeightRequest="1" 
                 Opacity="0.5" 
@@ -48,31 +53,15 @@
         </StackLayout>
 
         <ScrollView Grid.Row="1">
-            <StackLayout>
-                <views:MasterMenuEntry
-                    ImageSource="{Binding DetailPages[0].ImageSource}"
-                    Title="{Binding DetailPages[0].Name}" 
-                    PageType="{Binding DetailPages[0].PageType}" />
-
-                <views:MasterMenuEntry
-                    ImageSource="{Binding DetailPages[1].ImageSource}"
-                    Title="{Binding DetailPages[1].Name}" 
-                    PageType="{Binding DetailPages[1].PageType}" />
-
-                <views:MasterMenuEntry
-                    ImageSource="{Binding DetailPages[2].ImageSource}"
-                    Title="{Binding DetailPages[2].Name}" 
-                    PageType="{Binding DetailPages[2].PageType}" />
-
-                <views:MasterMenuEntry
-                    ImageSource="{Binding DetailPages[3].ImageSource}"
-                    Title="{Binding DetailPages[3].Name}" 
-                    PageType="{Binding DetailPages[3].PageType}" />
-
-                <views:MasterMenuEntry
-                    ImageSource="{Binding DetailPages[4].ImageSource}"
-                    Title="{Binding DetailPages[4].Name}" 
-                    PageType="{Binding DetailPages[4].PageType}" />
+            <StackLayout BindableLayout.ItemsSource="{Binding DetailPages}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <views:MasterMenuEntry
+                            ImageSource="{Binding ImageSource}"
+                            Title="{Binding Name}" 
+                            PageType="{Binding PageType}" />
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
             </StackLayout>
         </ScrollView>
         

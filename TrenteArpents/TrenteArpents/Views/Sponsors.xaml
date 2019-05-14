@@ -7,26 +7,66 @@
     BindingContext="{Binding SponsorListViewModel, Source={StaticResource locator}}"
     Title="{Binding Title}">
 
-    <Grid>
-        <Image
-            Source="{StaticResource detailBackgroundImage}" 
-            Aspect="AspectFill" />
+    <ContentPage.Resources>
+        <DataTemplate x:Key="goldTemplate">
+            <ViewCell>
+                <Grid 
+                    HeightRequest="200"
+                    Margin="5,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
 
-        <ListView 
-          x:Name="listView"
-          ItemsSource="{Binding Items}"
-          HasUnevenRows="True"
-          SelectionMode="None">
-            <ListView.Behaviors>
-                <views:EventToCommandBehavior
-                    EventName="ItemTapped"
-                    Command="{Binding ItemTappedCommand}" />
-            </ListView.Behaviors>
-          
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid Margin="10">
+                    <Frame 
+                        Grid.RowSpan="2"
+                        BackgroundColor="#33000000">
+                        <Grid Margin="5,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image
+                                Source="{Binding ImageUrl}"
+                                BackgroundColor="{Binding BackgroundColor}"
+                                VerticalOptions="Center"
+                                HeightRequest="150"
+                                WidthRequest="150" />
+
+                            <Label
+                                Grid.Column="1"
+                                Margin="5,0"
+                                Text="{Binding Name}"
+                                FontSize="24"
+                                VerticalOptions="CenterAndExpand" />
+                        </Grid>
+                    </Frame>
+
+                    <Image
+                        WidthRequest="100"
+                        HeightRequest="100"
+                        HorizontalOptions="End"
+                        Source="goldBanner.png"
+                        Aspect="AspectFill" />
+                </Grid>
+            </ViewCell>
+        </DataTemplate>
+
+        <DataTemplate x:Key="silverTemplate">
+            <ViewCell>
+                <Grid 
+                    HeightRequest="150"
+                    Margin="5,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Frame 
+                        Grid.RowSpan="2"
+                        BackgroundColor="#33000000">
+                        <Grid Margin="5,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
@@ -43,12 +83,165 @@
                                 Grid.Column="1"
                                 Margin="5,0"
                                 Text="{Binding Name}"
-                                FontSize="Large"
-                                VerticalOptions="Center" />
+                                FontSize="20"
+                                VerticalOptions="CenterAndExpand" />
                         </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+                    </Frame>
+
+                    <Image
+                        WidthRequest="100"
+                        HeightRequest="100"
+                        HorizontalOptions="End"
+                        Source="silverBanner.png"
+                        Aspect="AspectFill" />
+                </Grid>
+            </ViewCell>
+        </DataTemplate>
+
+        <DataTemplate x:Key="bronzeTemplate">
+            <ViewCell>
+                <Grid 
+                    HeightRequest="125"
+                    Margin="5,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Frame 
+                        Grid.RowSpan="2"
+                        BackgroundColor="#33000000">
+                        <Grid Margin="5,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image
+                                Source="{Binding ImageUrl}"
+                                BackgroundColor="{Binding BackgroundColor}"
+                                VerticalOptions="Center"
+                                HeightRequest="80"
+                                WidthRequest="80" />
+
+                            <Label
+                                Grid.Column="1"
+                                Margin="5,0"
+                                Text="{Binding Name}"
+                                FontSize="16"
+                                VerticalOptions="CenterAndExpand" />
+                        </Grid>
+                    </Frame>
+
+                    <Image
+                        WidthRequest="100"
+                        HeightRequest="100"
+                        HorizontalOptions="End"
+                        Source="bronzeBanner.png"
+                        Aspect="AspectFill" />
+                </Grid>
+            </ViewCell>
+        </DataTemplate>
+
+        <DataTemplate x:Key="localTemplate">
+            <ViewCell>
+                <Grid 
+                    HeightRequest="125"
+                    Margin="5,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Frame 
+                        Grid.RowSpan="2"
+                        BackgroundColor="#33000000">
+                        <Grid Margin="5,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image
+                                Source="{Binding ImageUrl}"
+                                BackgroundColor="{Binding BackgroundColor}"
+                                VerticalOptions="Center"
+                                HeightRequest="80"
+                                WidthRequest="80" />
+
+                            <Label
+                                Grid.Column="1"
+                                Margin="5,0"
+                                Text="{Binding Name}"
+                                FontSize="16"
+                                VerticalOptions="CenterAndExpand" />
+                        </Grid>
+                    </Frame>
+
+                    <Image
+                        WidthRequest="100"
+                        HeightRequest="100"
+                        HorizontalOptions="End"
+                        Source="localBanner.png"
+                        Aspect="AspectFill" />
+                </Grid>
+            </ViewCell>
+        </DataTemplate>
+
+        <DataTemplate x:Key="otherTemplate">
+            <ViewCell>
+                <Grid 
+                    HeightRequest="75"
+                    Margin="5,10">
+
+                    <Frame 
+                        BackgroundColor="#33000000">
+                        <Grid Margin="5,0">
+                            <Label
+                                Margin="5,0"
+                                Text="{Binding Name}"
+                                FontSize="16"
+                                VerticalOptions="CenterAndExpand" />
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </ViewCell>
+        </DataTemplate>
+
+        <views:SponsorDataTemplateSelector
+            x:Key="sponsorTemplateSelector"
+            GoldSponsorTemplate="{StaticResource goldTemplate}"
+            SilverSponsorTemplate="{StaticResource silverTemplate}"
+            BronzeSponsorTemplate="{StaticResource bronzeTemplate}"
+            LocalSponsorTemplate="{StaticResource localTemplate}"
+            OtherSponsorTemplate="{StaticResource otherTemplate}" />
+    </ContentPage.Resources>
+
+    <Grid>
+        <Image
+            Source="{StaticResource detailBackgroundImage}" 
+            Aspect="AspectFill" />
+
+        <ListView 
+            ItemsSource="{Binding Items}"
+            HasUnevenRows="True"
+            SelectionMode="None"
+            ItemTemplate="{StaticResource sponsorTemplateSelector}">
+            <ListView.Header>
+                <Grid>
+                    <Label
+                        Margin="5"
+                        Text="Nous vous invitons à encourager nos commanditaires qui font en sorte que nous ayons une fête magique année après année!"
+                        FontSize="24"
+                        HorizontalTextAlignment="Center"
+                        VerticalOptions="CenterAndExpand" />
+                </Grid>
+            </ListView.Header>
+            <ListView.Behaviors>
+                <views:EventToCommandBehavior
+                    EventName="ItemTapped"
+                    Command="{Binding ItemTappedCommand}" />
+            </ListView.Behaviors>
         </ListView>
 
         <Label 
