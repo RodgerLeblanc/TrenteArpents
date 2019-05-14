@@ -46,6 +46,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\MotDeMDoyon.xaml.cs">
+      <DependentUpon>MotDeMDoyon.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>

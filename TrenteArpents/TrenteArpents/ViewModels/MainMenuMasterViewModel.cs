@@ -67,6 +67,12 @@ namespace TrenteArpents.ViewModels
                 },
                 new DetailPageInfo
                 {
+                    Name = "Mot de M. Doyon",
+                    ImageSource = ImageSource.FromFile("message.png"),
+                    PageType = typeof(MotDeMDoyon)
+                },
+                new DetailPageInfo
+                {
                     Name = "À propos",
                     ImageSource = ImageSource.FromFile("about.png"),
                     PageType = typeof(About)

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TrenteArpents.Views.MotDeMDoyon"
+    xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
+    BindingContext="{Binding MotDeMDoyonViewModel, Source={StaticResource locator}}"
+    Title="{Binding Title}">
+
+    <Grid>
+        <Image
+            Source="{StaticResource detailBackgroundImage}" 
+            Aspect="AspectFill" />
+
+        <ScrollView>
+            <StackLayout 
+                Margin="5"
+                HorizontalOptions="FillAndExpand">
+                <Label
+                    Text="{Binding TextTitle}"
+                    FontFamily="{StaticResource boldItalicFont}"
+                    FontSize="{Binding TextTitleFontSize }" 
+                    HorizontalTextAlignment="Center" />
+
+                <Label 
+                    Margin="0,10"
+                    FormattedText="{Binding FormattedText}"
+                    FontSize="{Binding FormattedTextFontSize}"
+                    HorizontalTextAlignment="Center" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

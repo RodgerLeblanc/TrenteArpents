@@ -16,7 +16,7 @@ namespace TrenteArpents.Models
         public Uri ImageUrl { get; set; }
 
         [JsonProperty("sponsorType")]
-        public long SponsorType { get; set; }
+        public SponsorType SponsorType { get; set; } = SponsorType.Other;
 
         [JsonProperty("promoUrl")]
         public Uri PromoUrl { get; set; }
@@ -26,6 +26,15 @@ namespace TrenteArpents.Models
 
         [JsonProperty("isVisible")]
         public bool IsVisible { get; set; } = true;
+    }
+
+    public enum SponsorType
+    {
+        Gold,
+        Silver,
+        Bronze,
+        Local,
+        Other
     }
 }
 
