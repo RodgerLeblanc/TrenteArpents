@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using TrenteArpents.Models;
@@ -61,9 +60,9 @@ namespace TrenteArpents.ViewModels
                 },
                 new DetailPageInfo
                 {
-                    Name = "Multimédia",
+                    Name = "Photos",
                     ImageSource = ImageSource.FromFile("photos.png"),
-                    PageType = typeof(Multimedia)
+                    PageType = typeof(Photos)
                 },
                 new DetailPageInfo
                 {

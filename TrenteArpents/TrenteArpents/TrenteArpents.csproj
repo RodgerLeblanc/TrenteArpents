@@ -57,8 +57,8 @@
     <Compile Update="Views\Social.xaml.cs">
       <DependentUpon>Social.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Multimedia.xaml.cs">
-      <DependentUpon>Multimedia.xaml</DependentUpon>
+    <Compile Update="Views\Photos.xaml.cs">
+      <DependentUpon>Photos.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\ScheduleList.xaml.cs">
       <DependentUpon>ScheduleList.xaml</DependentUpon>
@@ -75,7 +75,7 @@
     <EmbeddedResource Update="Views\Social.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Multimedia.xaml">
+    <EmbeddedResource Update="Views\Photos.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ScheduleList.xaml">
