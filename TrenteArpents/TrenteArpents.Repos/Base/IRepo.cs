@@ -14,5 +14,6 @@ namespace TrenteArpents.Repos
         Task<TModel> GetAsync(int id);
         Task<IEnumerable<TModel>> GetAsync(Func<TModel, bool> predicate);
         Task<IEnumerable<TModel>> GetAsync();
+        Task<TResponse> PostAsync<TResponse>(TModel model) where TResponse : new();
     }
 }

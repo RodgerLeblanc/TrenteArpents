@@ -6,7 +6,7 @@ namespace TrenteArpents.Models
     public class Album : IModel
     {
         [JsonProperty("id")]
-        public int Id { get; }
+        public int Id { get; set; }
 
         [JsonProperty("title")]
         public string Title { get; set; }

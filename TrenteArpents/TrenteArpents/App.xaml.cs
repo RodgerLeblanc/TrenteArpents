@@ -34,16 +34,19 @@ namespace TrenteArpents
             var cachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
 #endif
 
-            DependencyInjection.Register<IGitHubConfiguration, GitHubConfiguration>();
+            DependencyInjection.Register<AzureConfiguration>();
+            DependencyInjection.Register<GitHubConfiguration>();
             DependencyInjection.Register<IRestClient>(() => new RestClient() { CachePolicy = cachePolicy });
 
             DependencyInjection.Register<IRepo<Activity>, ActivityRepo>();
             DependencyInjection.Register<IRepo<Album>, AlbumRepo>();
+            DependencyInjection.Register<IRepo<Email>, EmailRepo>();
             DependencyInjection.Register<IRepo<Sponsor>, SponsorRepo>();
 
             DependencyInjection.RegisterSingleton(() => GetNavigationService());
             DependencyInjection.Register<AboutViewModel>();
             DependencyInjection.Register<AlbumListViewModel>();
+            DependencyInjection.Register<ContactUsViewModel>();
             DependencyInjection.Register<MainMenuMasterViewModel>();
             DependencyInjection.Register<MotDeMDoyonViewModel>();
             DependencyInjection.Register<ScheduleListViewModel>();
@@ -58,6 +61,7 @@ namespace TrenteArpents
             var navigationService = new NavigationService();
 
             navigationService.Configure(ViewModelLocator.AboutPageKey, typeof(About));
+            navigationService.Configure(ViewModelLocator.ContactUsPageKey, typeof(ContactUs));
             navigationService.Configure(ViewModelLocator.GenericWebPageKey, typeof(GenericWebPage));
             navigationService.Configure(ViewModelLocator.MainMenuPageKey, typeof(MainMenuMaster));
             navigationService.Configure(ViewModelLocator.MotDeMDoyonPageKey, typeof(MotDeMDoyon));

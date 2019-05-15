@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TrenteArpents.Views.ContactUs"
+    xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
+    BindingContext="{Binding ContactUsViewModel, Source={StaticResource locator}}"
+    Title="{Binding Title}">
+
+    <Grid>
+        <Image
+            Source="{StaticResource detailBackgroundImage}" 
+            Aspect="AspectFill" />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <Label 
+                Margin="0,15,0,0"
+                Text="Votre courriel :" />
+            
+            <Entry 
+                Grid.Column="1"
+                Text="{Binding From}"
+                Keyboard="Email" />
+
+            <Label 
+                Grid.Row="1"
+                Margin="0,15,0,0"
+                Text="Sujet :" />
+
+            <Entry 
+                Grid.Row="1"
+                Grid.Column="1"
+                Text="{Binding Subject}" />
+
+            <Label 
+                Grid.Row="2"
+                Margin="0,15,0,0"
+                Text="Message :" />
+
+            <Editor 
+                Grid.Row="2"
+                Grid.Column="1"
+                Text="{Binding Body}" />
+
+            <Button
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
+                Text="ENVOYER"
+                Command="{Binding SendCommand}" />
+        </Grid>
+    </Grid>
+</ContentPage>

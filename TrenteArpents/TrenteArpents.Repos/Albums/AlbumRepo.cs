@@ -5,7 +5,7 @@ namespace TrenteArpents.Repos
 {
     public class AlbumRepo : BaseGitHubRepo<Album>
     {
-        public AlbumRepo(IRestClient client, IGitHubConfiguration configuration) : base(client, configuration)
+        public AlbumRepo(IRestClient client, GitHubConfiguration configuration) : base(client, configuration)
         {
         }
 

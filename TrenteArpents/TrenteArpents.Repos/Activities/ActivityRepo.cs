@@ -5,7 +5,7 @@ namespace TrenteArpents.Repos
 {
     public class ActivityRepo : BaseGitHubRepo<Activity>
     {
-        public ActivityRepo(IRestClient client, IGitHubConfiguration configuration) : base(client, configuration)
+        public ActivityRepo(IRestClient client, GitHubConfiguration configuration) : base(client, configuration)
         {
         }
 
