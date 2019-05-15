@@ -72,15 +72,19 @@
                 <Setter Property="Color" Value="White" />
             </Style>
 
-            <Style TargetType="Frame">
+            <Style TargetType="Frame" x:Key="frameStyle">
                 <Setter Property="BorderColor" Value="White" />
                 <Setter Property="IsClippedToBounds" Value="True" />
                 <Setter Property="Padding" Value="1" />
             </Style>
 
-            <Style TargetType="Image">
+            <Style TargetType="Frame" BasedOn="{StaticResource frameStyle}" />
+
+            <Style TargetType="Image" x:Key="imageStyle">
                 <Setter Property="Aspect" Value="AspectFit" />
             </Style>
+            
+            <Style TargetType="Image" BasedOn="{StaticResource imageStyle}" />
 
             <Style TargetType="ActivityIndicator">
                 <Setter Property="Color" Value="{StaticResource primaryColor}" />

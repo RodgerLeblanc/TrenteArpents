@@ -1,13 +1,12 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Drawing;
 
 namespace TrenteArpents.Models
 {
     public partial class Sponsor : IModel
     {
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public int Id { get; }
 
         [JsonProperty("name")]
         public string Name { get; set; }

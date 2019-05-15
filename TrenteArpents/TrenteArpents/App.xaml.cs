@@ -38,15 +38,14 @@ namespace TrenteArpents
             DependencyInjection.Register<IRestClient>(() => new RestClient() { CachePolicy = cachePolicy });
 
             DependencyInjection.Register<IRepo<Activity>, ActivityRepo>();
-            DependencyInjection.Register<IRepo<Photo>, PhotoRepo>();
+            DependencyInjection.Register<IRepo<Album>, AlbumRepo>();
             DependencyInjection.Register<IRepo<Sponsor>, SponsorRepo>();
 
             DependencyInjection.RegisterSingleton(() => GetNavigationService());
             DependencyInjection.Register<AboutViewModel>();
+            DependencyInjection.Register<AlbumListViewModel>();
             DependencyInjection.Register<MainMenuMasterViewModel>();
             DependencyInjection.Register<MotDeMDoyonViewModel>();
-            DependencyInjection.Register<MultimediaViewModel>();
-            DependencyInjection.Register<PhotoListViewModel>();
             DependencyInjection.Register<ScheduleListViewModel>();
             DependencyInjection.Register<SocialViewModel>();
             DependencyInjection.Register<SponsorListViewModel>();
@@ -62,7 +61,7 @@ namespace TrenteArpents
             navigationService.Configure(ViewModelLocator.GenericWebPageKey, typeof(GenericWebPage));
             navigationService.Configure(ViewModelLocator.MainMenuPageKey, typeof(MainMenuMaster));
             navigationService.Configure(ViewModelLocator.MotDeMDoyonPageKey, typeof(MotDeMDoyon));
-            navigationService.Configure(ViewModelLocator.MultiMediaPageKey, typeof(Multimedia));
+            navigationService.Configure(ViewModelLocator.PhotoListPageKey, typeof(Photos));
             navigationService.Configure(ViewModelLocator.ScheduleListPageKey, typeof(ScheduleList));
             navigationService.Configure(ViewModelLocator.SocialPageKey, typeof(Social));
             navigationService.Configure(ViewModelLocator.SponsorListKey, typeof(SponsorList));

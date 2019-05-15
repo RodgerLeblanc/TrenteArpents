@@ -1,12 +1,12 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace TrenteArpents.Models
 {
     public class Activity : IModel
     {
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public int Id { get; }
 
         [JsonProperty("name")]
         public string Name { get; set; }
