@@ -107,6 +107,11 @@ namespace TrenteArpents.ViewModels
                 };
 
                 Navigation.NavigateTo(ViewModelLocator.GenericWebPageKey, viewModel);
+
+                if (App.Current.MainPage is MasterDetailPage masterDetail)
+                {
+                    masterDetail.IsPresented = false;
+                }
             }
         }
 
