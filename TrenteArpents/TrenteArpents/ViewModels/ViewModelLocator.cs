@@ -16,6 +16,7 @@ namespace TrenteArpents.ViewModels
     public class ViewModelLocator
     {
         public const string AboutPageKey = nameof(AboutPageKey);
+        public const string ContactUsPageKey = nameof(ContactUsPageKey);
         public const string GenericWebPageKey = nameof(GenericWebPageKey);
         public const string MainMenuPageKey = nameof(MainMenuPageKey);
         public const string MotDeMDoyonPageKey = nameof(MotDeMDoyonPageKey);
@@ -26,6 +27,7 @@ namespace TrenteArpents.ViewModels
 
         public AboutViewModel AboutViewModel { get => DependencyInjection.Get<AboutViewModel>(); }
         public AlbumListViewModel AlbumListViewModel { get => DependencyInjection.Get<AlbumListViewModel>(); }
+        public ContactUsViewModel ContactUsViewModel { get => DependencyInjection.Get<ContactUsViewModel>(); }
         public MainMenuMasterViewModel MainMenuMasterViewModel { get => DependencyInjection.Get<MainMenuMasterViewModel>(); }
         public MotDeMDoyonViewModel MotDeMDoyonViewModel { get => DependencyInjection.Get<MotDeMDoyonViewModel>(); }
         public ScheduleListViewModel ScheduleListViewModel { get => DependencyInjection.Get<ScheduleListViewModel>(); }

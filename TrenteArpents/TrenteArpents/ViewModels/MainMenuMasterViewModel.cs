@@ -76,6 +76,12 @@ namespace TrenteArpents.ViewModels
                     ImageSource = ImageSource.FromFile("about.png"),
                     PageType = typeof(About)
                 },
+                new DetailPageInfo
+                {
+                    Name = "Contactez-nous",
+                    ImageSource = ImageSource.FromFile("email.png"),
+                    PageType = typeof(ContactUs)
+                },
             };
         }
 
