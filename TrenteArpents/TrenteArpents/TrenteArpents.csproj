@@ -41,6 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CellNinja.Controls\CellNinja.Controls.csproj" />
     <ProjectReference Include="..\TrenteArpents.Models\TrenteArpents.Models.csproj" />
     <ProjectReference Include="..\TrenteArpents.Repos\TrenteArpents.Repos.csproj" />
   </ItemGroup>
@@ -65,6 +66,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Views\Components\MasterMenuEntry.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\GenericWebPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Social.xaml">
