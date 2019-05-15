@@ -100,7 +100,13 @@ namespace TrenteArpents.ViewModels
             Sponsor sponsor = GetSponsorAtIndex(index);
             if (sponsor != null && sponsor.PromoUrl != null)
             {
-                Device.OpenUri(sponsor.PromoUrl);
+                GenericWebPageViewModel viewModel = new GenericWebPageViewModel
+                {
+                    Title = sponsor.Name,
+                    Source = sponsor.PromoUrl
+                };
+
+                Navigation.NavigateTo(ViewModelLocator.GenericWebPageKey, viewModel);
             }
         }
 
