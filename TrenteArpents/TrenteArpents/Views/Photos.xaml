@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
+    x:Class="TrenteArpents.Views.Photos"
+    BindingContext="{Binding AlbumListViewModel, Source={StaticResource locator}}"
+    Title="{Binding Title}">
+
+    <Grid>
+        <Image
+            Source="{StaticResource detailBackgroundImage}" 
+            Aspect="AspectFill" />
+
+        <ScrollView>
+            <StackLayout 
+                x:Name="stackLayout"
+                BindableLayout.ItemsSource="{Binding Items}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Frame 
+                            Margin="5,10"
+                            BackgroundColor="#33000000">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    Command="{Binding BindingContext.OpenPhotoBrowserCommand, Source={Reference stackLayout}}"
+                                    CommandParameter="{Binding}" />
+                            </Frame.GestureRecognizers>
+                            
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="170" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.Resources>
+                                    <Style TargetType="Image" BasedOn="{StaticResource imageStyle}">
+                                        <Setter Property="Aspect" Value="AspectFill" />
+                                        <Setter Property="WidthRequest" Value="120" />
+                                        <Setter Property="HeightRequest" Value="120" />
+                                    </Style>
+                                    
+                                    <Style TargetType="Frame" BasedOn="{StaticResource frameStyle}">
+                                        <Setter Property="BorderColor" Value="Black" />
+                                        <Setter Property="HorizontalOptions" Value="Center" />
+                                        <Setter Property="VerticalOptions" Value="Center" />
+                                    </Style>
+                                </Grid.Resources>
+
+                                <Label
+                                    Margin="5,0"
+                                    Text="{Binding Title}"
+                                    FontSize="24"
+                                    VerticalOptions="CenterAndExpand" />
+
+                                <Frame
+                                    Grid.Row="1"
+                                    Rotation="-20" 
+                                    TranslationX="-30">
+                                    <Image Source="{Binding Photos[0].ImageUrl}" />
+                                </Frame>
+
+                                <Frame
+                                    Grid.Row="1"
+                                    Rotation="-5" 
+                                    TranslationX="0">
+                                    <Image Source="{Binding Photos[1].ImageUrl}" />
+                                </Frame>
+
+                                <Frame
+                                    Grid.Row="1"
+                                    Rotation="10" 
+                                    TranslationX="30">
+                                    <Image Source="{Binding Photos[2].ImageUrl}" />
+                                </Frame>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

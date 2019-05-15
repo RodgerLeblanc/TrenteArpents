@@ -1,63 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage 
+<cnc:CNWebViewPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:cnc="clr-namespace:CellNinja.Controls;assembly=CellNinja.Controls"
     x:Class="TrenteArpents.Views.Social"
     BindingContext="{Binding SocialViewModel, Source={StaticResource locator}}"
-    Title="{Binding Title}">
-
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-
-        <Image
-            Grid.RowSpan="2"
-            Source="{StaticResource detailBackgroundImage}" 
-            Aspect="AspectFill" />
-
-        <Frame
-            BackgroundColor="#88000000"
-            HorizontalOptions="Center"
-            VerticalOptions="Center">
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding OpenFacebookCommand}" />
-            </Frame.GestureRecognizers>
-
-            <StackLayout Margin="10">
-                <Label
-                    Text="Rejoignez-nous sur"
-                    HorizontalOptions="Center" />
-
-                <Image
-                    Source="facebook.png"
-                    HorizontalOptions="Center"
-                    HeightRequest="60"
-                    WidthRequest="60" />
-            </StackLayout>
-        </Frame>
-
-        <Frame
-            Grid.Row="1"
-            BackgroundColor="#88000000"
-            HorizontalOptions="Center"
-            VerticalOptions="Center">
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding OpenEmailCommand}" />
-            </Frame.GestureRecognizers>
-
-            <StackLayout Margin="10">
-                <Label
-                    Text="Rejoignez-nous par courriel"
-                    HorizontalOptions="Center" />
-
-                <Image
-                    Source="email.png"
-                    HorizontalOptions="Center"
-                    HeightRequest="60"
-                    WidthRequest="60" />
-            </StackLayout>
-        </Frame>
-    </Grid>
-</ContentPage>
+    Title="{Binding Title}"
+    Source="{Binding FacebookUrl}">
+</cnc:CNWebViewPage>

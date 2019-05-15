@@ -1,7 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Views;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -26,12 +25,37 @@ namespace TrenteArpents.Services
             }
 
             var page = (Page)Activator.CreateInstance(pageTypeMapper[pageKey]);
-            Task unawaitedTask = Application.Current.MainPage.Navigation.PushAsync(page);
+            Task unawaitedTask = PushAsync(page);
         }
 
         public void NavigateTo(string pageKey, object parameter)
         {
-            throw new NotImplementedException();
+            if (!pageTypeMapper.ContainsKey(pageKey))
+            {
+                throw new KeyNotFoundException($"The key {pageKey} was not found.");
+            }
+
+            var page = (Page)Activator.CreateInstance(pageTypeMapper[pageKey], parameter);
+            Task unawaitedTask = PushAsync(page);
+        }
+
+        private Task PushAsync(Page page)
+        {
+            INavigation navigation = GetNavigation(Application.Current.MainPage);
+            return navigation.PushAsync(page);
+        }
+
+        private INavigation GetNavigation(Page mainPage)
+        {
+            switch (mainPage)
+            {
+                case MasterDetailPage masterDetail:
+                    return masterDetail.Detail.Navigation;
+                case NavigationPage navigationPage:
+                    return navigationPage.Navigation;
+                default:
+                    return Application.Current.MainPage.Navigation;
+            }
         }
 
         public void Configure(string key, Type pageType)

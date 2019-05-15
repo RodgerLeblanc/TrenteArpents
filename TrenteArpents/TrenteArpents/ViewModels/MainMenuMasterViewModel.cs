@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using TrenteArpents.Models;
@@ -61,9 +60,9 @@ namespace TrenteArpents.ViewModels
                 },
                 new DetailPageInfo
                 {
-                    Name = "Multimédia",
+                    Name = "Photos",
                     ImageSource = ImageSource.FromFile("photos.png"),
-                    PageType = typeof(Multimedia)
+                    PageType = typeof(Photos)
                 },
                 new DetailPageInfo
                 {
@@ -76,6 +75,12 @@ namespace TrenteArpents.ViewModels
                     Name = "À propos",
                     ImageSource = ImageSource.FromFile("about.png"),
                     PageType = typeof(About)
+                },
+                new DetailPageInfo
+                {
+                    Name = "Contactez-nous",
+                    ImageSource = ImageSource.FromFile("email.png"),
+                    PageType = typeof(ContactUs)
                 },
             };
         }
@@ -95,7 +100,18 @@ namespace TrenteArpents.ViewModels
             Sponsor sponsor = GetSponsorAtIndex(index);
             if (sponsor != null && sponsor.PromoUrl != null)
             {
-                Device.OpenUri(sponsor.PromoUrl);
+                GenericWebPageViewModel viewModel = new GenericWebPageViewModel
+                {
+                    Title = sponsor.Name,
+                    Source = sponsor.PromoUrl
+                };
+
+                Navigation.NavigateTo(ViewModelLocator.GenericWebPageKey, viewModel);
+
+                if (App.Current.MainPage is MasterDetailPage masterDetail)
+                {
+                    masterDetail.IsPresented = false;
+                }
             }
         }
 

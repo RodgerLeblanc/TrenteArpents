@@ -1,18 +1,15 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using TrenteArpents.Views;
+﻿using GalaSoft.MvvmLight.Views;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
-using SimpleInjector;
 using RestSharp;
+using System.Net.Cache;
 using TrenteArpents.Models;
 using TrenteArpents.Repos;
-using TrenteArpents.ViewModels;
-using GalaSoft.MvvmLight.Views;
 using TrenteArpents.Services;
-using System.Net.Cache;
+using TrenteArpents.ViewModels;
+using TrenteArpents.Views;
+using Xamarin.Forms;
 
 namespace TrenteArpents
 {
@@ -37,19 +34,22 @@ namespace TrenteArpents
             var cachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
 #endif
 
-            DependencyInjection.Register<IGitHubConfiguration, GitHubConfiguration>();
+            DependencyInjection.Register<AzureConfiguration>();
+            DependencyInjection.Register<GitHubConfiguration>();
             DependencyInjection.Register<IRestClient>(() => new RestClient() { CachePolicy = cachePolicy });
 
             DependencyInjection.Register<IRepo<Activity>, ActivityRepo>();
-            DependencyInjection.Register<IRepo<Photo>, PhotoRepo>();
+            DependencyInjection.Register<IRepo<Album>, AlbumRepo>();
+            DependencyInjection.Register<IRepo<Email>, EmailRepo>();
             DependencyInjection.Register<IRepo<Sponsor>, SponsorRepo>();
 
+            DependencyInjection.RegisterSingleton<IAlertService, AlertService>();
             DependencyInjection.RegisterSingleton(() => GetNavigationService());
             DependencyInjection.Register<AboutViewModel>();
+            DependencyInjection.Register<AlbumListViewModel>();
+            DependencyInjection.Register<ContactUsViewModel>();
             DependencyInjection.Register<MainMenuMasterViewModel>();
             DependencyInjection.Register<MotDeMDoyonViewModel>();
-            DependencyInjection.Register<MultimediaViewModel>();
-            DependencyInjection.Register<PhotoListViewModel>();
             DependencyInjection.Register<ScheduleListViewModel>();
             DependencyInjection.Register<SocialViewModel>();
             DependencyInjection.Register<SponsorListViewModel>();
@@ -62,8 +62,11 @@ namespace TrenteArpents
             var navigationService = new NavigationService();
 
             navigationService.Configure(ViewModelLocator.AboutPageKey, typeof(About));
+            navigationService.Configure(ViewModelLocator.ContactUsPageKey, typeof(ContactUs));
+            navigationService.Configure(ViewModelLocator.GenericWebPageKey, typeof(GenericWebPage));
             navigationService.Configure(ViewModelLocator.MainMenuPageKey, typeof(MainMenuMaster));
-            navigationService.Configure(ViewModelLocator.MultiMediaPageKey, typeof(Multimedia));
+            navigationService.Configure(ViewModelLocator.MotDeMDoyonPageKey, typeof(MotDeMDoyon));
+            navigationService.Configure(ViewModelLocator.PhotoListPageKey, typeof(Photos));
             navigationService.Configure(ViewModelLocator.ScheduleListPageKey, typeof(ScheduleList));
             navigationService.Configure(ViewModelLocator.SocialPageKey, typeof(Social));
             navigationService.Configure(ViewModelLocator.SponsorListKey, typeof(SponsorList));

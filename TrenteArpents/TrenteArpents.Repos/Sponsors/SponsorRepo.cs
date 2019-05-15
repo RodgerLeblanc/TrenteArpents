@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using RestSharp;
+﻿using RestSharp;
 using TrenteArpents.Models;
 
 namespace TrenteArpents.Repos
 {
     public class SponsorRepo : BaseGitHubRepo<Sponsor>
     {
-        public SponsorRepo(IRestClient client, IGitHubConfiguration configuration) : base(client, configuration)
+        public SponsorRepo(IRestClient client, GitHubConfiguration configuration) : base(client, configuration)
         {
         }
 
