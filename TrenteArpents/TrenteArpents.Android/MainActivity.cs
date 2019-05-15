@@ -1,13 +1,10 @@
-﻿using System;
-
+﻿
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
-using Xamarin.Forms;
+using Android.Runtime;
 using System.Diagnostics;
+using Xamarin.Forms;
 
 namespace TrenteArpents.Droid
 {
@@ -25,6 +22,7 @@ namespace TrenteArpents.Droid
             LockDeviceOrientation();
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            Stormlion.PhotoBrowser.Droid.Platform.Init(this);
 
             Forms.Init(this, savedInstanceState);
 

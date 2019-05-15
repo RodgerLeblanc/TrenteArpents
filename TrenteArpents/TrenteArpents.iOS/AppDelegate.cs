@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Foundation;
 using System.Diagnostics;
-using System.Linq;
-using Foundation;
 using UIKit;
 
 namespace TrenteArpents.iOS
@@ -22,6 +19,8 @@ namespace TrenteArpents.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Stormlion.PhotoBrowser.iOS.Platform.Init();
+
             global::Xamarin.Forms.Forms.Init();
 
             FFImageLoading.FormsHandler.Init(debug: Debugger.IsAttached);
