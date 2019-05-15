@@ -6,6 +6,7 @@
     xmlns:vm="clr-namespace:TrenteArpents.ViewModels"
     xmlns:views="clr-namespace:TrenteArpents.Views"
     xmlns:ctrls="clr-namespace:TrenteArpents.Controls"
+    xmlns:cnc="clr-namespace:CellNinja.Controls;assembly=CellNinja.Controls"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
     x:Class="TrenteArpents.App">
 
@@ -39,18 +40,17 @@
             <x:String x:Key="masterBackgroundImage">fete2018.jpg</x:String>
             <x:String x:Key="detailBackgroundImage">repeatedPattern.png</x:String>
 
-            <Color x:Key="NavigationPrimary">#165973</Color>
+            <Color x:Key="primaryColor">#165973</Color>
 
             <Style TargetType="NavigationPage" ApplyToDerivedTypes="True">
-                <Setter Property="BackgroundColor" Value="{StaticResource NavigationPrimary}" />
-                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource primaryColor}" />
+                <Setter Property="BarBackgroundColor" Value="{StaticResource primaryColor}" />
                 <Setter Property="BarTextColor" Value="White" />
                 <Setter Property="ios:NavigationPage.PrefersLargeTitles" Value="True" />
             </Style>
 
             <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
-                <Setter Property="BackgroundColor" Value="{StaticResource NavigationPrimary}" />
-                <Setter Property="BackgroundImage" Value="{StaticResource detailBackgroundImage}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource primaryColor}" />
                 <Setter Property="views:EventToCommandBehavior.AttachAppearing" Value="True" />
             </Style>
             
@@ -80,6 +80,14 @@
 
             <Style TargetType="Image">
                 <Setter Property="Aspect" Value="AspectFit" />
+            </Style>
+
+            <Style TargetType="ActivityIndicator">
+                <Setter Property="Color" Value="{StaticResource primaryColor}" />
+            </Style>
+
+            <Style TargetType="cnc:CNWebViewPage">
+                <Setter Property="BackgroundColor" Value="LightGray" />
             </Style>
 
         </ResourceDictionary>

@@ -1,18 +1,15 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using TrenteArpents.Views;
+﻿using GalaSoft.MvvmLight.Views;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
-using SimpleInjector;
 using RestSharp;
+using System.Net.Cache;
 using TrenteArpents.Models;
 using TrenteArpents.Repos;
-using TrenteArpents.ViewModels;
-using GalaSoft.MvvmLight.Views;
 using TrenteArpents.Services;
-using System.Net.Cache;
+using TrenteArpents.ViewModels;
+using TrenteArpents.Views;
+using Xamarin.Forms;
 
 namespace TrenteArpents
 {
@@ -62,7 +59,9 @@ namespace TrenteArpents
             var navigationService = new NavigationService();
 
             navigationService.Configure(ViewModelLocator.AboutPageKey, typeof(About));
+            navigationService.Configure(ViewModelLocator.GenericWebPageKey, typeof(GenericWebPage));
             navigationService.Configure(ViewModelLocator.MainMenuPageKey, typeof(MainMenuMaster));
+            navigationService.Configure(ViewModelLocator.MotDeMDoyonPageKey, typeof(MotDeMDoyon));
             navigationService.Configure(ViewModelLocator.MultiMediaPageKey, typeof(Multimedia));
             navigationService.Configure(ViewModelLocator.ScheduleListPageKey, typeof(ScheduleList));
             navigationService.Configure(ViewModelLocator.SocialPageKey, typeof(Social));

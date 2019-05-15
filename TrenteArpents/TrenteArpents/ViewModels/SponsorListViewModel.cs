@@ -1,5 +1,4 @@
 ﻿using GalaSoft.MvvmLight.Views;
-using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using TrenteArpents.Extensions;
@@ -22,18 +21,23 @@ namespace TrenteArpents.ViewModels
 
         private void OnItemTapped(ItemTappedEventArgs eventArgs)
         {
-            Uri uri = GetUriFromItem(eventArgs);
+            Sponsor sponsor = GetSponsor(eventArgs);
 
-            if (uri != null)
+            if (sponsor != null)
             {
-                Device.OpenUri(uri);
+                GenericWebPageViewModel viewModel = new GenericWebPageViewModel
+                {
+                    Title = sponsor.Name,
+                    Source = sponsor.PromoUrl
+                };
+
+                Navigation.NavigateTo(ViewModelLocator.GenericWebPageKey, viewModel);
             }
         }
 
-        private Uri GetUriFromItem(ItemTappedEventArgs eventArgs)
+        private Sponsor GetSponsor(ItemTappedEventArgs eventArgs)
         {
-            Sponsor sponsor = (Sponsor)eventArgs?.Item;
-            return sponsor?.PromoUrl;
+            return (Sponsor)eventArgs?.Item;
         }
 
         public override async Task RefreshAsync()

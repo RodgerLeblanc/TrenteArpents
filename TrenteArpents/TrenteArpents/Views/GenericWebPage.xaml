@@ -3,8 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:cnc="clr-namespace:CellNinja.Controls;assembly=CellNinja.Controls"
-    x:Class="TrenteArpents.Views.Social"
-    BindingContext="{Binding SocialViewModel, Source={StaticResource locator}}"
+    x:Class="TrenteArpents.Views.GenericWebPage"
     Title="{Binding Title}"
-    Source="{Binding FacebookUrl}">
+    Source="{Binding Source}">
 </cnc:CNWebViewPage>

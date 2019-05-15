@@ -16,6 +16,7 @@ namespace TrenteArpents.ViewModels
     public class ViewModelLocator
     {
         public const string AboutPageKey = nameof(AboutPageKey);
+        public const string GenericWebPageKey = nameof(GenericWebPageKey);
         public const string MainMenuPageKey = nameof(MainMenuPageKey);
         public const string MotDeMDoyonPageKey = nameof(MotDeMDoyonPageKey);
         public const string MultiMediaPageKey = nameof(MultiMediaPageKey);
