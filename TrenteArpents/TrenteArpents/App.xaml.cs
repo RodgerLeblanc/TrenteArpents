@@ -43,6 +43,7 @@ namespace TrenteArpents
             DependencyInjection.Register<IRepo<Email>, EmailRepo>();
             DependencyInjection.Register<IRepo<Sponsor>, SponsorRepo>();
 
+            DependencyInjection.RegisterSingleton<IAlertService, AlertService>();
             DependencyInjection.RegisterSingleton(() => GetNavigationService());
             DependencyInjection.Register<AboutViewModel>();
             DependencyInjection.Register<AlbumListViewModel>();
