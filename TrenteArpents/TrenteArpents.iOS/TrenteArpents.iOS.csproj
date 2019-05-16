@@ -79,7 +79,6 @@
     <CodesignExtraArgs />
     <CodesignResourceRules />
     <BuildIpa>true</BuildIpa>
-    <MtouchFastDev>false</MtouchFastDev>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
