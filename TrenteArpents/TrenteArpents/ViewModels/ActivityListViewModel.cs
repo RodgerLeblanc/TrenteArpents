@@ -25,13 +25,8 @@ namespace TrenteArpents.ViewModels
 
             if (activity != null)
             {
-                GenericWebPageViewModel viewModel = new GenericWebPageViewModel
-                {
-                    Title = activity.Name,
-                    //Source = activity.PromoUrl
-                };
-
-                Navigation.NavigateTo(ViewModelLocator.GenericWebPageKey, viewModel);
+                ActivityEditViewModel viewModel = new ActivityEditViewModel(activity);
+                Navigation.NavigateTo(ViewModelLocator.ActivityEditPageKey, viewModel);
             }
         }
 

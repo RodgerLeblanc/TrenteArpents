@@ -627,4 +627,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\localBanner.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\background.png" />
+  </ItemGroup>
 </Project>

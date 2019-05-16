@@ -16,6 +16,7 @@ namespace TrenteArpents.ViewModels
     public class ViewModelLocator
     {
         public const string AboutPageKey = nameof(AboutPageKey);
+        public const string ActivityEditPageKey = nameof(ActivityEditPageKey);
         public const string ActivityListPageKey = nameof(ActivityListPageKey);
         public const string ContactUsPageKey = nameof(ContactUsPageKey);
         public const string GenericWebPageKey = nameof(GenericWebPageKey);
@@ -26,6 +27,7 @@ namespace TrenteArpents.ViewModels
         public const string SponsorListKey = nameof(SponsorListKey);
 
         public AboutViewModel AboutViewModel { get => DependencyInjection.Get<AboutViewModel>(); }
+        public ActivityEditViewModel ActivityEditViewModel { get => DependencyInjection.Get<ActivityEditViewModel>(); }
         public ActivityListViewModel ActivityListViewModel { get => DependencyInjection.Get<ActivityListViewModel>(); }
         public AlbumListViewModel AlbumListViewModel { get => DependencyInjection.Get<AlbumListViewModel>(); }
         public ContactUsViewModel ContactUsViewModel { get => DependencyInjection.Get<ContactUsViewModel>(); }

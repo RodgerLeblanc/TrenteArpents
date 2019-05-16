@@ -46,6 +46,7 @@ namespace TrenteArpents
             DependencyInjection.RegisterSingleton<IAlertService, AlertService>();
             DependencyInjection.RegisterSingleton(() => GetNavigationService());
             DependencyInjection.Register<AboutViewModel>();
+            DependencyInjection.Register<ActivityEditViewModel>();
             DependencyInjection.Register<ActivityListViewModel>();
             DependencyInjection.Register<AlbumListViewModel>();
             DependencyInjection.Register<ContactUsViewModel>();
@@ -62,6 +63,7 @@ namespace TrenteArpents
             var navigationService = new NavigationService();
 
             navigationService.Configure(ViewModelLocator.AboutPageKey, typeof(About));
+            navigationService.Configure(ViewModelLocator.ActivityEditPageKey, typeof(ActivityEdit));
             navigationService.Configure(ViewModelLocator.ActivityListPageKey, typeof(ActivityList));
             navigationService.Configure(ViewModelLocator.ContactUsPageKey, typeof(ContactUs));
             navigationService.Configure(ViewModelLocator.GenericWebPageKey, typeof(GenericWebPage));
