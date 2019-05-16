@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:TrenteArpents.Views"
+    xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
+    xmlns:ctrls="clr-namespace:TrenteArpents.Controls"
+    x:Class="TrenteArpents.Views.ActivityEdit"
+    Title="{Binding Title}">
+
+    <Grid>
+        <Image 
+            Aspect="AspectFill" 
+            Source = "{StaticResource detailBackgroundImage}" />
+
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Image
+                    Aspect="AspectFill"
+                    Source="{Binding ImageUrl}" />
+
+                <Image
+                    Aspect="AspectFill"
+                    Source="blackToTransparentGradient.png" />
+
+                <Label
+                    Text="{Binding Name}"
+                    FontSize="24"
+                    VerticalOptions="End" />
+
+                <StackLayout 
+                    Grid.Row="1"
+                    VerticalOptions="FillAndExpand"
+                    Margin="5">
+                    <Label 
+                        Text="{Binding Time}" 
+                        Margin="0,0,0,20" />
+
+                    <Label 
+                        Text="{Binding Description}" 
+                        FontSize="20"/>
+
+                    <Button 
+                        HorizontalOptions="Center"
+                        VerticalOptions="EndAndExpand"
+                        BackgroundColor="#88808080"
+                        TextColor="White"
+                        Image="share.png" 
+                        Text="Partager" 
+                        Command="{Binding ShareCommand}" />
+                </StackLayout>
+
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

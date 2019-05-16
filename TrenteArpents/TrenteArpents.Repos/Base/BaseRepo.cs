@@ -30,7 +30,15 @@ namespace TrenteArpents.Repos
                 throw new NotSupportedException();
             }
 
-            return (await GetAsync(m => m.Id == id)).FirstOrDefault();
+            try
+            {
+                IEnumerable<TModel> items = await GetAsync(m => m.Id == id);
+                return items.FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                return default;
+            }
         }
 
         public virtual async Task<IEnumerable<TModel>> GetAsync(Func<TModel, bool> predicate)
@@ -40,11 +48,23 @@ namespace TrenteArpents.Repos
                 throw new NotSupportedException();
             }
 
-            var items = await GetAsync();
+            try
+            {
+                var items = await GetAsync();
 
-            return items
-                .Where(predicate)
-                .ToList();
+                if (items == null)
+                {
+                    return Enumerable.Empty<TModel>();
+                }
+
+                return items
+                    .Where(predicate)
+                    .ToList();
+            }
+            catch (Exception)
+            {
+                return Enumerable.Empty<TModel>();
+            }
         }
 
         public virtual async Task<IEnumerable<TModel>> GetAsync()
@@ -54,8 +74,15 @@ namespace TrenteArpents.Repos
                 throw new NotSupportedException();
             }
 
-            var request = new RestRequest(GetResource(), DataFormat.Json);
-            return await RestClient.GetAsync<List<TModel>>(request);
+            try
+            {
+                var request = new RestRequest(GetResource(), DataFormat.Json);
+                return await RestClient.GetAsync<List<TModel>>(request);
+            }
+            catch (Exception)
+            {
+                return Enumerable.Empty<TModel>();
+            }
         }
 
         public virtual async Task<TResponse> PostAsync<TResponse>(TModel model)
@@ -66,8 +93,15 @@ namespace TrenteArpents.Repos
                 throw new NotSupportedException();
             }
 
-            var request = new RestRequest(GetResource(), DataFormat.Json).AddJsonBody(model);
-            return await RestClient.PostAsync<TResponse>(request);
+            try
+            {
+                var request = new RestRequest(GetResource(), DataFormat.Json).AddJsonBody(model);
+                return await RestClient.PostAsync<TResponse>(request);
+            }
+            catch (Exception)
+            {
+                return default;
+            }
         }
 
         private bool IsSupported(Method method)

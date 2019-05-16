@@ -8,7 +8,7 @@ namespace TrenteArpents.Views
         public MainPage()
         {
             InitializeComponent();
-            Detail = new NavigationPage(new ScheduleList());
+            Detail = new NavigationPage(new ActivityList());
         }
     }
 }

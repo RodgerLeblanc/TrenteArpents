@@ -63,12 +63,15 @@
     <Compile Update="Views\Photos.xaml.cs">
       <DependentUpon>Photos.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\ScheduleList.xaml.cs">
-      <DependentUpon>ScheduleList.xaml</DependentUpon>
+    <Compile Update="Views\ActivityList.xaml.cs">
+      <DependentUpon>ActivityList.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\ActivityEdit.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Components\MasterMenuEntry.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -81,7 +84,7 @@
     <EmbeddedResource Update="Views\Photos.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ScheduleList.xaml">
+    <EmbeddedResource Update="Views\ActivityList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Sponsors.xaml">
@@ -94,6 +97,12 @@
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\About.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ActivityEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ActivityList.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="Views\Components\MasterMenuEntry.xaml">

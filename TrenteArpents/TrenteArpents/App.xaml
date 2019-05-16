@@ -38,10 +38,10 @@
             <vm:ViewModelLocator x:Key="locator" />
 
             <x:String x:Key="masterBackgroundImage">fete2018.jpg</x:String>
-            <x:String x:Key="detailBackgroundImage">repeatedPattern.png</x:String>
+            <x:String x:Key="detailBackgroundImage">background.png</x:String>
 
-            <Color x:Key="primaryColor">#165973</Color>
-
+            <Color x:Key="primaryColor">#3E56BC</Color>
+            
             <Style TargetType="NavigationPage" ApplyToDerivedTypes="True">
                 <Setter Property="BackgroundColor" Value="{StaticResource primaryColor}" />
                 <Setter Property="BarBackgroundColor" Value="{StaticResource primaryColor}" />

@@ -44,7 +44,7 @@ namespace TrenteArpents.ViewModels
                 {
                     Name = "Programmation",
                     ImageSource = ImageSource.FromFile("schedule.png"),
-                    PageType = typeof(ScheduleList)
+                    PageType = typeof(ActivityList)
                 },
                 new DetailPageInfo
                 {

@@ -231,6 +231,7 @@
                 <Grid>
                     <Label
                         Margin="5"
+                        IsVisible="{Binding HasItems}"
                         Text="Nous vous invitons à encourager nos commanditaires qui font en sorte que nous ayons une fête magique année après année!"
                         FontSize="24"
                         HorizontalTextAlignment="Center"
