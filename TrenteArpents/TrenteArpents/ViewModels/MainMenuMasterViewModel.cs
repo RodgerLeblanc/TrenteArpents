@@ -48,7 +48,7 @@ namespace TrenteArpents.ViewModels
                 },
                 new DetailPageInfo
                 {
-                    Name = "Commanditaires",
+                    Name = "Partenaires",
                     ImageSource = ImageSource.FromFile("sponsors.png"),
                     PageType = typeof(SponsorList)
                 },
