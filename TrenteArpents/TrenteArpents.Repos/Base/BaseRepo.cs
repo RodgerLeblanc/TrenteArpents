@@ -32,7 +32,7 @@ namespace TrenteArpents.Repos
 
             try
             {
-                return (await GetAsync(m => m.Id == id))?.FirstOrDefault();
+                return (await GetAsync(m => m.Id == id)).FirstOrDefault();
             }
             catch (Exception)
             {
