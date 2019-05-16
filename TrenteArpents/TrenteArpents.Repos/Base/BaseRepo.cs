@@ -32,11 +32,12 @@ namespace TrenteArpents.Repos
 
             try
             {
-                return (await GetAsync(m => m.Id == id))?.FirstOrDefault();
+                IEnumerable<TModel> items = await GetAsync(m => m.Id == id);
+                return items.FirstOrDefault();
             }
             catch (Exception)
             {
-                return default;
+                return default(TModel);
             }
         }
 
@@ -99,7 +100,7 @@ namespace TrenteArpents.Repos
             }
             catch (Exception)
             {
-                return default;
+                return default(TResponse);
             }
         }
 
