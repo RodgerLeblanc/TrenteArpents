@@ -5,8 +5,8 @@
     xmlns:views="clr-namespace:TrenteArpents.Views"
     xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
     xmlns:ctrls="clr-namespace:TrenteArpents.Controls"
-    x:Class="TrenteArpents.Views.ScheduleList"
-    BindingContext="{Binding ScheduleListViewModel, Source={StaticResource locator}}"
+    x:Class="TrenteArpents.Views.ActivityList"
+    BindingContext="{Binding ActivityListViewModel, Source={StaticResource locator}}"
     Title="{Binding Title}">
 
     <Grid>
@@ -21,6 +21,11 @@
             IsVisible="{Binding HasItems}"
             RowHeight="200"
             SelectionMode="None">
+            <ListView.Behaviors>
+                <views:EventToCommandBehavior
+                    EventName="ItemTapped"
+                    Command="{Binding ItemTappedCommand}" />
+            </ListView.Behaviors>
 
             <ListView.ItemTemplate>
                 <DataTemplate>
