@@ -21,11 +21,6 @@
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <AndroidKeyStore>true</AndroidKeyStore>
-    <AndroidSigningKeyStore>C:\Users\roger\Dev\Keystores\CellNinja.jks</AndroidSigningKeyStore>
-    <AndroidSigningStorePass>cevelane104</AndroidSigningStorePass>
-    <AndroidSigningKeyAlias>CellNinja</AndroidSigningKeyAlias>
-    <AndroidSigningKeyPass>cevelane104</AndroidSigningKeyPass>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
