@@ -1,31 +1,88 @@
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using SendGrid.Helpers.Mail;
 using System.IO;
+using System.Net;
+using System.Net.Mail;
 using System.Threading.Tasks;
 
 namespace TrenteArpentsEmail
 {
     public static class SendEmail
     {
+
         [FunctionName(nameof(SendEmail))]
-        public static async Task Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest request,
-            [SendGrid(ApiKey = "SendGridApiKey")] IAsyncCollector<SendGridMessage> messages)
+        public static async Task<IActionResult> Run(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req,
+            ILogger log,
+            ExecutionContext context)
         {
-            string requestBody = await new StreamReader(request.Body).ReadToEndAsync();
+            try
+            {
+                var config = new ConfigurationBuilder()
+                    .SetBasePath(context.FunctionAppDirectory)
+                    .AddJsonFile("local.settings.json", optional: true, reloadOnChange: true)
+                    .AddEnvironmentVariables()
+                    .Build();
 
-            Email email = JsonConvert.DeserializeObject<Email>(requestBody);
+                string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
 
-            var message = new SendGridMessage();
-            message.AddTo("cq30arpents@hotmail.com");
-            message.AddContent("text/html", email.Body);
-            message.SetFrom(new EmailAddress(email.From));
-            message.SetSubject(email.Subject);
+                Email email = JsonConvert.DeserializeObject<Email>(requestBody);
 
-            await messages.AddAsync(message);
+                if (await SendEmailAsync(email, config, log))
+                {
+                    return new OkObjectResult(email);
+                }
+
+                return new BadRequestObjectResult("Unable to send the email.");
+            }
+            catch (System.Exception)
+            {
+                return new BadRequestObjectResult("Unable to get the email informations from the request body.");
+            }
+        }
+
+        private static async Task<bool> SendEmailAsync(Email email, IConfigurationRoot config, ILogger log)
+        {
+            try
+            {
+                using (MailMessage mail = new MailMessage())
+                {
+                    using (SmtpClient smtpServer = new SmtpClient("smtp.gmail.com"))
+                    {
+                        mail.From = new MailAddress(email.From);
+                        mail.To.Add("cq30arpents@hotmail.com");
+                        mail.ReplyToList.Add(new MailAddress(email.From));
+                        mail.Subject = email.Subject;
+                        mail.Body = $"Message de {email.From} à partir de l'application Fête 30 Arpents :" +
+                            $"\n\n" +
+                            $"{email.Body}";
+
+                        smtpServer.Port = 587;
+                        smtpServer.Host = "smtp.gmail.com";
+                        smtpServer.EnableSsl = true;
+                        smtpServer.UseDefaultCredentials = false;
+
+                        var emailUsername = config["EmailUsername"];
+                        var emailPassword = config["EmailPassword"];
+                        smtpServer.Credentials = new NetworkCredential(emailUsername, emailPassword);
+
+                        await smtpServer.SendMailAsync(mail);
+
+                        return true;
+                    }
+                }
+            }
+            catch (System.Exception e)
+            {
+                log.LogInformation(e, $"Error sending email: {e.Message}");
+
+                return false;
+            }
         }
     }
 }
