@@ -12,7 +12,7 @@ namespace TrenteArpents.ViewModels
     {
         public SponsorListViewModel(INavigationService navigationService, IRepo<Sponsor> repo) : base(navigationService, repo)
         {
-            Title = "Commanditaires";
+            Title = "Partenaires";
 
             ItemTappedCommand = new Command<ItemTappedEventArgs>(OnItemTapped);
         }
