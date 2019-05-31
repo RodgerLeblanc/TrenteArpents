@@ -40,7 +40,7 @@ namespace TrenteArpents.ViewModels
             return (Sponsor)eventArgs?.Item;
         }
 
-        public override async Task RefreshAsync()
+        protected override async Task RefreshAsync()
         {
             Items = await Repo.GetAsync(a => a.IsVisible).SetIsBusy(this);
         }

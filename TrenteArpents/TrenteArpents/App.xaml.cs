@@ -4,6 +4,7 @@ using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using RestSharp;
 using System.Net.Cache;
+using TrenteArpents.Helpers;
 using TrenteArpents.Models;
 using TrenteArpents.Repos;
 using TrenteArpents.Services;
@@ -33,6 +34,10 @@ namespace TrenteArpents
 #else
             var cachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
 #endif
+
+            DependencyInjection.RegisterSingleton<IUuidHandler, UuidHandler>();
+
+            DependencyInjection.Register<IHeartService, HeartService>();
 
             DependencyInjection.Register<AzureConfiguration>();
             DependencyInjection.Register<GitHubConfiguration>();
@@ -78,10 +83,12 @@ namespace TrenteArpents
 
         protected override void OnStart()
         {
+#if DEBUG
             AppCenter.Start("ios=0435f9f8-0442-421a-9c28-d6936c1d44c6;" +
                 "uwp=fff63baa-a995-4b7c-be70-d712ff684392;" +
                 "android=7ea164fd-1895-4d6c-9d23-f80b4ca8ef4e;",
                 typeof(Analytics), typeof(Crashes));
+#endif
         }
 
         protected override void OnSleep()

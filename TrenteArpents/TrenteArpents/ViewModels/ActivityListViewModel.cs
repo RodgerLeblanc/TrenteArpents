@@ -1,43 +1,30 @@
 ﻿using GalaSoft.MvvmLight.Views;
+using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using TrenteArpents.Extensions;
+using TrenteArpents.Helpers;
 using TrenteArpents.Models;
 using TrenteArpents.Repos;
-using Xamarin.Forms;
 
 namespace TrenteArpents.ViewModels
 {
-    public class ActivityListViewModel : BaseListViewModel<Activity>
+    public class ActivityListViewModel : BaseListViewModel<Activity, ActivityEditViewModel>
     {
-        public ActivityListViewModel(INavigationService navigationService, IRepo<Activity> repo) : base(navigationService, repo)
+        public ActivityListViewModel(INavigationService navigationService, IRepo<Activity> repo, IHeartService heartService) : base(navigationService, repo)
         {
+            HeartService = heartService;
+
             Title = "Programmation";
-
-            ItemTappedCommand = new Command<ItemTappedEventArgs>(OnItemTapped);
         }
 
-        public ICommand ItemTappedCommand { get; }
+        protected IHeartService HeartService { get; }
 
-        private void OnItemTapped(ItemTappedEventArgs eventArgs)
+        protected override async Task RefreshAsync()
         {
-            Activity activity = GetActivity(eventArgs);
+            var hearts = await HeartService.GetAsync();
 
-            if (activity != null)
-            {
-                ActivityEditViewModel viewModel = new ActivityEditViewModel(activity);
-                Navigation.NavigateTo(ViewModelLocator.ActivityEditPageKey, viewModel);
-            }
-        }
-
-        private Activity GetActivity(ItemTappedEventArgs eventArgs)
-        {
-            return (Activity)eventArgs?.Item;
-        }
-
-        public override async Task RefreshAsync()
-        {
-            Items = await Repo.GetAsync(a => a.IsVisible).SetIsBusy(this);
+            var items = await Repo.GetAsync(a => a.IsVisible).SetIsBusy(this);
+            Items = items.Select(i => new ActivityEditViewModel(i)).ToList();
         }
     }
 }

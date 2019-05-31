@@ -5,6 +5,7 @@
     xmlns:views="clr-namespace:TrenteArpents.Views"
     xmlns:hlp="clr-namespace:TrenteArpents.Helpers"
     xmlns:ctrls="clr-namespace:TrenteArpents.Controls"
+    xmlns:cnc="clr-namespace:CellNinja.Controls;assembly=CellNinja.Controls"
     x:Class="TrenteArpents.Views.ActivityList"
     BindingContext="{Binding ActivityListViewModel, Source={StaticResource locator}}"
     Title="{Binding Title}">
@@ -21,12 +22,6 @@
             IsVisible="{Binding HasItems}"
             RowHeight="200"
             SelectionMode="None">
-            <ListView.Behaviors>
-                <views:EventToCommandBehavior
-                    EventName="ItemTapped"
-                    Command="{Binding ItemTappedCommand}" />
-            </ListView.Behaviors>
-
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -34,6 +29,10 @@
                             x:Name="frame"
                             Margin="5,10"
                             BackgroundColor="Black">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TappedCommand}" />
+                            </Frame.GestureRecognizers>
+                            
                             <Grid Margin="5,0">
                                 <Grid.RowDefinitions>
                                     <RowDefinition />
@@ -67,6 +66,20 @@
                                     FontSize="16"
                                     VerticalOptions="CenterAndExpand" 
                                     HorizontalOptions="End" />
+
+                                <cnc:CNTwoStateImage
+                                    Grid.Column="1"
+                                    IsOn="{Binding IsHearted}"
+                                    OnSource="heartFull.png"
+                                    OffSource="heartEmpty.png"
+                                    VerticalOptions="Start" 
+                                    HorizontalOptions="End" 
+                                    WidthRequest="40"
+                                    HeightRequest="40">
+                                    <cnc:CNTwoStateImage.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ChangeIsHeartedCommand}" />
+                                    </cnc:CNTwoStateImage.GestureRecognizers>
+                                </cnc:CNTwoStateImage>
 
                                 <Label 
                                     Grid.Row="1" 

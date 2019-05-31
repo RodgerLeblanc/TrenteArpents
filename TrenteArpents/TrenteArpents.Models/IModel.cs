@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TrenteArpents.Models
+﻿namespace TrenteArpents.Models
 {
     public interface IModel
     {
