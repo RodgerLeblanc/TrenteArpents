@@ -570,4 +570,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\share.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cellNinja_512.png" />
+  </ItemGroup>
 </Project>

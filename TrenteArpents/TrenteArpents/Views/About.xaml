@@ -8,7 +8,14 @@
     Title="{Binding Title}">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
         <Image
+            Grid.RowSpan="3"
             Source="{StaticResource detailBackgroundImage}" 
             Aspect="AspectFill" />
 
@@ -40,5 +47,32 @@
                 FontSize="10"
                 FontAttributes="Italic" />
         </Grid>
+
+        <BoxView 
+            Grid.Row="1"
+            HeightRequest="1" 
+            Opacity="0.5" 
+            Margin="5,0" 
+            HorizontalOptions="FillAndExpand" />
+
+        <StackLayout 
+            Grid.Row="2"
+            HorizontalOptions="Center"
+            Orientation="Horizontal">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding SendEmailCommand}" />
+            </StackLayout.GestureRecognizers>
+
+            <Label
+                Text="Une création"
+                VerticalOptions="Center" />
+
+            <Image
+                Grid.Column="1"
+                Source="cellNinja_512.png" 
+                VerticalOptions="Center"
+                HeightRequest="100"
+                WidthRequest="100" />
+        </StackLayout>
     </Grid>
 </ContentPage>
