@@ -14,7 +14,7 @@
             Source = "{StaticResource detailBackgroundImage}" />
 
         <ScrollView>
-            <Grid>
+            <Grid Padding="0,0,0,70">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="200" />
                     <RowDefinition Height="Auto" />
@@ -44,18 +44,19 @@
                     <Label 
                         Text="{Binding Description}" 
                         FontSize="20"/>
-
-                    <Button 
-                        HorizontalOptions="Center"
-                        VerticalOptions="EndAndExpand"
-                        BackgroundColor="#88808080"
-                        TextColor="White"
-                        Image="share.png" 
-                        Text="Partager" 
-                        Command="{Binding ShareCommand}" />
                 </StackLayout>
-
             </Grid>
         </ScrollView>
+
+        <Button 
+            Margin="0,0,0,10"
+            HorizontalOptions="Center"
+            VerticalOptions="EndAndExpand"
+            BackgroundColor="#88808080"
+            TextColor="White"
+            Image="share.png" 
+            Text="Partager" 
+            Command="{Binding ShareCommand}" />
+
     </Grid>
 </ContentPage>

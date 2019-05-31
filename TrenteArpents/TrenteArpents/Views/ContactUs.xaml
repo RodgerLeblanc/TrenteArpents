@@ -57,6 +57,11 @@
             <Button
                 Grid.Row="3"
                 Grid.ColumnSpan="2"
+                Padding="3,0"
+                HorizontalOptions="Center"
+                BackgroundColor="#565967"
+                TextColor="White"
+                Image="email.png" 
                 Text="ENVOYER"
                 Command="{Binding SendCommand}" />
 
