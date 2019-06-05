@@ -24,15 +24,6 @@
                     Aspect="AspectFill"
                     Source="{Binding ImageUrl}" />
 
-                <Image
-                    Aspect="AspectFill"
-                    Source="blackToTransparentGradient.png" />
-
-                <Label
-                    Text="{Binding Name}"
-                    FontSize="24"
-                    VerticalOptions="End" />
-
                 <StackLayout 
                     Grid.Row="1"
                     VerticalOptions="FillAndExpand"
