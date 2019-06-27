@@ -328,3 +328,5 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+TrenteArpents/TrenteArpents.Functions/TrenteArpentsHearts/local.settings.json
+TrenteArpents/TrenteArpents.Functions/TrenteArpentsEmail/TrenteArpentsEmail/local.settings.json

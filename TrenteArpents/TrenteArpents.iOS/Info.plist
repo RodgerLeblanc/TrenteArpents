@@ -24,7 +24,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>com.cellninja.TrenteArpents</string>
 	<key>CFBundleVersion</key>
-	<string>1.2.1</string>
+	<string>1.2.3</string>
 	<key>CFBundleName</key>
 	<string>TrenteArpents</string>
 	<key>XSAppIconAssets</key>
@@ -92,9 +92,20 @@
 				<key>NSIncludesSubdomains</key>
 				<true/>
 			</dict>
+			<key>www.aubergelacst-pierre.com</key>
+			<dict>
+				<key>NSExceptionMinimumTLSVersion</key>
+				<string>TLSv1.0</string>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
 		</dict>
 	</dict>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2</string>
+	<string>1.2.3</string>
 </dict>
 </plist>

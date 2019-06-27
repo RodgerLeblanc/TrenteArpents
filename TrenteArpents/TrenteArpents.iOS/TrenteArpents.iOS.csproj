@@ -576,4 +576,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\heartFull.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cellNinja_512.png" />
+  </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="6" android:versionName="1.2" package="com.cellninja.TrenteArpents" android:installLocation="auto" android:largeHeap="true" android:hardwareAccelerated="false">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="9" android:versionName="1.2" package="com.cellninja.TrenteArpents" android:installLocation="auto" android:largeHeap="true" android:hardwareAccelerated="false">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<application android:label="Fête 30 Arpents" android:icon="@mipmap/ic_launcher"></application>

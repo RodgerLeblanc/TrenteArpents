@@ -1,9 +1,8 @@
-﻿using System;
+﻿using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using RestSharp;
 using TrenteArpents.Models;
 using TrenteArpents.Repos;
 
@@ -11,7 +10,7 @@ namespace TrenteArpents.Tests.Repos
 {
     public class SponsorRepoMock : BaseRepo<Sponsor>
     {
-        public SponsorRepoMock(IRestClient client) : base(client)
+        public SponsorRepoMock(IRestClient client, IRepoConfiguration repoConfiguration) : base(client, repoConfiguration)
         {
         }
 
