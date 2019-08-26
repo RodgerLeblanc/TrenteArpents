@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using TrenteArpents.Models;
 
@@ -8,12 +9,14 @@ namespace TrenteArpents.Helpers
     {
         public async Task<IEnumerable<HeartInfo>> GetAsync()
         {
-            throw new System.NotImplementedException();
+            await Task.CompletedTask;
+            return Enumerable.Empty<HeartInfo>();
         }
 
         public async Task<HeartInfo> GetAsync(int activityId)
         {
-            throw new System.NotImplementedException();
+            await Task.CompletedTask;
+            return new HeartInfo();
         }
     }
 }
