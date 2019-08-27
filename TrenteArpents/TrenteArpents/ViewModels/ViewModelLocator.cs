@@ -23,6 +23,7 @@ namespace TrenteArpents.ViewModels
         public const string MainMenuPageKey = nameof(MainMenuPageKey);
         public const string MotDeMDoyonPageKey = nameof(MotDeMDoyonPageKey);
         public const string PhotoListPageKey = nameof(PhotoListPageKey);
+        public const string NewsletterPageKey = nameof(NewsletterPageKey);
         public const string SocialPageKey = nameof(SocialPageKey);
         public const string SponsorListKey = nameof(SponsorListKey);
 
@@ -33,6 +34,7 @@ namespace TrenteArpents.ViewModels
         public ContactUsViewModel ContactUsViewModel { get => DependencyInjection.Get<ContactUsViewModel>(); }
         public MainMenuMasterViewModel MainMenuMasterViewModel { get => DependencyInjection.Get<MainMenuMasterViewModel>(); }
         public MotDeMDoyonViewModel MotDeMDoyonViewModel { get => DependencyInjection.Get<MotDeMDoyonViewModel>(); }
+        public NewsletterViewModel NewsletterViewModel { get => DependencyInjection.Get<NewsletterViewModel>(); }
         public SocialViewModel SocialViewModel { get => DependencyInjection.Get<SocialViewModel>(); }
         public SponsorListViewModel SponsorListViewModel { get => DependencyInjection.Get<SponsorListViewModel>(); }
     }
