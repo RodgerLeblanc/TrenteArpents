@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="TrenteArpents.Views.FlyoutHeader">
+    <!--<Grid BackgroundColor="Black">
+        <Image Aspect="AspectFill" 
+               Source="xamarinstore.jpg" 
+               Opacity="0.6" />
+        <Label Text="Animals" 
+               TextColor="White" 
+               FontAttributes="Bold" 
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center" />
+    </Grid>-->
+    <StackLayout 
+            HorizontalOptions="FillAndExpand" 
+            Padding="10,5" 
+            BackgroundColor="#88000000">
+        <Label
+            x:Name="title"
+            Text="17 AOÛT 2019"
+            FontSize="28" 
+            FontFamily="{StaticResource boldFont}"
+            HorizontalOptions="Center" />
+
+        <Label
+            Text="POINTE-DU-LAC"
+            FontSize="20" 
+            HorizontalOptions="Center" />
+
+        <BoxView 
+            HeightRequest="1" 
+            Opacity="0.5" 
+            Margin="5,0" 
+            HorizontalOptions="FillAndExpand" />
+    </StackLayout>
+</ContentView>

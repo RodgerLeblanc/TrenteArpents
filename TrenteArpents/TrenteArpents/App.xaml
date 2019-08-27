@@ -37,7 +37,7 @@
             
             <vm:ViewModelLocator x:Key="locator" />
 
-            <x:String x:Key="masterBackgroundImage">fete2018.jpg</x:String>
+            <x:String x:Key="masterBackgroundImage">fete2018dark.jpg</x:String>
             <x:String x:Key="detailBackgroundImage">background.png</x:String>
 
             <Color x:Key="primaryColor">#3E56BC</Color>

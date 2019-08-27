@@ -1,11 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<MasterDetailPage
+<Shell
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:TrenteArpents.Views"
+    FlyoutHeaderBehavior="CollapseOnScroll"
+    Shell.FlyoutBackgroundImage="{StaticResource masterBackgroundImage}"
+    Shell.FlyoutBackgroundImageAspect="AspectFill"
+    Shell.TabBarIsVisible="False" 
     x:Class="TrenteArpents.Views.MainPage">
+    
+    <Shell.Resources>
+        <Style x:Key="BaseStyle" TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="Yellow" />
+            <Setter Property="Shell.ForegroundColor" Value="Green" />
+            <Setter Property="Shell.TitleColor" Value="Blue" />
+            <Setter Property="Shell.DisabledColor" Value="Red" />
+            <Setter Property="Shell.UnselectedColor" Value="Orange" />
+        </Style>
 
-    <MasterDetailPage.Master>
+        <Style TargetType="ShellItem" BasedOn="{StaticResource BaseStyle}" />
+        
+        <Style x:Key="DomesticShell" TargetType="Element" BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" Value="#039BE6" />
+        </Style>
+
+        <Style x:Key="ActivityListShell" TargetType="Element" BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" Value="Pink" />
+        </Style>
+
+        <Style x:Key="AboutShell" TargetType="Element" BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" Value="#96d1ff" />
+        </Style>
+    </Shell.Resources>
+
+    <Shell.FlyoutHeader>
+        <views:FlyoutHeader />
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Route="menu"
+                Title="Menu"
+                FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Route="activityList"
+                      Style="{StaticResource ActivityListShell}"
+                      Title="Programmation"
+                      Icon="schedule.png"
+                      ContentTemplate="{DataTemplate views:ActivityList}" />
+        <ShellContent Route="sponsorList"
+                      Style="{StaticResource ActivityListShell}"
+                      Title="Partenaires"
+                      Icon="sponsors.png"
+                      ContentTemplate="{DataTemplate views:SponsorList}" />
+        <ShellContent Route="social"
+                      Style="{StaticResource ActivityListShell}"
+                      Title="Social"
+                      Icon="facebook.png"
+                      ContentTemplate="{DataTemplate views:Social}" />
+    </FlyoutItem>
+
+    <MenuItem Text="À propos"
+              Icon="about.png" 
+              Command="{Binding RandomPageCommand}" />
+
+    <MenuItem Text="Contactez-nous"
+              Icon="email.png" />
+
+    <!--<MasterDetailPage.Master>
         <NavigationPage Title="Menu">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
@@ -16,5 +75,5 @@
                 <views:MainMenuMaster NavigationPage.HasNavigationBar="False" />
             </x:Arguments>
         </NavigationPage>
-    </MasterDetailPage.Master>
-</MasterDetailPage>
+    </MasterDetailPage.Master>-->
+</Shell>

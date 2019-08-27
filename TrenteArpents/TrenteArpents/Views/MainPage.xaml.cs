@@ -1,14 +1,19 @@
-﻿using System;
+﻿using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace TrenteArpents.Views
 {
-    public partial class MainPage : MasterDetailPage
+    public partial class MainPage : Shell
     {
         public MainPage()
         {
             InitializeComponent();
-            Detail = new NavigationPage(new ActivityList());
+
+            RandomPageCommand = new Command(() => { });
+
+            BindingContext = this;
         }
+
+        public ICommand RandomPageCommand { get; set; }
     }
 }
