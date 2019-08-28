@@ -573,4 +573,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\cellNinja_512.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\newsletter.png" />
+  </ItemGroup>
 </Project>

@@ -52,6 +52,7 @@ namespace TrenteArpents
             DependencyInjection.Register<ContactUsViewModel>();
             DependencyInjection.Register<MainMenuMasterViewModel>();
             DependencyInjection.Register<MotDeMDoyonViewModel>();
+            DependencyInjection.Register<NewsletterViewModel>();
             DependencyInjection.Register<SocialViewModel>();
             DependencyInjection.Register<SponsorListViewModel>();
 
@@ -69,6 +70,7 @@ namespace TrenteArpents
             navigationService.Configure(ViewModelLocator.GenericWebPageKey, typeof(GenericWebPage));
             navigationService.Configure(ViewModelLocator.MainMenuPageKey, typeof(MainMenuMaster));
             navigationService.Configure(ViewModelLocator.MotDeMDoyonPageKey, typeof(MotDeMDoyon));
+            navigationService.Configure(ViewModelLocator.NewsletterPageKey, typeof(Newsletter));
             navigationService.Configure(ViewModelLocator.PhotoListPageKey, typeof(Photos));
             navigationService.Configure(ViewModelLocator.SocialPageKey, typeof(Social));
             navigationService.Configure(ViewModelLocator.SponsorListKey, typeof(SponsorList));

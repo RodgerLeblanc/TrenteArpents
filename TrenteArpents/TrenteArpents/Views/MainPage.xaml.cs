@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace TrenteArpents.Views
 {
@@ -8,7 +7,7 @@ namespace TrenteArpents.Views
         public MainPage()
         {
             InitializeComponent();
-            Detail = new NavigationPage(new ActivityList());
+            Detail = new NavigationPage(new Photos());
         }
     }
 }
