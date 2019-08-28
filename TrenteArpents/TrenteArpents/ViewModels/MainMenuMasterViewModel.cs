@@ -72,17 +72,16 @@ namespace TrenteArpents.ViewModels
                 },
                 new DetailPageInfo
                 {
-                    Name = "Infolettre",
-                    ImageSource = ImageSource.FromFile("newsletter.png"),
-                    PageType = typeof(Newsletter)
-                },
-                new DetailPageInfo
-                {
                     Name = "À propos",
                     ImageSource = ImageSource.FromFile("about.png"),
                     PageType = typeof(About)
                 },
-                //https://mailchi.mp/c99dc0abfcc1/30arpents
+                new DetailPageInfo
+                {
+                    Name = "Infolettre",
+                    ImageSource = ImageSource.FromFile("newsletter.png"),
+                    PageType = typeof(Newsletter)
+                },
                 new DetailPageInfo
                 {
                     Name = "Contactez-nous",
