@@ -1,7 +1,10 @@
-﻿using GalaSoft.MvvmLight.Views;
+﻿using Com.OneSignal;
+using Com.OneSignal.Abstractions;
+using GalaSoft.MvvmLight.Views;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Push;
 using RestSharp;
 using System.Net.Cache;
 using TrenteArpents.Models;
@@ -24,6 +27,28 @@ namespace TrenteArpents
         {
             InitializeComponent();
             MainPage = new MainPage();
+
+            //OneSignal.Current
+            //    .StartInit("1aae8ee6-b8ac-4985-bcde-9f24f2e2016c")
+            //    .EndInit();
+            OneSignal.Current
+                .StartInit("1c66c546-2aae-446e-9889-a1740f208fce")
+                .HandleNotificationOpened(HandleNotificationOpened)
+                .HandleNotificationReceived(HandleNotificationReceived)
+                .HandleInAppMessageClicked(HandleInAppMessageClicked)
+                .EndInit();
+        }
+
+        private void HandleInAppMessageClicked(OSInAppMessageAction action)
+        {
+        }
+
+        private void HandleNotificationReceived(OSNotification notification)
+        {
+        }
+
+        private void HandleNotificationOpened(OSNotificationOpenedResult result)
+        {
         }
 
         private static void RegisterIoc()
@@ -80,10 +105,38 @@ namespace TrenteArpents
 
         protected override void OnStart()
         {
+            // This should come before AppCenter.Start() is called
+            // Avoid duplicate event registration:
+            if (!AppCenter.Configured && false)
+            {
+                Push.PushNotificationReceived += (sender, e) =>
+                {
+                    // Add the notification message and title to the message
+                    string summary = $"Push notification received:" +
+                                        $"\n\tNotification title: {e.Title}" +
+                                        $"\n\tMessage: {e.Message}";
+
+                    // If there is custom data associated with the notification,
+                    // print the entries
+                    if (e.CustomData != null)
+                    {
+                        summary += "\n\tCustom data:\n";
+                        foreach (string key in e.CustomData.Keys)
+                        {
+                            summary += $"\t\t{key} : {e.CustomData[key]}\n";
+                        }
+                    }
+
+                    // Send the notification summary to debug output
+                    System.Diagnostics.Debug.WriteLine(summary);
+                };
+            }
+
             AppCenter.Start("ios=0435f9f8-0442-421a-9c28-d6936c1d44c6;" +
                 "uwp=fff63baa-a995-4b7c-be70-d712ff684392;" +
                 "android=7ea164fd-1895-4d6c-9d23-f80b4ca8ef4e;",
                 typeof(Analytics), typeof(Crashes));
+            //typeof(Analytics), typeof(Crashes)), typeof(Push));
         }
 
         protected override void OnSleep()
