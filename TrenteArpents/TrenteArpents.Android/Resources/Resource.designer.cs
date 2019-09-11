@@ -10672,9 +10672,6 @@ namespace TrenteArpents.Droid
 			// aapt resource value: 0x7f0b0011
 			public const int common_signin_button_text_long = 2131427345;
 			
-			// aapt resource value: 0x7f0b0064
-			public const int default_web_client_id = 2131427428;
-			
 			// aapt resource value: 0x7f0b0057
 			public const int fab_transformation_scrim_behavior = 2131427415;
 			
@@ -10683,24 +10680,6 @@ namespace TrenteArpents.Droid
 			
 			// aapt resource value: 0x7f0b0012
 			public const int fcm_fallback_notification_channel_label = 2131427346;
-			
-			// aapt resource value: 0x7f0b0065
-			public const int firebase_database_url = 2131427429;
-			
-			// aapt resource value: 0x7f0b0062
-			public const int gcm_defaultSenderId = 2131427426;
-			
-			// aapt resource value: 0x7f0b0066
-			public const int google_api_key = 2131427430;
-			
-			// aapt resource value: 0x7f0b0063
-			public const int google_app_id = 2131427427;
-			
-			// aapt resource value: 0x7f0b0067
-			public const int google_crash_reporting_api_key = 2131427431;
-			
-			// aapt resource value: 0x7f0b0068
-			public const int google_storage_bucket = 2131427432;
 			
 			// aapt resource value: 0x7f0b0059
 			public const int hide_bottom_view_on_scroll_behavior = 2131427417;
@@ -10797,9 +10776,6 @@ namespace TrenteArpents.Droid
 			
 			// aapt resource value: 0x7f0b005f
 			public const int path_password_strike_through = 2131427423;
-			
-			// aapt resource value: 0x7f0b0069
-			public const int project_id = 2131427433;
 			
 			// aapt resource value: 0x7f0b0046
 			public const int search_menu_title = 2131427398;

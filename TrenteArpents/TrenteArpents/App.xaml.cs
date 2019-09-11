@@ -28,14 +28,14 @@ namespace TrenteArpents
             InitializeComponent();
             MainPage = new MainPage();
 
-            //OneSignal.Current
-            //    .StartInit("1aae8ee6-b8ac-4985-bcde-9f24f2e2016c")
-            //    .EndInit();
+            OneSignal.Current.RegisterForPushNotifications();
+
             OneSignal.Current
                 .StartInit("1c66c546-2aae-446e-9889-a1740f208fce")
                 .HandleNotificationOpened(HandleNotificationOpened)
                 .HandleNotificationReceived(HandleNotificationReceived)
                 .HandleInAppMessageClicked(HandleInAppMessageClicked)
+                .UnsubscribeWhenNotificationsAreDisabled(true)
                 .EndInit();
         }
 

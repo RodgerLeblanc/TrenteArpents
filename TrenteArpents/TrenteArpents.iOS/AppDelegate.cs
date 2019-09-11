@@ -3,6 +3,7 @@ using Microsoft.AppCenter.Push;
 using System;
 using System.Diagnostics;
 using UIKit;
+using UserNotifications;
 
 namespace TrenteArpents.iOS
 {
@@ -29,10 +30,10 @@ namespace TrenteArpents.iOS
 
             LoadApplication(new App());
 
-            //if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
-            //{
-            //    UNUserNotificationCenter.Current.Delegate = new CustomUNUserNotificationCenterDelegate();
-            //}
+            if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
+            {
+                UNUserNotificationCenter.Current.Delegate = new CustomUNUserNotificationCenterDelegate();
+            }
 
             return base.FinishedLaunching(app, options);
         }
@@ -48,6 +49,10 @@ namespace TrenteArpents.iOS
             {
                 completionHandler(UIBackgroundFetchResult.NoData);
             }
+        }
+
+        public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
+        {
         }
     }
 }
