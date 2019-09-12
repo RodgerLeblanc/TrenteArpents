@@ -2,10 +2,6 @@
 using Moq;
 using RestSharp;
 using SimpleInjector;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using TrenteArpents.Models;
 using TrenteArpents.Repos;
@@ -57,6 +53,7 @@ namespace TrenteArpents.Tests.Repos
             container = new Container();
 
             container.Register(() => new Mock<IRestClient>().Object);
+            container.Register<IRepoConfiguration, GitHubConfiguration>();
             container.Register<IRepo<Activity>, ActivityRepoMock>();
 
             container.Verify();

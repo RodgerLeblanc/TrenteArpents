@@ -1,9 +1,13 @@
-﻿using GalaSoft.MvvmLight.Views;
-using Microsoft.AppCenter;
+﻿using Com.OneSignal;
+using Com.OneSignal.Abstractions;
+using GalaSoft.MvvmLight.Views;
+#if !DEBUG
 using Microsoft.AppCenter.Analytics;
-using Microsoft.AppCenter.Crashes;
+#endif
 using RestSharp;
+using System.Collections.Generic;
 using System.Net.Cache;
+using TrenteArpents.AppCenterHandlers;
 using TrenteArpents.Models;
 using TrenteArpents.Repos;
 using TrenteArpents.Services;
@@ -15,6 +19,8 @@ namespace TrenteArpents
 {
     public partial class App : Application
     {
+        private IAppCenterHandler _appCenterHandler;
+
         static App()
         {
             RegisterIoc();
@@ -22,16 +28,47 @@ namespace TrenteArpents
 
         public App()
         {
+            _appCenterHandler = DependencyInjection.Get<IAppCenterHandler>();
+
             InitializeComponent();
+
             MainPage = new MainPage();
+
+            OneSignal.Current
+                .StartInit("1c66c546-2aae-446e-9889-a1740f208fce")
+                .HandleNotificationReceived(OnNotificationReceived)
+                .HandleNotificationOpened(OnNotificationOpened)
+                .HandleInAppMessageClicked(OnInAppMessageClicked)
+                .UnsubscribeWhenNotificationsAreDisabled(true)
+                .Settings(new Dictionary<string, bool>() {
+                    { IOSSettings.kOSSettingsKeyAutoPrompt, true },
+                    { IOSSettings.kOSSettingsKeyInAppLaunchURL, true } })
+                .EndInit();
+        }
+
+        private void OnNotificationReceived(OSNotification notification)
+        {
+            _appCenterHandler.OnNotificationReceived(notification);
+        }
+
+        private void OnNotificationOpened(OSNotificationOpenedResult result)
+        {
+            _appCenterHandler.OnNotificationOpened(result);
+        }
+
+        private void OnInAppMessageClicked(OSInAppMessageAction action)
+        {
+            _appCenterHandler.OnInAppMessageClicked(action);
         }
 
         private static void RegisterIoc()
         {
 #if DEBUG
             var cachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
+            DependencyInjection.Register<IAppCenterHandler, AppCenterDebugHandler>();
 #else
             var cachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
+            DependencyInjection.Register<IAppCenterHandler, AppCenterHandler>();
 #endif
 
             DependencyInjection.Register<AzureConfiguration>();
@@ -80,10 +117,7 @@ namespace TrenteArpents
 
         protected override void OnStart()
         {
-            AppCenter.Start("ios=0435f9f8-0442-421a-9c28-d6936c1d44c6;" +
-                "uwp=fff63baa-a995-4b7c-be70-d712ff684392;" +
-                "android=7ea164fd-1895-4d6c-9d23-f80b4ca8ef4e;",
-                typeof(Analytics), typeof(Crashes));
+            _appCenterHandler.Start();
         }
 
         protected override void OnSleep()

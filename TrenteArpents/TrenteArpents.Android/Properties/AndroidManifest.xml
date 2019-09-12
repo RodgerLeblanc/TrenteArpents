@@ -2,5 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="9" android:versionName="1.2" package="com.cellninja.TrenteArpents" android:installLocation="auto" android:largeHeap="true" android:hardwareAccelerated="false">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="Fête 30 Arpents" android:icon="@mipmap/ic_launcher"></application>
+	<permission android:name="com.cellninja.TrenteArpents.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+	<uses-permission android:name="com.cellninja.TrenteArpents.permission.C2D_MESSAGE" />
+	<application android:label="Fête 30 Arpents" android:icon="@mipmap/ic_launcher">
+		<receiver android:name="com.onesignal.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+				<category android:name="com.cellninja.TrenteArpents" />
+			</intent-filter>
+		</receiver>
+	</application>
 </manifest>

@@ -107,5 +107,11 @@
 	</dict>
 	<key>CFBundleShortVersionString</key>
 	<string>1.2.3</string>
+	<key>AppCenterUserNotificationCenterDelegateForwarderEnabled</key>
+	<integer>0</integer>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 </dict>
 </plist>
