@@ -26,131 +26,6 @@ namespace TrenteArpents.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.font = global::TrenteArpents.Droid.Resource.Attribute.font;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.fontProviderAuthority = global::TrenteArpents.Droid.Resource.Attribute.fontProviderAuthority;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.fontProviderCerts = global::TrenteArpents.Droid.Resource.Attribute.fontProviderCerts;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.fontProviderFetchStrategy = global::TrenteArpents.Droid.Resource.Attribute.fontProviderFetchStrategy;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.fontProviderFetchTimeout = global::TrenteArpents.Droid.Resource.Attribute.fontProviderFetchTimeout;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.fontProviderPackage = global::TrenteArpents.Droid.Resource.Attribute.fontProviderPackage;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.fontProviderQuery = global::TrenteArpents.Droid.Resource.Attribute.fontProviderQuery;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.fontStyle = global::TrenteArpents.Droid.Resource.Attribute.fontStyle;
-			global::Microsoft.AppCenter.Push.Android.Resource.Attribute.fontWeight = global::TrenteArpents.Droid.Resource.Attribute.fontWeight;
-			global::Microsoft.AppCenter.Push.Android.Resource.Boolean.abc_action_bar_embed_tabs = global::TrenteArpents.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
-			global::Microsoft.AppCenter.Push.Android.Resource.Color.notification_action_color_filter = global::TrenteArpents.Droid.Resource.Color.notification_action_color_filter;
-			global::Microsoft.AppCenter.Push.Android.Resource.Color.notification_icon_bg_color = global::TrenteArpents.Droid.Resource.Color.notification_icon_bg_color;
-			global::Microsoft.AppCenter.Push.Android.Resource.Color.notification_material_background_media_default_color = global::TrenteArpents.Droid.Resource.Color.notification_material_background_media_default_color;
-			global::Microsoft.AppCenter.Push.Android.Resource.Color.primary_text_default_material_dark = global::TrenteArpents.Droid.Resource.Color.primary_text_default_material_dark;
-			global::Microsoft.AppCenter.Push.Android.Resource.Color.ripple_material_light = global::TrenteArpents.Droid.Resource.Color.ripple_material_light;
-			global::Microsoft.AppCenter.Push.Android.Resource.Color.secondary_text_default_material_dark = global::TrenteArpents.Droid.Resource.Color.secondary_text_default_material_dark;
-			global::Microsoft.AppCenter.Push.Android.Resource.Color.secondary_text_default_material_light = global::TrenteArpents.Droid.Resource.Color.secondary_text_default_material_light;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.compat_button_inset_horizontal_material = global::TrenteArpents.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.compat_button_inset_vertical_material = global::TrenteArpents.Droid.Resource.Dimension.compat_button_inset_vertical_material;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.compat_button_padding_horizontal_material = global::TrenteArpents.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.compat_button_padding_vertical_material = global::TrenteArpents.Droid.Resource.Dimension.compat_button_padding_vertical_material;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.compat_control_corner_material = global::TrenteArpents.Droid.Resource.Dimension.compat_control_corner_material;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_action_icon_size = global::TrenteArpents.Droid.Resource.Dimension.notification_action_icon_size;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_action_text_size = global::TrenteArpents.Droid.Resource.Dimension.notification_action_text_size;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_big_circle_margin = global::TrenteArpents.Droid.Resource.Dimension.notification_big_circle_margin;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_content_margin_start = global::TrenteArpents.Droid.Resource.Dimension.notification_content_margin_start;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_large_icon_height = global::TrenteArpents.Droid.Resource.Dimension.notification_large_icon_height;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_large_icon_width = global::TrenteArpents.Droid.Resource.Dimension.notification_large_icon_width;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_main_column_padding_top = global::TrenteArpents.Droid.Resource.Dimension.notification_main_column_padding_top;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_media_narrow_margin = global::TrenteArpents.Droid.Resource.Dimension.notification_media_narrow_margin;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_right_icon_size = global::TrenteArpents.Droid.Resource.Dimension.notification_right_icon_size;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_right_side_padding_top = global::TrenteArpents.Droid.Resource.Dimension.notification_right_side_padding_top;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_small_icon_background_padding = global::TrenteArpents.Droid.Resource.Dimension.notification_small_icon_background_padding;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_small_icon_size_as_large = global::TrenteArpents.Droid.Resource.Dimension.notification_small_icon_size_as_large;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_subtext_size = global::TrenteArpents.Droid.Resource.Dimension.notification_subtext_size;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_top_pad = global::TrenteArpents.Droid.Resource.Dimension.notification_top_pad;
-			global::Microsoft.AppCenter.Push.Android.Resource.Dimension.notification_top_pad_large_text = global::TrenteArpents.Droid.Resource.Dimension.notification_top_pad_large_text;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.ic_stat_notify_dot = global::TrenteArpents.Droid.Resource.Drawable.ic_stat_notify_dot;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_action_background = global::TrenteArpents.Droid.Resource.Drawable.notification_action_background;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_bg = global::TrenteArpents.Droid.Resource.Drawable.notification_bg;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_bg_low = global::TrenteArpents.Droid.Resource.Drawable.notification_bg_low;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_bg_low_normal = global::TrenteArpents.Droid.Resource.Drawable.notification_bg_low_normal;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_bg_low_pressed = global::TrenteArpents.Droid.Resource.Drawable.notification_bg_low_pressed;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_bg_normal = global::TrenteArpents.Droid.Resource.Drawable.notification_bg_normal;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_bg_normal_pressed = global::TrenteArpents.Droid.Resource.Drawable.notification_bg_normal_pressed;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_icon_background = global::TrenteArpents.Droid.Resource.Drawable.notification_icon_background;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_template_icon_bg = global::TrenteArpents.Droid.Resource.Drawable.notification_template_icon_bg;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_template_icon_low_bg = global::TrenteArpents.Droid.Resource.Drawable.notification_template_icon_low_bg;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notification_tile_bg = global::TrenteArpents.Droid.Resource.Drawable.notification_tile_bg;
-			global::Microsoft.AppCenter.Push.Android.Resource.Drawable.notify_panel_notification_icon_bg = global::TrenteArpents.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.action0 = global::TrenteArpents.Droid.Resource.Id.action0;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.action_container = global::TrenteArpents.Droid.Resource.Id.action_container;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.action_divider = global::TrenteArpents.Droid.Resource.Id.action_divider;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.action_image = global::TrenteArpents.Droid.Resource.Id.action_image;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.action_text = global::TrenteArpents.Droid.Resource.Id.action_text;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.actions = global::TrenteArpents.Droid.Resource.Id.actions;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.async = global::TrenteArpents.Droid.Resource.Id.async;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.blocking = global::TrenteArpents.Droid.Resource.Id.blocking;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.cancel_action = global::TrenteArpents.Droid.Resource.Id.cancel_action;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.chronometer = global::TrenteArpents.Droid.Resource.Id.chronometer;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.end_padder = global::TrenteArpents.Droid.Resource.Id.end_padder;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.forever = global::TrenteArpents.Droid.Resource.Id.forever;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.icon = global::TrenteArpents.Droid.Resource.Id.icon;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.icon_group = global::TrenteArpents.Droid.Resource.Id.icon_group;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.info = global::TrenteArpents.Droid.Resource.Id.info;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.italic = global::TrenteArpents.Droid.Resource.Id.italic;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.line1 = global::TrenteArpents.Droid.Resource.Id.line1;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.line3 = global::TrenteArpents.Droid.Resource.Id.line3;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.media_actions = global::TrenteArpents.Droid.Resource.Id.media_actions;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.normal = global::TrenteArpents.Droid.Resource.Id.normal;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.notification_background = global::TrenteArpents.Droid.Resource.Id.notification_background;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.notification_main_column = global::TrenteArpents.Droid.Resource.Id.notification_main_column;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.notification_main_column_container = global::TrenteArpents.Droid.Resource.Id.notification_main_column_container;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.right_icon = global::TrenteArpents.Droid.Resource.Id.right_icon;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.right_side = global::TrenteArpents.Droid.Resource.Id.right_side;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.status_bar_latest_event_content = global::TrenteArpents.Droid.Resource.Id.status_bar_latest_event_content;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.text = global::TrenteArpents.Droid.Resource.Id.text;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.text2 = global::TrenteArpents.Droid.Resource.Id.text2;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.time = global::TrenteArpents.Droid.Resource.Id.time;
-			global::Microsoft.AppCenter.Push.Android.Resource.Id.title = global::TrenteArpents.Droid.Resource.Id.title;
-			global::Microsoft.AppCenter.Push.Android.Resource.Integer.cancel_button_image_alpha = global::TrenteArpents.Droid.Resource.Integer.cancel_button_image_alpha;
-			global::Microsoft.AppCenter.Push.Android.Resource.Integer.google_play_services_version = global::TrenteArpents.Droid.Resource.Integer.google_play_services_version;
-			global::Microsoft.AppCenter.Push.Android.Resource.Integer.status_bar_notification_info_maxnum = global::TrenteArpents.Droid.Resource.Integer.status_bar_notification_info_maxnum;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_action = global::TrenteArpents.Droid.Resource.Layout.notification_action;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_action_tombstone = global::TrenteArpents.Droid.Resource.Layout.notification_action_tombstone;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_media_action = global::TrenteArpents.Droid.Resource.Layout.notification_media_action;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_media_cancel_action = global::TrenteArpents.Droid.Resource.Layout.notification_media_cancel_action;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_big_media = global::TrenteArpents.Droid.Resource.Layout.notification_template_big_media;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_big_media_custom = global::TrenteArpents.Droid.Resource.Layout.notification_template_big_media_custom;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_big_media_narrow = global::TrenteArpents.Droid.Resource.Layout.notification_template_big_media_narrow;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_big_media_narrow_custom = global::TrenteArpents.Droid.Resource.Layout.notification_template_big_media_narrow_custom;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_custom_big = global::TrenteArpents.Droid.Resource.Layout.notification_template_custom_big;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_icon_group = global::TrenteArpents.Droid.Resource.Layout.notification_template_icon_group;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_lines_media = global::TrenteArpents.Droid.Resource.Layout.notification_template_lines_media;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_media = global::TrenteArpents.Droid.Resource.Layout.notification_template_media;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_media_custom = global::TrenteArpents.Droid.Resource.Layout.notification_template_media_custom;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_part_chronometer = global::TrenteArpents.Droid.Resource.Layout.notification_template_part_chronometer;
-			global::Microsoft.AppCenter.Push.Android.Resource.Layout.notification_template_part_time = global::TrenteArpents.Droid.Resource.Layout.notification_template_part_time;
-			global::Microsoft.AppCenter.Push.Android.Resource.String.common_google_play_services_unknown_issue = global::TrenteArpents.Droid.Resource.String.common_google_play_services_unknown_issue;
-			global::Microsoft.AppCenter.Push.Android.Resource.String.fcm_fallback_notification_channel_label = global::TrenteArpents.Droid.Resource.String.fcm_fallback_notification_channel_label;
-			global::Microsoft.AppCenter.Push.Android.Resource.String.library_name = global::TrenteArpents.Droid.Resource.String.library_name;
-			global::Microsoft.AppCenter.Push.Android.Resource.String.status_bar_notification_info_overflow = global::TrenteArpents.Droid.Resource.String.status_bar_notification_info_overflow;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification = global::TrenteArpents.Droid.Resource.Style.TextAppearance_Compat_Notification;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Info = global::TrenteArpents.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::TrenteArpents.Droid.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::TrenteArpents.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::TrenteArpents.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Media = global::TrenteArpents.Droid.Resource.Style.TextAppearance_Compat_Notification_Media;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Time = global::TrenteArpents.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::TrenteArpents.Droid.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Title = global::TrenteArpents.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::TrenteArpents.Droid.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.Widget_Compat_NotificationActionContainer = global::TrenteArpents.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
-			global::Microsoft.AppCenter.Push.Android.Resource.Style.Widget_Compat_NotificationActionText = global::TrenteArpents.Droid.Resource.Style.Widget_Compat_NotificationActionText;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamily = global::TrenteArpents.Droid.Resource.Styleable.FontFamily;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamily_fontProviderAuthority = global::TrenteArpents.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamily_fontProviderCerts = global::TrenteArpents.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::TrenteArpents.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::TrenteArpents.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamily_fontProviderPackage = global::TrenteArpents.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamily_fontProviderQuery = global::TrenteArpents.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamilyFont = global::TrenteArpents.Droid.Resource.Styleable.FontFamilyFont;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamilyFont_font = global::TrenteArpents.Droid.Resource.Styleable.FontFamilyFont_font;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamilyFont_fontStyle = global::TrenteArpents.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
-			global::Microsoft.AppCenter.Push.Android.Resource.Styleable.FontFamilyFont_fontWeight = global::TrenteArpents.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
 			global::Stormlion.PhotoBrowser.Droid.Resource.Animation.abc_fade_in = global::TrenteArpents.Droid.Resource.Animation.abc_fade_in;
 			global::Stormlion.PhotoBrowser.Droid.Resource.Animation.abc_fade_out = global::TrenteArpents.Droid.Resource.Animation.abc_fade_out;
 			global::Stormlion.PhotoBrowser.Droid.Resource.Animation.abc_grow_fade_in_from_bottom = global::TrenteArpents.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -8379,26 +8254,26 @@ namespace TrenteArpents.Droid
 			// aapt resource value: 0x7f020055
 			public const int avd_hide_password = 2130837589;
 			
+			// aapt resource value: 0x7f020162
+			public const int avd_hide_password_1 = 2130837858;
+			
 			// aapt resource value: 0x7f020163
-			public const int avd_hide_password_1 = 2130837859;
+			public const int avd_hide_password_2 = 2130837859;
 			
 			// aapt resource value: 0x7f020164
-			public const int avd_hide_password_2 = 2130837860;
-			
-			// aapt resource value: 0x7f020165
-			public const int avd_hide_password_3 = 2130837861;
+			public const int avd_hide_password_3 = 2130837860;
 			
 			// aapt resource value: 0x7f020056
 			public const int avd_show_password = 2130837590;
 			
+			// aapt resource value: 0x7f020165
+			public const int avd_show_password_1 = 2130837861;
+			
 			// aapt resource value: 0x7f020166
-			public const int avd_show_password_1 = 2130837862;
+			public const int avd_show_password_2 = 2130837862;
 			
 			// aapt resource value: 0x7f020167
-			public const int avd_show_password_2 = 2130837863;
-			
-			// aapt resource value: 0x7f020168
-			public const int avd_show_password_3 = 2130837864;
+			public const int avd_show_password_3 = 2130837863;
 			
 			// aapt resource value: 0x7f020057
 			public const int background = 2130837591;
@@ -9037,172 +8912,169 @@ namespace TrenteArpents.Droid
 			public const int ic_os_notification_fallback_white_24dp = 2130837802;
 			
 			// aapt resource value: 0x7f02012b
-			public const int ic_stat_notify_dot = 2130837803;
+			public const int ic_vol_type_speaker_dark = 2130837803;
 			
 			// aapt resource value: 0x7f02012c
-			public const int ic_vol_type_speaker_dark = 2130837804;
+			public const int ic_vol_type_speaker_group_dark = 2130837804;
 			
 			// aapt resource value: 0x7f02012d
-			public const int ic_vol_type_speaker_group_dark = 2130837805;
+			public const int ic_vol_type_speaker_group_light = 2130837805;
 			
 			// aapt resource value: 0x7f02012e
-			public const int ic_vol_type_speaker_group_light = 2130837806;
+			public const int ic_vol_type_speaker_light = 2130837806;
 			
 			// aapt resource value: 0x7f02012f
-			public const int ic_vol_type_speaker_light = 2130837807;
+			public const int ic_vol_type_tv_dark = 2130837807;
 			
 			// aapt resource value: 0x7f020130
-			public const int ic_vol_type_tv_dark = 2130837808;
+			public const int ic_vol_type_tv_light = 2130837808;
 			
 			// aapt resource value: 0x7f020131
-			public const int ic_vol_type_tv_light = 2130837809;
+			public const int loading = 2130837809;
 			
 			// aapt resource value: 0x7f020132
-			public const int loading = 2130837810;
+			public const int localBanner = 2130837810;
 			
 			// aapt resource value: 0x7f020133
-			public const int localBanner = 2130837811;
+			public const int message = 2130837811;
 			
 			// aapt resource value: 0x7f020134
-			public const int message = 2130837812;
+			public const int mr_button_connected_dark = 2130837812;
 			
 			// aapt resource value: 0x7f020135
-			public const int mr_button_connected_dark = 2130837813;
+			public const int mr_button_connected_light = 2130837813;
 			
 			// aapt resource value: 0x7f020136
-			public const int mr_button_connected_light = 2130837814;
+			public const int mr_button_connecting_dark = 2130837814;
 			
 			// aapt resource value: 0x7f020137
-			public const int mr_button_connecting_dark = 2130837815;
+			public const int mr_button_connecting_light = 2130837815;
 			
 			// aapt resource value: 0x7f020138
-			public const int mr_button_connecting_light = 2130837816;
+			public const int mr_button_dark = 2130837816;
 			
 			// aapt resource value: 0x7f020139
-			public const int mr_button_dark = 2130837817;
+			public const int mr_button_light = 2130837817;
 			
 			// aapt resource value: 0x7f02013a
-			public const int mr_button_light = 2130837818;
+			public const int mr_dialog_close_dark = 2130837818;
 			
 			// aapt resource value: 0x7f02013b
-			public const int mr_dialog_close_dark = 2130837819;
+			public const int mr_dialog_close_light = 2130837819;
 			
 			// aapt resource value: 0x7f02013c
-			public const int mr_dialog_close_light = 2130837820;
+			public const int mr_dialog_material_background_dark = 2130837820;
 			
 			// aapt resource value: 0x7f02013d
-			public const int mr_dialog_material_background_dark = 2130837821;
+			public const int mr_dialog_material_background_light = 2130837821;
 			
 			// aapt resource value: 0x7f02013e
-			public const int mr_dialog_material_background_light = 2130837822;
+			public const int mr_group_collapse = 2130837822;
 			
 			// aapt resource value: 0x7f02013f
-			public const int mr_group_collapse = 2130837823;
+			public const int mr_group_expand = 2130837823;
 			
 			// aapt resource value: 0x7f020140
-			public const int mr_group_expand = 2130837824;
+			public const int mr_media_pause_dark = 2130837824;
 			
 			// aapt resource value: 0x7f020141
-			public const int mr_media_pause_dark = 2130837825;
+			public const int mr_media_pause_light = 2130837825;
 			
 			// aapt resource value: 0x7f020142
-			public const int mr_media_pause_light = 2130837826;
+			public const int mr_media_play_dark = 2130837826;
 			
 			// aapt resource value: 0x7f020143
-			public const int mr_media_play_dark = 2130837827;
+			public const int mr_media_play_light = 2130837827;
 			
 			// aapt resource value: 0x7f020144
-			public const int mr_media_play_light = 2130837828;
+			public const int mr_media_stop_dark = 2130837828;
 			
 			// aapt resource value: 0x7f020145
-			public const int mr_media_stop_dark = 2130837829;
+			public const int mr_media_stop_light = 2130837829;
 			
 			// aapt resource value: 0x7f020146
-			public const int mr_media_stop_light = 2130837830;
+			public const int mr_vol_type_audiotrack_dark = 2130837830;
 			
 			// aapt resource value: 0x7f020147
-			public const int mr_vol_type_audiotrack_dark = 2130837831;
+			public const int mr_vol_type_audiotrack_light = 2130837831;
 			
 			// aapt resource value: 0x7f020148
-			public const int mr_vol_type_audiotrack_light = 2130837832;
+			public const int mtrl_snackbar_background = 2130837832;
 			
 			// aapt resource value: 0x7f020149
-			public const int mtrl_snackbar_background = 2130837833;
+			public const int mtrl_tabs_default_indicator = 2130837833;
 			
 			// aapt resource value: 0x7f02014a
-			public const int mtrl_tabs_default_indicator = 2130837834;
+			public const int navigation_empty_icon = 2130837834;
 			
 			// aapt resource value: 0x7f02014b
-			public const int navigation_empty_icon = 2130837835;
+			public const int newsletter = 2130837835;
 			
 			// aapt resource value: 0x7f02014c
-			public const int newsletter = 2130837836;
+			public const int notification_action_background = 2130837836;
 			
 			// aapt resource value: 0x7f02014d
-			public const int notification_action_background = 2130837837;
+			public const int notification_bg = 2130837837;
 			
 			// aapt resource value: 0x7f02014e
-			public const int notification_bg = 2130837838;
+			public const int notification_bg_low = 2130837838;
 			
 			// aapt resource value: 0x7f02014f
-			public const int notification_bg_low = 2130837839;
+			public const int notification_bg_low_normal = 2130837839;
 			
 			// aapt resource value: 0x7f020150
-			public const int notification_bg_low_normal = 2130837840;
+			public const int notification_bg_low_pressed = 2130837840;
 			
 			// aapt resource value: 0x7f020151
-			public const int notification_bg_low_pressed = 2130837841;
+			public const int notification_bg_normal = 2130837841;
 			
 			// aapt resource value: 0x7f020152
-			public const int notification_bg_normal = 2130837842;
+			public const int notification_bg_normal_pressed = 2130837842;
 			
 			// aapt resource value: 0x7f020153
-			public const int notification_bg_normal_pressed = 2130837843;
-			
-			// aapt resource value: 0x7f020154
-			public const int notification_icon_background = 2130837844;
-			
-			// aapt resource value: 0x7f020161
-			public const int notification_template_icon_bg = 2130837857;
-			
-			// aapt resource value: 0x7f020162
-			public const int notification_template_icon_low_bg = 2130837858;
-			
-			// aapt resource value: 0x7f020155
-			public const int notification_tile_bg = 2130837845;
-			
-			// aapt resource value: 0x7f020156
-			public const int notify_panel_notification_icon_bg = 2130837846;
-			
-			// aapt resource value: 0x7f020157
-			public const int photos = 2130837847;
-			
-			// aapt resource value: 0x7f020158
-			public const int repeatedPattern = 2130837848;
-			
-			// aapt resource value: 0x7f020159
-			public const int schedule = 2130837849;
-			
-			// aapt resource value: 0x7f02015a
-			public const int share = 2130837850;
-			
-			// aapt resource value: 0x7f02015b
-			public const int silverBanner = 2130837851;
-			
-			// aapt resource value: 0x7f02015c
-			public const int splashScreen = 2130837852;
-			
-			// aapt resource value: 0x7f02015d
-			public const int sponsors = 2130837853;
-			
-			// aapt resource value: 0x7f02015e
-			public const int tooltip_frame_dark = 2130837854;
-			
-			// aapt resource value: 0x7f02015f
-			public const int tooltip_frame_light = 2130837855;
+			public const int notification_icon_background = 2130837843;
 			
 			// aapt resource value: 0x7f020160
-			public const int weather = 2130837856;
+			public const int notification_template_icon_bg = 2130837856;
+			
+			// aapt resource value: 0x7f020161
+			public const int notification_template_icon_low_bg = 2130837857;
+			
+			// aapt resource value: 0x7f020154
+			public const int notification_tile_bg = 2130837844;
+			
+			// aapt resource value: 0x7f020155
+			public const int notify_panel_notification_icon_bg = 2130837845;
+			
+			// aapt resource value: 0x7f020156
+			public const int photos = 2130837846;
+			
+			// aapt resource value: 0x7f020157
+			public const int repeatedPattern = 2130837847;
+			
+			// aapt resource value: 0x7f020158
+			public const int schedule = 2130837848;
+			
+			// aapt resource value: 0x7f020159
+			public const int share = 2130837849;
+			
+			// aapt resource value: 0x7f02015a
+			public const int silverBanner = 2130837850;
+			
+			// aapt resource value: 0x7f02015b
+			public const int splashScreen = 2130837851;
+			
+			// aapt resource value: 0x7f02015c
+			public const int sponsors = 2130837852;
+			
+			// aapt resource value: 0x7f02015d
+			public const int tooltip_frame_dark = 2130837853;
+			
+			// aapt resource value: 0x7f02015e
+			public const int tooltip_frame_light = 2130837854;
+			
+			// aapt resource value: 0x7f02015f
+			public const int weather = 2130837855;
 			
 			static Drawable()
 			{
@@ -10672,6 +10544,9 @@ namespace TrenteArpents.Droid
 			// aapt resource value: 0x7f0b0011
 			public const int common_signin_button_text_long = 2131427345;
 			
+			// aapt resource value: 0x7f0b0063
+			public const int default_web_client_id = 2131427427;
+			
 			// aapt resource value: 0x7f0b0057
 			public const int fab_transformation_scrim_behavior = 2131427415;
 			
@@ -10681,11 +10556,26 @@ namespace TrenteArpents.Droid
 			// aapt resource value: 0x7f0b0012
 			public const int fcm_fallback_notification_channel_label = 2131427346;
 			
-			// aapt resource value: 0x7f0b0059
-			public const int hide_bottom_view_on_scroll_behavior = 2131427417;
+			// aapt resource value: 0x7f0b0064
+			public const int firebase_database_url = 2131427428;
 			
 			// aapt resource value: 0x7f0b0061
-			public const int library_name = 2131427425;
+			public const int gcm_defaultSenderId = 2131427425;
+			
+			// aapt resource value: 0x7f0b0065
+			public const int google_api_key = 2131427429;
+			
+			// aapt resource value: 0x7f0b0062
+			public const int google_app_id = 2131427426;
+			
+			// aapt resource value: 0x7f0b0066
+			public const int google_crash_reporting_api_key = 2131427430;
+			
+			// aapt resource value: 0x7f0b0067
+			public const int google_storage_bucket = 2131427431;
+			
+			// aapt resource value: 0x7f0b0059
+			public const int hide_bottom_view_on_scroll_behavior = 2131427417;
 			
 			// aapt resource value: 0x7f0b0013
 			public const int mr_button_content_description = 2131427347;
@@ -10776,6 +10666,9 @@ namespace TrenteArpents.Droid
 			
 			// aapt resource value: 0x7f0b005f
 			public const int path_password_strike_through = 2131427423;
+			
+			// aapt resource value: 0x7f0b0068
+			public const int project_id = 2131427432;
 			
 			// aapt resource value: 0x7f0b0046
 			public const int search_menu_title = 2131427398;
