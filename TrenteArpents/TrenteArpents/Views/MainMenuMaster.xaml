@@ -35,7 +35,7 @@
             BackgroundColor="#88000000">
             <Label
                 x:Name="title"
-                Text="18 AOÛT 2019"
+                Text="17 AOÛT 2019"
                 FontSize="28" 
                 FontFamily="{StaticResource boldFont}"
                 HorizontalOptions="Center" />

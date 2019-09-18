@@ -1,9 +1,6 @@
 ﻿using Com.OneSignal;
 using Com.OneSignal.Abstractions;
 using GalaSoft.MvvmLight.Views;
-#if !DEBUG
-using Microsoft.AppCenter.Analytics;
-#endif
 using RestSharp;
 using System.Collections.Generic;
 using System.Net.Cache;
@@ -19,7 +16,7 @@ namespace TrenteArpents
 {
     public partial class App : Application
     {
-        private IAppCenterHandler _appCenterHandler;
+        private readonly IAppCenterHandler _appCenterHandler;
 
         static App()
         {
@@ -63,13 +60,9 @@ namespace TrenteArpents
 
         private static void RegisterIoc()
         {
-#if DEBUG
             var cachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
-            DependencyInjection.Register<IAppCenterHandler, AppCenterDebugHandler>();
-#else
-            var cachePolicy = new RequestCachePolicy(RequestCacheLevel.CacheIfAvailable);
+
             DependencyInjection.Register<IAppCenterHandler, AppCenterHandler>();
-#endif
 
             DependencyInjection.Register<AzureConfiguration>();
             DependencyInjection.Register<GitHubConfiguration>();
@@ -118,6 +111,10 @@ namespace TrenteArpents
         protected override void OnStart()
         {
             _appCenterHandler.Start();
+
+#if DEBUG
+            OneSignal.Current.SendTag("debug", "true");
+#endif
         }
 
         protected override void OnSleep()

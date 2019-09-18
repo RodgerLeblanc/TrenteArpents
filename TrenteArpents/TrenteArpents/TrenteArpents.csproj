@@ -130,6 +130,9 @@
     <None Update="Views\Multimedia.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+    <None Update="Views\Newsletter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Update="Views\Photos.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
